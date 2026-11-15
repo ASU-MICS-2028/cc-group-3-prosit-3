@@ -1,6 +1,6 @@
 # MQTT topics
 
-Draft v0 (D-001, proposed). Every reading is published as JSON matching [`sensor-reading.schema.json`](./sensor-reading.schema.json).
+Draft v0 (decision 2-sensor-reading-and-topic-contract, proposed). Every reading is published as JSON matching [`sensor-reading.schema.json`](./sensor-reading.schema.json).
 
 ## Topic layout
 

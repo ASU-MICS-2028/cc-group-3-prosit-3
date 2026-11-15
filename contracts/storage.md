@@ -1,6 +1,6 @@
 # Storage layout (logical)
 
-Draft v0 (D-001, proposed). Logical shape only: the physical form (tables in TimescaleDB, measurements in InfluxDB, etc.) follows the Lab 10 Part D decision.
+Draft v0 (decision 2-sensor-reading-and-topic-contract, proposed). Logical shape only: the physical form (tables in TimescaleDB, measurements in InfluxDB, etc.) follows the Lab 10 Part D decision.
 
 ## Raw readings: one table/measurement per domain
 

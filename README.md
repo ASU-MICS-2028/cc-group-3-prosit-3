@@ -12,7 +12,7 @@ We go deep on three sensor domains, each feeding one piece of ML or AI:
 | Waste bin fill level | Simulator | Fill-rate prediction → collection routes |
 | Flood / drain water level | Simulator | Anomaly detection and early warning |
 
-Traffic, water-pipe and energy sensors, and computer vision, reinforcement learning, digital twins and federated learning are **not built**; each is recorded as a decision with the reason.
+Traffic, water-pipe and energy sensors, and computer vision, reinforcement learning, digital twins and federated learning are **not built**. The reasons will be recorded as a decision (issue #54).
 
 ## Team
 

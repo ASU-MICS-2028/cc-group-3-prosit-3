@@ -1,9 +1,9 @@
 ---
-id: D-NNN
+issue: <issue number whose PR records this>
 title: <the decision, in a few words>
 date: YYYY-MM-DD
 decided_by: <names>
-status: proposed   # proposed | accepted | replaced by D-NNN
+status: proposed   # proposed | accepted | replaced by <file>
 ---
 
 ## Context

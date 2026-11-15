@@ -1,7 +1,7 @@
 Closes #
 
-**Change file:** `changes/C-NNN-<slug>.md`
-**Decisions added:** none / D-NNN
+**Change file:** `changes/<issue-number>-<slug>.md` (and its line in `changes/README.md`)
+**Decisions added:** none / decisions/<issue-number>-<slug>.md
 **Notes added:** none / knowledge/… / learnings/…
 **Evidence:** none / evidence/labNN/…
 

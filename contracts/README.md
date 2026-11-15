@@ -2,7 +2,7 @@
 
 **The shared formats every part builds against**, so nobody waits on anyone: the simulator, bridge, database, API, web dashboard, mobile app and ML work can all start on day one with fake data that matches these files.
 
-Status: **draft v0**, proposed in [D-001](../decisions/D-001-sensor-reading-and-topic-contract.md). Owner: Joseph. Changing a contract = its own PR with a decision file; tag the people it affects.
+Status: **draft v0**, proposed in [decisions/2-sensor-reading-and-topic-contract.md](../decisions/2-sensor-reading-and-topic-contract.md). Owner: Joseph. Changing a contract = its own PR with a decision file; tag the people it affects.
 
 | File | What it fixes | Used by |
 |---|---|---|

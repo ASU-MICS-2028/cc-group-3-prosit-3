@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/ASU-MICS-2028/cc-group-3-prosit-3/contracts/sensor-reading.schema.json",
   "title": "SmartCity Accra sensor reading",
-  "description": "One reading published by one device. Draft v0 (D-001, proposed).",
+  "description": "One reading published by one device. Draft v0 (decision 2-sensor-reading-and-topic-contract, proposed).",
   "type": "object",
   "additionalProperties": false,
   "required": ["device_id", "domain", "metric", "value", "unit", "ts", "seq"],

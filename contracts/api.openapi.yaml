@@ -3,7 +3,7 @@ info:
   title: SmartCity Accra API
   version: 0.1.0-draft
   description: |
-    What the web dashboard and the mobile app call. Draft v0 (D-001, proposed).
+    What the web dashboard and the mobile app call. Draft v0 (decision 2-sensor-reading-and-topic-contract, proposed).
     Paths and shapes only; auth (officials sign in, residents mostly read) is decided later.
 servers:
   - url: http://localhost:8000

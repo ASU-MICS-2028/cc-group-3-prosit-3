@@ -1,5 +1,5 @@
 ---
-id: D-001
+issue: 2
 title: Sensor reading, MQTT topic, API and storage contracts (draft v0)
 date: 2026-11-15
 decided_by: Joseph (proposed; open for team comment)
