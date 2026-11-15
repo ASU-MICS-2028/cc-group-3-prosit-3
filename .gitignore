@@ -3,6 +3,11 @@
 .env.*
 !.env.example
 *.pem
+*.key
+# MQTT broker credentials and ACLs (one per device; never commit)
+passwd
+*.passwd
+mosquitto/acl*
 *_credentials.csv
 *.tfvars
 !example.tfvars

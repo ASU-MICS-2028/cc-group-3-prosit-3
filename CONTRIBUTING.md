@@ -7,12 +7,12 @@ Using a coding assistant? It follows [`AGENTS.md`](./AGENTS.md), which builds on
 1. **Issue.** Every task is a GitHub issue with one owner (the assignee) and labels for area, lab and week. Pick one assigned to you, or ask in the group before taking someone else's.
 2. **Plan.** Fill in `plans/<issue-number>-<slug>.md` (copy [`plans/TEMPLATE.md`](./plans/TEMPLATE.md)): goal, what gets built, depends on, done when, evidence to capture. Add a row to [`plans/README.md`](./plans/README.md). If the plan needs agreement first, open a small PR with just the plan.
 3. **Branch and PR.** Branch `<area>/<issue-number>-<slug>` off an up-to-date `main`. One PR per issue; its body says `Closes #<issue-number>`.
-4. **Change file.** Every PR adds **one** `changes/C-NNN-<slug>.md` (copy [`changes/TEMPLATE.md`](./changes/TEMPLATE.md)) and one line in [`changes/README.md`](./changes/README.md). It says what changed and why, **who was in charge**, who reviewed it, **what AI did** (tool, which parts, what you checked or changed after), how to check it, and what's not done. A pure chore (typo, index fix) can skip it with the label `skip-change-file`.
-5. **Decisions.** Each decision is its own `decisions/D-NNN-<slug>.md` (copy [`decisions/TEMPLATE.md`](./decisions/TEMPLATE.md)) plus one line in [`decisions/README.md`](./decisions/README.md). Link it from your change file.
+4. **Change file.** Every PR adds **one** `changes/<issue-number>-<slug>.md` (copy [`changes/TEMPLATE.md`](./changes/TEMPLATE.md)) and fills its issue's line in [`changes/README.md`](./changes/README.md). It says what changed and why, **who was in charge**, who reviewed it, **what AI did** (tool, which parts, what you checked or changed after), how to check it, and what's not done. A pure chore (typo, index fix) can skip it with the label `skip-change-file`.
+5. **Decisions.** Each decision is its own `decisions/<issue-number>-<slug>.md` (copy [`decisions/TEMPLATE.md`](./decisions/TEMPLATE.md)), listed on its issue's line in [`decisions/README.md`](./decisions/README.md). Link it from your change file.
 6. **Notes.** Facts go in [`knowledge/`](./knowledge/README.md), things you found out by doing in [`learnings/`](./learnings/README.md): one idea per note (rules below).
 7. **Review and merge.** **One approval from anyone who isn't the author** merges it. No area needs a particular reviewer; CODEOWNERS only suggests one. Never merge with `--admin`. Merging closes the issue.
 
-**Numbers:** take the next free `C-NNN` / `D-NNN` when you open the PR. If someone merges the same number first, CI tells you; rename yours to the next free number.
+**No merge conflicts in the indexes:** files are named after the issue number, so two PRs never pick the same name. The indexes (`plans/`, `changes/`, `decisions/`) have one hidden slot line per issue, `<!-- #12 -->`, with blank lines between them: replace your issue's slot with your entry and touch nothing else. Note indexes (`knowledge/`, `learnings/`) keep a blank line between entries for the same reason; insert yours in alphabetical order in its section.
 
 ## Working without waiting
 
@@ -40,7 +40,7 @@ Every part builds against the shared formats in [`contracts/`](./contracts/READM
 
 | Check | What it enforces |
 |---|---|
-| `change-file` | Exactly one new `changes/C-NNN-*.md`, unused number (or label `skip-change-file`) |
+| `change-file` | Exactly one new `changes/<issue-number>-*.md`, linked from `changes/README.md` (or label `skip-change-file`) |
 | `notes` | Front matter, `## Related`, and index link for every note |
 | `links` | No broken relative links in Markdown |
 | `unit` | Tests for the checks themselves |
