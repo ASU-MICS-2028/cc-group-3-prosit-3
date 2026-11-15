@@ -30,7 +30,7 @@ Entry: `- [#<n>: <decision>](<file>.md) — <status>`
 
 <!-- #12 -->
 
-<!-- #13 -->
+- [#13: Stay in af-south-1 (and africa-south1) despite the dirtier grid](13-region-choice-carbon.md) — proposed
 
 <!-- #14 -->
 

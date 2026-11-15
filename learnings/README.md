@@ -20,6 +20,8 @@ Every note is listed below under a topic.
 
 ## Cost and sustainability
 
+- [af-south-1 costs 29% more and emits about twice as much as us-east-1 for the same servers](af-south-1-costs-more-and-emits-twice-us-east-1.md)
+
 - [Cost tracking and teardown: what keeps billing and what to delete by hand](cost-tracking-and-teardown-checklist.md)
 
 - [fck-nat instance versus managed NAT Gateway: about $3 versus $32 a month](fck-nat-vs-nat-gateway.md)
