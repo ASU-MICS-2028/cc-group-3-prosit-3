@@ -116,7 +116,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #55 -->
 
-<!-- #56 -->
+- [#56](56-pr-review-rule-and-ci-hygiene.md) — Review open PRs first; CI hygiene — Joseph
 
 <!-- #57 -->
 
