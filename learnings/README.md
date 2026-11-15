@@ -32,6 +32,8 @@ Every note is listed below under a topic.
 
 - [Offline app design: save locally first, encrypt, queue, and let a person settle conflicts](offline-conflicts-are-shown-to-a-person.md)
 
+- [Paho raises on publish while the broker is down; catch it or the sensor dies](paho-publish-raises-while-broker-is-down.md)
+
 - [Sync downloads with a running-number bookmark can skip records unless numbering is ordered](sync-bookmark-lock-avoids-skipped-records.md)
 
 - [WebRTC results: direct paths worked, Chrome Slow 3G does not throttle media, TURN cost is a range](webrtc-testing-and-turn-findings.md)
