@@ -30,7 +30,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#12](12-l11-budget-model.md) — SmartCity budget model at stated sensor volume (L11-C) — Elise — stub
 
-- [#13](13-l11-sustainability.md) — Sustainability estimate and region choice (L11-D) — Joseph — stub
+- [#13](13-l11-sustainability.md) — Sustainability estimate and region choice (L11-D) — Joseph — done
 
 - [#14](14-l11-report.md) — Lab 11 report (300 words) — Eugene — stub
 

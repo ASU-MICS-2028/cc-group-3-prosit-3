@@ -30,7 +30,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #12 -->
 
-<!-- #13 -->
+- [#13](13-sustainability.md) — Sustainability estimate and region choice (Lab 11 Part D) — Joseph
 
 <!-- #14 -->
 
