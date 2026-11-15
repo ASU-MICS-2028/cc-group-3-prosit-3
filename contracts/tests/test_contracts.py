@@ -21,7 +21,7 @@ def load(p):
 class SensorReading(unittest.TestCase):
     def test_examples_valid(self):
         examples = sorted((C / "examples").glob("*.json"))
-        self.assertEqual(len(examples), 3)
+        self.assertGreaterEqual(len(examples), 3)  # one per domain at least
         for p in examples:
             with self.subTest(p.name):
                 VALIDATOR.validate(load(p))

@@ -10,7 +10,7 @@ Draft v0 (D-001, proposed). Logical shape only: the physical form (tables in Tim
 | `waste` | `device_id`, `neighbourhood`, `source` | `ts`, `seq`, `fill_pct`, `battery_pct` | 90 days |
 | `flood` | `device_id`, `neighbourhood`, `source` | `ts`, `seq`, `water_level_cm`, `battery_pct` | 90 days |
 
-`neighbourhood` comes from the topic. `(device_id, seq)` is unique: a repeat after buffering or QoS 1 redelivery is ignored, not stored twice.
+`neighbourhood` comes from the topic. **`(device_id, ts)` is unique**: a repeat after buffering or QoS 1 redelivery has the same timestamp and is ignored, not stored twice. `seq` is **not** a key: it restarts at 0 when a device or the simulator restarts, so it is only used to spot gaps between restarts.
 
 ## Hourly rollups
 

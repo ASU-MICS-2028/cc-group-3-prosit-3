@@ -18,7 +18,7 @@ Five parts (simulator and bridge, database, API, web, mobile) are built by diffe
 
 ## Decision
 
-Option 1 for topics, and a closed list of three domain/metric/unit pairs. Readings carry a per-device `seq` so the bridge can drop duplicates (QoS 1 delivers at least once) and spot gaps after buffering. `additionalProperties: false` so no extra fields (e.g. personal data) slip in. Raw readings kept 90 days (the Lab 11 budget assumption), hourly rollups kept longer.
+Option 1 for topics, and a closed list of three domain/metric/unit pairs. Duplicates (QoS 1 delivers at least once; buffered readings are replayed) are dropped on `(device_id, ts)`. Readings also carry a per-device `seq` to spot gaps; it restarts at 0 when a device restarts, so it is not used as a key. `additionalProperties: false` so no extra fields (e.g. personal data) slip in. Raw readings kept 90 days (the Lab 11 budget assumption), hourly rollups kept longer.
 
 ## Consequences
 

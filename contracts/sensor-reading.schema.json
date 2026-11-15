@@ -13,7 +13,7 @@
     "value": {"type": "number"},
     "unit": {"enum": ["ug/m3", "%", "cm"]},
     "ts": {"type": "string", "format": "date-time", "pattern": "Z$", "description": "When the reading was taken, RFC 3339 in UTC (ends in Z)."},
-    "seq": {"type": "integer", "minimum": 0, "description": "Per-device counter; lets the bridge spot gaps and drop duplicates after buffering."},
+    "seq": {"type": "integer", "minimum": 0, "description": "Per-device counter for spotting gaps. Restarts at 0 when the device restarts, so it is not a duplicate key; (device_id, ts) is."},
     "battery_pct": {"type": "number", "minimum": 0, "maximum": 100},
     "source": {"enum": ["simulator", "openaq", "device"], "default": "simulator"}
   },

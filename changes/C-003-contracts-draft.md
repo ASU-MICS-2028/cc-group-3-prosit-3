@@ -29,6 +29,11 @@ python3 -m unittest discover contracts/tests -v   # 5 tests OK
 - **What it did:** drafted the schema, examples, topic layout, OpenAPI file, storage layout and tests from the setup plan's values and the Lab 12–13 handouts.
 - **What the person checked or changed:** _Joseph to complete_
 
+## Review fixes
+- Duplicates are dropped on `(device_id, ts)`, not `(device_id, seq)`: `seq` restarts when a device restarts, so keying on it would silently throw away real readings.
+- The examples test no longer breaks when an example is added.
+- `contracts` listed in CONTRIBUTING's checks table; issue #55 makes it a required check.
+
 ## Decisions made
 - [D-001](../decisions/D-001-sensor-reading-and-topic-contract.md) (proposed)
 

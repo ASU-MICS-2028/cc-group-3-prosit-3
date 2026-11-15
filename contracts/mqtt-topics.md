@@ -20,7 +20,7 @@ Subscribers use wildcards: the bridge subscribes to `accra/+/+/+`; a dashboard f
 
 ## Delivery
 
-- **QoS 1** (at least once). Duplicates are possible, so consumers drop repeats using `(device_id, seq)`.
+- **QoS 1** (at least once). Duplicates are possible, so consumers drop repeats using `(device_id, ts)`. `seq` restarts at 0 when a device restarts, so never use it alone to detect duplicates.
 - No retained messages for readings. Devices publish every 60 s by default (simulator setting); flood devices every 10 s when the level is rising.
 
 ## Device identity
