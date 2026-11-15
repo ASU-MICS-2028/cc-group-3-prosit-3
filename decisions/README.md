@@ -4,3 +4,4 @@ One decision per file, `decisions/D-NNN-<slug>.md`, from [`TEMPLATE.md`](./TEMPL
 
 | ID | Decision | Status |
 |---|---|---|
+| [D-001](D-001-sensor-reading-and-topic-contract.md) | Sensor reading, MQTT topic, API and storage contracts (draft v0) | proposed |

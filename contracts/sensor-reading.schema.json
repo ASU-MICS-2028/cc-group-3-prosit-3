@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ASU-MICS-2028/cc-group-3-prosit-3/contracts/sensor-reading.schema.json",
+  "title": "SmartCity Accra sensor reading",
+  "description": "One reading published by one device. Draft v0 (D-001, proposed).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["device_id", "domain", "metric", "value", "unit", "ts", "seq"],
+  "properties": {
+    "device_id": {"type": "string", "pattern": "^[a-z]+-[a-z0-9-]+-\\d{3}$", "description": "<domain code>-<neighbourhood>-<NNN>, e.g. aq-jamestown-001. Also the device's MQTT username."},
+    "domain": {"enum": ["air_quality", "waste", "flood"]},
+    "metric": {"enum": ["pm25", "fill_pct", "water_level_cm"]},
+    "value": {"type": "number"},
+    "unit": {"enum": ["ug/m3", "%", "cm"]},
+    "ts": {"type": "string", "format": "date-time", "pattern": "Z$", "description": "When the reading was taken, RFC 3339 in UTC (ends in Z)."},
+    "seq": {"type": "integer", "minimum": 0, "description": "Per-device counter; lets the bridge spot gaps and drop duplicates after buffering."},
+    "battery_pct": {"type": "number", "minimum": 0, "maximum": 100},
+    "source": {"enum": ["simulator", "openaq", "device"], "default": "simulator"}
+  },
+  "oneOf": [
+    {"properties": {"domain": {"const": "air_quality"}, "metric": {"const": "pm25"}, "unit": {"const": "ug/m3"}, "value": {"minimum": 0, "maximum": 1000}, "device_id": {"pattern": "^aq-"}}},
+    {"properties": {"domain": {"const": "waste"}, "metric": {"const": "fill_pct"}, "unit": {"const": "%"}, "value": {"minimum": 0, "maximum": 100}, "device_id": {"pattern": "^wb-"}}},
+    {"properties": {"domain": {"const": "flood"}, "metric": {"const": "water_level_cm"}, "unit": {"const": "cm"}, "value": {"minimum": 0, "maximum": 1000}, "device_id": {"pattern": "^fl-"}}}
+  ]
+}

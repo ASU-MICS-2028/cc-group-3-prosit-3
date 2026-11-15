@@ -4,3 +4,4 @@ Every PR adds one change file, `changes/C-NNN-<slug>.md`, from [`TEMPLATE.md`](.
 
 | ID | Change | In charge | Issue |
 |---|---|---|---|
+| [C-003](C-003-contracts-draft.md) | First draft of the shared contracts | Joseph | #2 |

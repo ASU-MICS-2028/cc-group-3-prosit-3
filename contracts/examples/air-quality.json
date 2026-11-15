@@ -1,0 +1,1 @@
+{"device_id": "aq-jamestown-001", "domain": "air_quality", "metric": "pm25", "value": 38.4, "unit": "ug/m3", "ts": "2026-11-16T09:00:00Z", "seq": 1042, "battery_pct": 87, "source": "simulator"}
