@@ -4,6 +4,7 @@ Using a coding assistant? It follows [`AGENTS.md`](./AGENTS.md), which builds on
 
 ## The flow of one task
 
+0. **Open PRs first.** Before starting anything (a task, a session, a day's work), run `gh pr list --state open` and deal with what's there: review every PR you didn't author, approve and merge the ones that are ready (checks green, nothing wrong in the diff), and leave a review comment on the rest. Your own PRs: answer review comments. Then start new work. Unreviewed PRs block teammates; new work can wait ten minutes.
 1. **Issue.** Every task is a GitHub issue with one owner (the assignee) and labels for area, lab and week. Pick one assigned to you, or ask in the group before taking someone else's.
 2. **Plan.** Fill in `plans/<issue-number>-<slug>.md` (copy [`plans/TEMPLATE.md`](./plans/TEMPLATE.md)): goal, what gets built, depends on, done when, evidence to capture. Add a row to [`plans/README.md`](./plans/README.md). If the plan needs agreement first, open a small PR with just the plan.
 3. **Branch and PR.** Branch `<area>/<issue-number>-<slug>` off an up-to-date `main`. One PR per issue; its body says `Closes #<issue-number>`.
@@ -40,7 +41,7 @@ Every part builds against the shared formats in [`contracts/`](./contracts/READM
 
 | Check | What it enforces |
 |---|---|
-| `change-file` | Exactly one new `changes/<issue-number>-*.md`, linked from `changes/README.md` (or label `skip-change-file`) |
+| `change-file` | Exactly one new `changes/<issue-number>-*.md`, linked from `changes/README.md` (or label `skip-change-file`); any new decision file is `decisions/<same number>-*.md` and listed in `decisions/README.md` |
 | `notes` | Front matter, `## Related`, and index link for every note |
 | `links` | No broken relative links in Markdown |
 | `unit` | Tests for the checks themselves |

@@ -1,6 +1,7 @@
 """Check that a PR adds exactly one change file, changes/<issue-number>-<slug>.md, linked from changes/README.md.
 
 Usage: python3 scripts/check_change_file.py --base origin/main --labels "a,b"
+Any decision file the PR adds must be decisions/<same issue number>-<slug>.md and listed in decisions/README.md.
 A PR labelled skip-change-file (pure chores) is let through.
 Files are named after the issue the PR closes, so two PRs never pick the same name,
 and each issue has its own slot line in the index, so PRs don't conflict there either.
@@ -12,6 +13,7 @@ import sys
 from pathlib import Path
 
 PATTERN = re.compile(r"^changes/(\d+)-[a-z0-9-]+\.md$")
+DECISION = re.compile(r"^decisions/(\d+)-[a-z0-9-]+\.md$")
 
 
 def main():
@@ -37,6 +39,19 @@ def main():
         print(f"{added[0]} is not linked from changes/README.md. Replace the line <!-- #{n} --> with "
               f"\"- [#{n}]({name}) — <title> — <in charge>\".")
         return 1
+    n = PATTERN.match(added[0]).group(1)
+    decisions_index = Path("decisions/README.md").read_text() if Path("decisions/README.md").exists() else ""
+    for f in diff:
+        if not f.startswith("decisions/") or f.endswith("/README.md"):
+            continue
+        m = DECISION.match(f)
+        if not m or m.group(1) != n:
+            print(f"{f}: decision files in this PR must be named decisions/{n}-<slug>.md (the PR's issue number).")
+            return 1
+        if f"]({Path(f).name})" not in decisions_index and f"](./{Path(f).name})" not in decisions_index:
+            print(f"{f} is not listed in decisions/README.md. Replace the line <!-- #{n} --> with "
+                  f"\"- [#{n}: <decision>]({Path(f).name}) — <status>\".")
+            return 1
     print(f"change file OK: {added[0]}")
     return 0
 
