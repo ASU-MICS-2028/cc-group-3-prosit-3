@@ -8,7 +8,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 - [#1](1-initial-issues-and-plans.md) — Initial issues, labels, milestones and plan stubs — Joseph
 
-<!-- #2 -->
+- [#2](2-contracts-draft.md) — First draft of the shared contracts — Joseph
 
 <!-- #3 -->
 

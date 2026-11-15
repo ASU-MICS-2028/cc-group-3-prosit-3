@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: SmartCity Accra API
+  version: 0.1.0-draft
+  description: |
+    What the web dashboard and the mobile app call. Draft v0 (decision 2-sensor-reading-and-topic-contract, proposed).
+    Paths and shapes only; auth (officials sign in, residents mostly read) is decided later.
+servers:
+  - url: http://localhost:8000
+    description: local / mock
+paths:
+  /readings/latest:
+    get:
+      summary: Latest reading per device
+      parameters:
+        - {name: domain, in: query, schema: {$ref: '#/components/schemas/Domain'}}
+        - {name: neighbourhood, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: One reading per device
+          content: {application/json: {schema: {type: array, items: {$ref: 'sensor-reading.schema.json'}}}}
+  /readings:
+    get:
+      summary: History for one device
+      parameters:
+        - {name: device_id, in: query, required: true, schema: {type: string}}
+        - {name: from, in: query, required: true, schema: {type: string, format: date-time}}
+        - {name: to, in: query, required: true, schema: {type: string, format: date-time}}
+        - {name: interval, in: query, schema: {enum: [raw, 1h], default: raw}}
+      responses:
+        '200':
+          description: Raw readings, or hourly aggregates when interval=1h
+          content: {application/json: {schema: {type: array, items: {oneOf: [{$ref: 'sensor-reading.schema.json'}, {$ref: '#/components/schemas/HourlyAggregate'}]}}}}
+  /alerts:
+    get:
+      summary: Alerts (flood warnings, anomalies, bins due)
+      parameters:
+        - {name: status, in: query, schema: {enum: [open, closed], default: open}}
+      responses:
+        '200':
+          description: Alerts, newest first
+          content: {application/json: {schema: {type: array, items: {$ref: '#/components/schemas/Alert'}}}}
+  /predictions/pm25:
+    get:
+      summary: PM2.5 forecast for a station
+      parameters:
+        - {name: station, in: query, required: true, schema: {type: string}, description: 'device_id of an air-quality device'}
+        - {name: horizon_h, in: query, schema: {enum: [24, 48], default: 24}}
+      responses:
+        '200':
+          description: Forecast with the model version that made it
+          content: {application/json: {schema: {$ref: '#/components/schemas/Prediction'}}}
+  /reports:
+    post:
+      summary: A resident reports an issue
+      requestBody:
+        required: true
+        content: {application/json: {schema: {$ref: '#/components/schemas/CitizenReport'}}}
+      responses:
+        '201': {description: Stored; returns the report id, content: {application/json: {schema: {type: object, properties: {id: {type: string}}}}}}
+        '400': {description: Invalid report}
+  /open-data/{domain}:
+    get:
+      summary: Public hourly aggregates (no device-level location finer than neighbourhood)
+      parameters:
+        - {name: domain, in: path, required: true, schema: {$ref: '#/components/schemas/Domain'}}
+        - {name: from, in: query, schema: {type: string, format: date-time}}
+        - {name: to, in: query, schema: {type: string, format: date-time}}
+      responses:
+        '200':
+          description: Hourly aggregates per neighbourhood
+          content: {application/json: {schema: {type: array, items: {$ref: '#/components/schemas/HourlyAggregate'}}}}
+components:
+  schemas:
+    Domain: {enum: [air_quality, waste, flood]}
+    HourlyAggregate:
+      type: object
+      required: [domain, neighbourhood, hour, avg, min, max, count]
+      properties:
+        domain: {$ref: '#/components/schemas/Domain'}
+        neighbourhood: {type: string}
+        device_id: {type: string, description: 'omitted in /open-data'}
+        hour: {type: string, format: date-time}
+        avg: {type: number}
+        min: {type: number}
+        max: {type: number}
+        count: {type: integer}
+    Alert:
+      type: object
+      required: [id, kind, domain, neighbourhood, opened_at, status, reason]
+      properties:
+        id: {type: string}
+        kind: {enum: [flood_warning, anomaly, bin_due]}
+        domain: {$ref: '#/components/schemas/Domain'}
+        neighbourhood: {type: string}
+        device_id: {type: string}
+        opened_at: {type: string, format: date-time}
+        status: {enum: [open, closed]}
+        reason: {type: string, description: 'Plain-words explanation shown to residents, e.g. "Drain level 120 cm, above the 100 cm warning line"'}
+    Prediction:
+      type: object
+      required: [station, horizon_h, model_version, points]
+      properties:
+        station: {type: string}
+        horizon_h: {type: integer}
+        model_version: {type: string}
+        points:
+          type: array
+          items: {type: object, required: [ts, pm25], properties: {ts: {type: string, format: date-time}, pm25: {type: number}}}
+    CitizenReport:
+      type: object
+      required: [category, description, lat, lon]
+      additionalProperties: false
+      properties:
+        category: {enum: [flooding, waste, air, other]}
+        description: {type: string, maxLength: 1000}
+        lat: {type: number, minimum: -90, maximum: 90}
+        lon: {type: number, minimum: -180, maximum: 180}
+        photo_url: {type: string, format: uri}

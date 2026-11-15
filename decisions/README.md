@@ -8,7 +8,7 @@ Entry: `- [#<n>: <decision>](<file>.md) — <status>`
 
 <!-- #1 -->
 
-<!-- #2 -->
+- [#2: Sensor reading, MQTT topic, API and storage contracts (draft v0)](2-sensor-reading-and-topic-contract.md) — proposed
 
 <!-- #3 -->
 
