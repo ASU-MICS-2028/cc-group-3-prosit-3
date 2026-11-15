@@ -13,4 +13,4 @@ labels: type:decision
 
 **Needed by:** <date or issue it blocks>
 
-Record the outcome as `decisions/D-NNN-<slug>.md`.
+Record the outcome as `decisions/<issue-number>-<slug>.md`.

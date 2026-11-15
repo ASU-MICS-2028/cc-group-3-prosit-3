@@ -1,12 +1,14 @@
 ---
-title: Generating coursework with AI tools is prohibited unless a task explicitly allows it
+title: AI use is allowed in this course when declared; the written policy is stricter, so declare everything
 tags: [course, process]
 source: Course Description Fall 2026 (Ethical Conduct); Prosit 2 knowledge/course.md; Prosit 1 docs/ai-tools-usage.md; Prosit 2 CONTRIBUTING.md
 ---
 
-Plagiarism, unauthorized collaboration, or using generative AI (ChatGPT, Copilot, etc.) to generate, complete or code an assignment is strictly prohibited unless explicitly authorized for that task. Work from another person, service or tool is a serious violation. Check task wording before using AI help; written reports and lab deliverables must be in the team's own words.
+**Our position: AI use is allowed, and every use is declared** in the change file of the PR it went into (tool, what it did, prompts, what the person checked).
 
-**The two rules pull in different directions.** The written course description says this; the lecturer said in class (Lecture 2) that AI tools are allowed if you verify everything and never invent data, and Prosit 2 declared its AI use openly on that basis. So: declare every AI use (our change files do this), keep reports in our own words, and ask the lecturer if a task's wording is unclear.
+The written course description says: plagiarism, unauthorized collaboration, or using generative AI (ChatGPT, Copilot, etc.) to generate, complete or code an assignment is strictly prohibited unless explicitly authorized for that task. Work from another person, service or tool is a serious violation. Check task wording before using AI help; written reports and lab deliverables must be in the team's own words.
+
+**Our position (Joseph, 15 Nov): AI use is allowed**, as the lecturer said in class (Lecture 2), provided it is declared and checked. **The written policy is stricter.** The written course description says this; the lecturer said in class (Lecture 2) that AI tools are allowed if you verify everything and never invent data, and Prosit 2 declared its AI use openly on that basis. So: declare every AI use (our change files do this), keep reports in our own words, and ask the lecturer if a task's wording is unclear.
 
 **Also (Prosit 2 knowledge/course.md; Prosit 1 docs/ai-tools-usage.md; Prosit 2 CONTRIBUTING.md):** The syllabus bans AI-generated work unless authorised; the instructor authorised it for this course provided use is declared, following Ashesi's Policy on AI Use for Academic Work (declare when and how it was used, including prompts, in an addendum submitted with the work).
 

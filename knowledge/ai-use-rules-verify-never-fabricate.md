@@ -21,7 +21,7 @@ For SmartCity Accra: cost and sustainability numbers must come from real pricing
 Practical for the team: during Prosit 3, each person should be able to walk through MQTT, the broker, the database, the model and the scaling setup.
 
 ## Related
-- [Generating coursework with AI tools is prohibited unless a task explicitly allows it](course-ai-use-policy.md)
+- [AI use is allowed in this course when declared; the written policy is stricter, so declare everything](course-ai-use-policy.md)
 - [Ground rules for community-engaged prosits (consent, sign-off)](agroconnect-community-ground-rules.md)
 - [ICS 534 grading weights and the late-work penalty ladder](course-grading-weights-and-late-penalties.md)
 - [Get core features working before attempting advanced extras](core-features-before-advanced-features.md)

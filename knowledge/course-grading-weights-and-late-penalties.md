@@ -27,7 +27,7 @@ Why it matters for SmartCity Accra: Prosit 3 is the last of the three projects, 
 
 ## Related
 - [Syllabus dates did not match the real deadlines in Prosits 1 and 2](course-real-deadlines-differ-from-syllabus.md)
-- [Generating coursework with AI tools is prohibited unless a task explicitly allows it](course-ai-use-policy.md)
+- [AI use is allowed in this course when declared; the written policy is stricter, so declare everything](course-ai-use-policy.md)
 - [Syllabus plan for Weeks 10 to 15 (Prosit 3 and exams)](course-schedule-weeks-10-to-15.md)
 - [Lectures, labs, then prosit - how the course is structured](lectures-labs-prosit-course-structure.md)
 - [Course learning outcomes (what quizzes and exams are built from)](course-learning-outcomes.md)
