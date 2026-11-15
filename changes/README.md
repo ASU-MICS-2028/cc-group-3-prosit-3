@@ -4,3 +4,4 @@ Every PR adds one change file, `changes/C-NNN-<slug>.md`, from [`TEMPLATE.md`](.
 
 | ID | Change | In charge | Issue |
 |---|---|---|---|
+| [C-001](C-001-initial-issues-and-plans.md) | Initial issues, labels, milestones and plan stubs | Joseph | #1 |
