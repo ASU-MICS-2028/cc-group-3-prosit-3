@@ -1,0 +1,31 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*_credentials.csv
+*.tfvars
+!example.tfvars
+
+# course materials: never publish
+*.docx
+*.pptx
+week*.pdf
+Prosit*.pdf
+
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+
+# python / node
+__pycache__/
+.venv/
+node_modules/
+dist/
+mlruns/
+
+# misc
+.DS_Store
+.superpowers/

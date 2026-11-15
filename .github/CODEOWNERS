@@ -1,0 +1,14 @@
+# Suggests a reviewer only. "Require review from code owners" is OFF:
+# any one approval from someone who isn't the author merges a PR.
+/infra/aws/  @eugene-sew
+/loadtest/   @eugene-sew
+/db/         @Elise-Oyi
+/ml/         @Elise-Oyi
+/web/        @Elise-Oyi
+/mobile/     @PeaElorm
+/design/     @PeaElorm
+/sensors/    @josetseph
+/ingest/     @josetseph
+/api/        @josetseph
+/infra/gcp/  @josetseph
+/contracts/  @josetseph
