@@ -12,7 +12,7 @@ SKIP = {"README.md", "TEMPLATE.md"}
 
 def problems(folder: Path):
     index = (folder / "README.md").read_text() if (folder / "README.md").exists() else ""
-    linked = set(re.findall(r"\]\(([^)#\s]+\.md)", index))
+    linked = {l.removeprefix("./") for l in re.findall(r"\]\(([^)#\s]+\.md)", index)}
     for note in sorted(folder.glob("*.md")):
         if note.name in SKIP:
             continue

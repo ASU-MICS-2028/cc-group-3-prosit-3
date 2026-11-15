@@ -59,6 +59,12 @@ class CheckNotes(unittest.TestCase):
         self.assertEqual(r.returncode, 1)
         self.assertIn("## Related", r.stdout)
 
+    def test_dot_slash_index_link_counts(self):
+        (self.dir / "golden-signals.md").write_text(GOOD_NOTE)
+        (self.dir / "README.md").write_text("- [x](./golden-signals.md) — hook\n")
+        r = run("check_notes.py", str(self.dir))
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
     def test_unindexed_note_fails(self):
         self.write(GOOD_NOTE, index_links=())
         r = run("check_notes.py", str(self.dir))

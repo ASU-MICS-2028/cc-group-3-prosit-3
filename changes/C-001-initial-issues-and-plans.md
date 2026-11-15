@@ -28,7 +28,14 @@ python3 scripts/check_notes.py knowledge learnings
 ## AI use
 - **Tool:** Claude Code
 - **What it did:** turned the Lab 10–14 handouts, the Prosit 3 brief and the course schedule into issue titles, "done when" lines and plan stubs; created the labels, milestones and issues with `gh`.
+- **Prompts / session summary:** this session's design and plan, `docs/specs/2026-11-14-setup-design.md` and `docs/specs/2026-11-15-setup-plan.md`.
 - **What the person checked or changed:** Joseph set the scope (three sensor domains), the roles and the review rule, and approved the owner list in the design and plan reviews on 14–15 Nov.
+
+## Review fixes in this PR
+- `scripts/check_notes.py` now accepts index links written as `./note.md` (test `test_dot_slash_index_link_counts`).
+- `changes/TEMPLATE.md`: a **Prompts / session summary** line in AI use (the course asks for prompts in AI declarations); `reviewed_by` is filled by the approver.
+- `.gitignore`: `*.key` and MQTT broker password/ACL files.
+- README no longer claims the not-built items are already recorded; issue #54 tracks that decision. Issue #55 tracks making `contracts` a required check.
 
 ## Decisions made
 - None new. Owners for the five written reports and the capstone pieces are defaults from the plan; reassign on the issue if needed.
