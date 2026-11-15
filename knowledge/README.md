@@ -3,3 +3,583 @@
 **What we were taught or given:** lectures, labs, the Prosit 3 brief, course facts, and facts carried over from Prosits 1 and 2. One idea per note, from [`TEMPLATE.md`](./TEMPLATE.md). What we found out by doing goes in [`../learnings/`](../learnings/README.md) instead.
 
 Every note is listed below under a topic. Big topics have a `map-*.md` note that walks through them.
+
+## Topic maps
+
+- [Lectures by week](map-lectures.md) — every lecture's notes
+
+- [SmartCity Accra brief and our scope](map-smartcity-brief.md) — The Prosit 3 problem, stakeholders, targets, assessment, and what we chose to build.
+
+- [Labs 0–14](map-labs.md) — One overview note per lab (requirements, deliverables, rubric), then techniques from the labs.
+
+- [Course facts](map-course.md) — Grading, deadlines, exams, presentations, AI rules, how the course runs.
+
+- [Scaling, reliability and monitoring](map-scaling-monitoring.md) — Auto-scaling, load balancing, golden signals, alerts, load tests, failure design.
+
+- [Cost and sustainability](map-cost-sustainability.md) — Billing audits, optimisation, budgets, teardown, carbon and region choice.
+
+- [IoT, edge and offline](map-iot-edge.md) — MQTT, sensors, buffering, time-series storage, edge computing, offline-first sync.
+
+- [ML and MLOps](map-ml-mlops.md) — Baselines, forecasting, anomaly detection, MLflow, serving, drift, explainability.
+
+- [Security, privacy and data governance](map-security.md) — CIA, IAM, encryption, network isolation, audit logs, consent, data residency, Act 843.
+
+- [Carried over from Prosits 1 and 2](map-prosit-1-2-carryover.md) — AgroConnect and HealthConnect architecture, and the patterns and gotchas we reuse.
+
+- [Cloud foundations](map-cloud-foundations.md) — Definitions, service and deployment models, virtualization, containers, storage, networking, IaC, CI/CD, events.
+
+## SmartCity Accra brief and our scope
+
+- [Brief success targets: 99.5% sensor uptime, over 85% model accuracy, 100,000+ devices](smartcity-success-metrics.md)
+
+- [Build the Smart City pipeline end to end on synthetic data now; plug in sensors later](smart-city-build-pipeline-first-hardware-later.md)
+
+- [Google Cloud IoT Core, listed in the brief, was retired by Google in August 2023](google-cloud-iot-core-retired.md)
+
+- [Our scope: air quality, waste bin fill level and flood level; the other domains are not built](smartcity-team-scope-air-waste-flood.md)
+
+- [Prosit 3 expects daily learning logs and weekly peer evaluations](daily-learning-log-and-weekly-peer-evaluation.md)
+
+- [Prosit 3 shifts focus from running in the cloud to scaling to millions of users](prosit-3-focus-scaling-and-distributed-processing.md)
+
+- [Prosit 3 weights: brief says 40/25/20/15, launch deck says 40/30/20/10](prosit-3-assessment-weights-two-versions.md)
+
+- [SmartCity Accra: an AMA-partnered AI/ML/IoT platform for Accra urban services](smartcity-problem-context.md)
+
+- [SmartCity stakeholders: officials, 2.5 million citizens, community groups, technology ecosystem](smartcity-stakeholders.md)
+
+- [Teams must choose and justify IoT platform, protocol, edge hardware, pipeline and database](smartcity-architecture-decisions-required.md)
+
+- [The brief frames four weeks: IoT foundation, ML analytics, AI optimization, community ecosystem](smartcity-four-weekly-focuses.md)
+
+- [The launch deck provides $500 of cloud and IoT connectivity credit per team](prosit-3-500-dollar-credit.md)
+
+## Labs 0–14
+
+- [Lab 0 - cloud accounts, Linux CLI, Git/GitHub and Docker foundations](lab-0-foundations-accounts-linux-git-docker.md)
+
+- [Lab 1 - three cloud accounts, CLI check, console comparison, problem statement](lab-1-cloud-accounts-console-problem-statement.md)
+
+- [Lab 2 - first VM, basic monitoring and a six-pillar architecture diagram](lab-2-first-vm-and-architecture-diagram.md)
+
+- [Lab 3 - containerize a microservice, push to a registry, run it on Kubernetes](lab-3-containerizing-microservice-kubernetes.md)
+
+- [Lab 4 - managed Postgres, private object storage and an offline-capable PWA](lab-4-managed-database-storage-offline-pwa.md)
+
+- [Lab 5 - VPC, load balancer and multi-country data residency (Prosit 1 wrap-up)](lab-5-vpc-load-balancer-data-residency.md)
+
+- [Lab 6 - least-privilege IAM, encryption, FHIR-aligned schema and audit logging](lab-6-iam-encryption-fhir-audit-logging.md)
+
+- [Lab 7 - event-driven serverless reminders and a WebRTC video call](lab-7-event-driven-serverless-and-webrtc.md)
+
+- [Lab 8 - structured peer design review and midterm preparation](lab-8-peer-review-and-midterm-prep.md)
+
+- [Lab 9 - CI/CD pipeline with security scan and approval gate, plus Terraform](lab-9-cicd-and-terraform.md)
+
+- [Lab 10 overview - auto-scaling, golden-signal dashboard, k6 load test, ingestion-stack choice](lab-10-auto-scaling-monitoring-load-testing.md)
+
+- [Lab 11 overview - audit real spend, two optimizations, SmartCity budget model, sustainability estimate](lab-11-cost-analysis-optimization-budget-model.md)
+
+- [Lab 12 overview: MQTT sensor to broker to time-series DB to live chart, with buffering and device security](lab-12-iot-sensor-pipeline.md)
+
+- [Lab 13 overview: baseline, train, track in MLflow, serve, and seed drift monitoring](lab-13-ml-train-deploy-monitor.md)
+
+- [Lab 14 overview: advanced feature test, capstone integration, final architecture doc, presentation](lab-14-advanced-feature-capstone-final-presentation.md)
+
+## Course facts
+
+- [A cluster is tightly coupled and uniform; a grid is heterogeneous and geographically dispersed](cluster-vs-grid-computing.md)
+
+- [A progress report states what was specified, what is built, and what is outstanding](progress-report-format-specified-built-outstanding.md)
+
+- [AI use rules - verify output, never fabricate data](ai-use-rules-verify-never-fabricate.md)
+
+- [Annotate the architecture diagram for all six Well-Architected pillars](well-architected-six-pillar-diagram-annotations.md)
+
+- [Architecture review with four fixed questions](peer-review-four-question-framework.md)
+
+- [Cloud research relies on simulators because providers rarely share real data](simulators-vs-real-cloud-data.md)
+
+- [Course availability targets: HealthConnect 99.7%, SmartCity 99.5%, and what nines mean](course-availability-targets-by-prosit.md)
+
+- [Course learning outcomes (what quizzes and exams are built from)](course-learning-outcomes.md)
+
+- [Each prosit is a separate codebase; the infrastructure pattern carries forward](three-prosit-codebases-separate-pattern-carries.md)
+
+- [Essay answers are marked on the itemized points, not word count](essay-graded-by-itemized-points.md)
+
+- [Exam and quiz format - mixed question types, calculation heavy, 3-hour final](exam-and-quiz-format.md)
+
+- [AI use is allowed in this course when declared; the written policy is stricter, so declare everything](course-ai-use-policy.md)
+
+- [Get core features working before attempting advanced extras](core-features-before-advanced-features.md)
+
+- [Glossary: auto scaling, horizontal vs vertical, SLA/SLI/SLO, RTO/RPO, MTTR](glossary-scaling-and-reliability-terms.md)
+
+- [Glossary: canary, blue-green, IaC, GitOps, MLOps, chaos engineering, CI/CD, A/B testing](glossary-deployment-and-ops-terms.md)
+
+- [Glossary: edge computing, VPC, subnet, NAT gateway, security group, load balancer, CDN](glossary-edge-and-networking-terms.md)
+
+- [Glossary: event-driven, FaaS, serverless, API gateway and cloud messaging services](glossary-messaging-and-event-terms.md)
+
+- [Glossary: IAM, MFA, encryption at rest and in transit, zero trust, RBAC, PKI, HSM, KMS](glossary-security-and-identity-terms.md)
+
+- [Glossary: pay-as-you-go, reserved, spot, tagging, cost optimization, FinOps, TCO](glossary-cost-and-finops-terms.md)
+
+- [Glossary: time-series, data lake vs warehouse, ETL, OLTP/OLAP, ML terms, KPI](glossary-data-and-ml-terms.md)
+
+- [How ICS 534 is taught: problem-based learning with a three-person teaching team](course-teaching-format-and-staff.md)
+
+- [ICS 534 grading weights and the late-work penalty ladder](course-grading-weights-and-late-penalties.md)
+
+- [Lectures, labs, then prosit - how the course is structured](lectures-labs-prosit-course-structure.md)
+
+- [Networking fundamentals (OSI and TCP/IP) are assumed course background](networking-fundamentals-prerequisite.md)
+
+- [Pre-record a screen capture with voiceover so a live failure cannot derail the demo](pre-record-demos-screen-capture-with-voiceover.md)
+
+- [Problem-based learning cycle - Clarify, Explore, Systemize, Implement](pbl-clarify-explore-systemize-implement.md)
+
+- [Quizzes continue after the mid-semester break, with a paper answer option](quizzes-and-paper-option.md)
+
+- [Reviewing technical papers and checking reproducibility](paper-review-and-reproducibility.md)
+
+- [SmartCity project uses sensors and Python libraries; it is the third project and part of the final exam](smartcity-uses-python-and-sensors.md)
+
+- [Syllabus dates did not match the real deadlines in Prosits 1 and 2](course-real-deadlines-differ-from-syllabus.md)
+
+- [Syllabus plan for Weeks 10 to 15 (Prosit 3 and exams)](course-schedule-weeks-10-to-15.md)
+
+- [The course is platform-agnostic - justify every provider choice](justify-provider-choice-platform-agnostic.md)
+
+- [The prosit project counts toward the final exam grade (20 points instead of 40)](course-prosit-counts-toward-final-exam.md)
+
+- [Three prosits - AgroConnect, HealthConnect, SmartCity](three-prosits-agroconnect-healthconnect-smartcity.md)
+
+- [Tutorial 1 (course reference): the multi-cloud architecture design challenge](tutorial-1-multi-cloud-architecture-challenge.md)
+
+- [Week zero prerequisites (Linux, Docker, GitHub, databases)](week-zero-prerequisites.md)
+
+- [What the instructor expects from a prosit report and presentation](prosit-report-and-presentation-expectations.md)
+
+## Scaling, reliability and monitoring
+
+- [A cluster is many servers stacked together; heavy jobs like LLM training rent whole clusters](compute-clusters-for-heavy-workloads.md)
+
+- [A load balancer presents one virtual IP and translates to real servers](load-balancer-virtual-ip-and-nat.md)
+
+- [A scheduled function in another region pings /health so outages are noticed even if dashboards are down](synthetic-canary-health-check.md)
+
+- [A target-tracking policy keeps average CPU near a set value (Lab 10 uses 70%, min 1, max 4)](target-tracking-cpu-auto-scaling-policy.md)
+
+- [Add a dead-letter queue and make consumers idempotent](dead-letter-queue-and-idempotent-consumers.md)
+
+- [Alibaba's next-generation load balancer takes the data path out of the balancer](nglb-full-bypass-load-balancer.md)
+
+- [Amdahl's law - the serial portion caps speedup no matter how many cores you add](amdahls-law.md)
+
+- [CAP theorem - a distributed system can guarantee only two of consistency, availability, partition tolerance](cap-theorem.md)
+
+- [Client-generated IDs, record versions and cursor downloads make sync safe on flaky networks](idempotent-ids-and-versions-for-flaky-connectivity.md)
+
+- [Data-intensive computing moves work to data spread across servers, not data into one machine's RAM](data-intensive-computing-distribute-chunks.md)
+
+- [Direct server return (DNAT) versus full NAT](direct-server-return-dnat-vs-fnat.md)
+
+- [Distributed computing spreads work over many sites with a master node coordinating](distributed-computing-master-node-map-reduce.md)
+
+- [Dual-zone redundancy means each zone runs at about 50 percent](dual-zone-redundancy-50-percent-headroom.md)
+
+- [Dynamic VM scheduling by chaining five existing algorithms](dynamic-vm-scheduling-five-algorithms.md)
+
+- [Generate controlled CPU load with stress-ng to see monitoring work](stress-ng-generate-cpu-load-for-monitoring.md)
+
+- [Google File System splits data into 64 MB chunks with a lightweight metadata master](gfs-chunking-and-lightweight-master.md)
+
+- [Host a static fallback on a second cloud and time the manual failover](multi-cloud-fallback-failover-time-test.md)
+
+- [If CPU stays low under load, scale on requests per target instead](scaling-not-triggering-io-bound-use-request-count.md)
+
+- [k6 load test showed the database connection pool, not the API, was the limit](load-test-reveals-database-connection-pool-bottleneck.md)
+
+- [k6 stages ramp virtual users up and down so you can watch scaling react](k6-ramping-load-test.md)
+
+- [Liveness probes ask "is it stuck?" and readiness probes ask "can it take traffic?"](liveness-vs-readiness-probes.md)
+
+- [Log one JSON line per request so the dashboard has real error-rate and latency data](structured-request-logging-middleware.md)
+
+- [MapReduce is the batch-processing paradigm for when a design that works at 1,000 users meets millions](mapreduce-batch-processing-for-scale.md)
+
+- [Measure connection quality with real stats](webrtc-measure-real-stats-not-impressions.md)
+
+- [Microservices avoid the single point of failure of a monolith](monolith-vs-microservices-single-point-of-failure.md)
+
+- [Microservices let each part scale on its own](microservices-scale-independently.md)
+
+- [Multi-cloud data recovery with erasure coding and encryption](multi-cloud-data-recovery-erasure-coding.md)
+
+- [Netflix lesson - design for failure and auto-scale to demand](netflix-design-for-failure-and-auto-scaling.md)
+
+- [One dashboard must show latency, traffic, errors and saturation](four-golden-signals-dashboard.md)
+
+- [Per-service idle timeouts instead of one global timeout](per-service-idle-timeouts.md)
+
+- [Pick consistency or availability by what a wrong answer costs (bank vs social media)](cap-choice-bank-vs-social-media.md)
+
+- [Pick three to five microservices per team, with sensible boundaries](microservice-boundaries-three-to-five-per-team.md)
+
+- [Prove Kubernetes self-healing by deleting a Pod on purpose](kubernetes-self-healing-delete-pod-demo.md)
+
+- [Prove resilience by stopping the DB while the simulator keeps publishing](buffer-test-stop-database-mid-stream.md)
+
+- [Replication keeps data safe when a server fails, at the cost of duplicates](replication-for-fault-tolerance.md)
+
+- [Rerun k6 at a much higher ramp (e.g. 500 users) to find what breaks first](stress-test-find-breaking-point.md)
+
+- [Scale out vs up, and lead, lag or match capacity strategies](horizontal-vs-vertical-scaling-and-capacity-planning.md)
+
+- [Test load-balancer failover by stopping an instance](load-balancer-health-check-failover-test.md)
+
+- [Threshold load balancing, stop at 75 percent and resume below 25 percent](threshold-load-balancing-75-25.md)
+
+- [Use more than one provider and read the SLA for availability](multiple-providers-for-availability.md)
+
+- [What a useful CloudWatch dashboard and alarm set looked like in Prosit 1](cloudwatch-alarms-and-dashboard-practice.md)
+
+- [Write one SLO for the ingestion tier and compute its monthly error budget](slo-and-error-budget-exercise.md)
+
+## Cost and sustainability
+
+- [An S3 lifecycle rule can move objects to STANDARD_IA after 90 days](s3-lifecycle-policy-ia-transition.md)
+
+- [Audit running compute on all three clouds before milestones](cross-provider-resource-audit-script.md)
+
+- [Capex versus opex - why elastic cloud capacity beats owned servers](capex-vs-opex-elasticity.md)
+
+- [Cloud benefits (responsiveness, lower upfront cost, availability) and risks (trust boundaries, lock-in, cost overruns)](cloud-benefits-and-risks.md)
+
+- [Compare managed vs self-hosted broker cost and find the volume where the answer flips](broker-cost-comparison-flip-point.md)
+
+- [Data centre siting, latency and energy trade-offs](data-centre-siting-latency-and-energy.md)
+
+- [Decide what to cut first if the real budget is half your estimate](budget-cut-half-exercise.md)
+
+- [Estimate carbon with the provider tool, or justify a lower-carbon region manually](region-carbon-intensity-sustainability-estimate.md)
+
+- [Four acceptable optimizations: right-size, cheaper storage tier, delete unused, scheduled shutdown](cost-optimization-options-right-size-tier-delete-schedule.md)
+
+- [Ground the monthly-active-user assumption in published Ghana population data](mau-assumption-from-ghana-statistics.md)
+
+- [Itemize the monthly cost: broker, time-series DB, compute, egress, with stated assumptions](smartcity-ingestion-budget-model.md)
+
+- [Pick one primary cloud for billable resources; keep the others empty](one-primary-cloud-platform-keeps-spend-down.md)
+
+- [Pull real cost by service with aws ce get-cost-and-usage and cross-check by tag](audit-spend-with-cost-explorer-cli.md)
+
+- [Serverless - pay per function invocation, not per server](serverless-pay-per-invocation.md)
+
+- [Stop idle cloud resources to protect credits](stop-idle-resources-protect-credits.md)
+
+- [Tag and name every cloud resource with the team name](tag-every-resource-with-team-name.md)
+
+- [Two extension ideas: a month-to-date spend warning script and a per-Prosit showback report](budget-alert-script-and-showback-report.md)
+
+- [Write the teardown plan now: resources, one named owner, 48-hour deadline after grades](decommissioning-plan-owner-and-date.md)
+
+## IoT, edge and offline
+
+- [A paho-mqtt script publishing a JSON reading every 5 seconds stands in for real hardware](sensor-simulator-mqtt-publisher.md)
+
+- [Core PWA technologies are the service worker, web app manifest and cache API](pwa-core-technologies.md)
+
+- [Edge compute lets sensitive data be used locally instead of moved to the cloud](edge-inference-keeps-data-on-premises.md)
+
+- [Edge devices with CPU and GPU on one chip share memory, enabling zero-copy inference](edge-ai-shared-memory-zero-copy.md)
+
+- [Four places to run ML: cloud, separate CPU+GPU, CPU-only, or a single-chip edge device](edge-vs-cloud-vs-cpu-gpu-tradeoffs.md)
+
+- [If the MQTT broker refuses connections, check mosquitto.conf listener settings](mosquitto-listens-localhost-only-by-default.md)
+
+- [IoT loop: sense at the edge, communicate over MQTT to a central store, compute and control](iot-sense-communicate-compute-control.md)
+
+- [IPv6 is gradually replacing IPv4 and is what makes IoT addressing possible at scale](ipv6-and-iot.md)
+
+- [Lab 10 Part D: a one-page choice of message broker and time-series database](ingestion-stack-decision-document.md)
+
+- [Lab 12 Part A: install Mosquitto and subscribe to accra/# to see all sensor topics](mosquitto-local-mqtt-broker-setup.md)
+
+- [Nano services on IoT sensors and the cache eviction choice](nano-services-iot-lru-vs-lfu.md)
+
+- [Offline sync needs a conflict resolution strategy, like merging in Git](offline-sync-conflict-resolution.md)
+
+- [Offline-first design for unreliable connectivity](offline-first-design-for-low-connectivity.md)
+
+- [Optional: feed 24 hours of real Accra PM2.5 from OpenAQ through the same MQTT pipeline](openaq-real-pm25-data-option.md)
+
+- [Replay real sensor data against a hypothetical alert threshold and count the extra alerts](digital-twin-what-if-replay.md)
+
+- [Scheduled job turns raw readings into an hourly-average table](downsampling-hourly-averages-job.md)
+
+- [Slow time-series writes: batch inserts instead of one INSERT per reading](batched-inserts-for-time-series-writes.md)
+
+- [The bridge writes each MQTT reading to TimescaleDB and spools to a local file when the DB is down](mqtt-to-timescaledb-bridge-local-buffering.md)
+
+## ML and MLOps
+
+- [A GradientBoostingRegressor with hour, lag_1 and lag_2 is the lab forecasting starter](gradient-boosted-lag-feature-forecast.md)
+
+- [A retraining script should promote a new model only if its MAE beats the deployed one](retrain-promote-only-if-better.md)
+
+- [Averaging two parties model weights may lose to a local model, and that is a legitimate result](federated-averaging-demo-honest-result.md)
+
+- [Beat "next reading equals last reading" (or a z-score rule) before any model ships](naive-baseline-before-model.md)
+
+- [Compare IsolationForest flags to the z-score baseline: same events, or noise?](anomaly-detection-zscore-vs-isolation-forest.md)
+
+- [Data leakage, repeated runs and sanity-checking ML metrics](ml-evaluation-leakage-and-repeated-runs.md)
+
+- [Deadline-aware GPU scheduling across mixed GPU types](gpu-deadline-scheduling-mixed-gpus.md)
+
+- [Federated learning with edge-level averaging keeps data local](federated-learning-at-the-edge.md)
+
+- [Heavy ML inference belongs on the server, not on low-end devices](heavy-ml-runs-server-side.md)
+
+- [If the model does not beat the baseline, report it and explain why; do not fabricate](honest-reporting-model-loses-to-baseline.md)
+
+- [Keep a human approving high-stakes ML recommendations](human-in-the-loop-ml-recommendations.md)
+
+- [Log predictions, join to later actuals, plot rolling MAE against a retrain threshold line](drift-monitoring-rolling-mae-threshold.md)
+
+- [MLflow logs params, metrics and a registered model version the endpoint loads](mlflow-experiment-tracking-and-registry.md)
+
+- [Route about 10% of requests to a second model version and compare errors](canary-model-comparison-10-percent.md)
+
+- [Split time-series data by time (e.g. first 80% train), never by random shuffle](chronological-split-for-time-series.md)
+
+- [Three ways to make synthetic data: LLM prompts with a schema, GANs, or distribution parameters](synthetic-data-for-testing-without-real-data.md)
+
+- [Turn feature_importances_ into two or three plain sentences for an AMA official](explaining-feature-importance-to-non-technical-official.md)
+
+- [Wrap the registered model in FastAPI with /health and /predict](fastapi-prediction-endpoint.md)
+
+## Security, privacy and data governance
+
+- [Accountability means every action can be traced to a user, through system logs](accountability-and-system-logs.md)
+
+- [Allow SSH only from your own IP, never 0.0.0.0/0](ssh-security-group-my-ip-only.md)
+
+- [Attackers with a shell can hide their tracks, so protect and ship logs](audit-logs-can-be-tampered.md)
+
+- [Audit logging - record who did what to which record, and await the write](audit-log-who-what-when-await-the-write.md)
+
+- [Authenticity means the sender and data are genuine, which gives non-repudiation](authenticity-and-non-repudiation.md)
+
+- [Availability is about the system being up; accessibility is a different idea](availability-vs-accessibility.md)
+
+- [Compromising one security goal often breaks the others](security-goals-are-interlinked.md)
+
+- [Confidentiality is non-disclosure of any data; privacy is an individual's control over their own data](confidentiality-vs-privacy.md)
+
+- [Cyber threats evolved from viruses and worms to ransomware, APTs and AI-powered attacks](threat-landscape-viruses-to-ai-attacks.md)
+
+- [Cybersecurity, information security and computer security differ by what is protected](cybersecurity-vs-information-vs-computer-security.md)
+
+- [Data centers protect data with physical and software security layers](data-center-layered-security.md)
+
+- [Data residency laws and consent drive where data may live](data-residency-and-consent.md)
+
+- [Data residency plan - shard by country and keep personal data in its home region](data-residency-plan-sharding-by-country.md)
+
+- [Deduplication with short hashes lets anyone who learns the hash claim a file; proof of ownership fixes it](proof-of-ownership-cloud-deduplication.md)
+
+- [Delay and degraded quality of service count as an availability failure](quality-of-service-deviation-is-availability-issue.md)
+
+- [Do daily work as a non-root IAM user, never the root account](never-use-root-account-for-daily-work.md)
+
+- [Do not put frontend, backend and database on the same host](separate-tiers-across-hosts-and-networks.md)
+
+- [Each device gets its own MQTT credential so one can be revoked alone](per-device-mqtt-credentials-and-revocation.md)
+
+- [Every cloud account gets MFA and a $5 billing alert on day one](cloud-account-baseline-mfa-billing-alert.md)
+
+- [FHIR-shaped schema now, with a written gap list for real interoperability](fhir-aligned-schema-with-gap-analysis.md)
+
+- [Firewalls should block persistent flooding sources to stop DDoS](ddos-protection-firewall-blocking.md)
+
+- [If MFA codes are rejected, check the device clock](mfa-codes-rejected-check-device-clock.md)
+
+- [Insiders are anyone related to the organization, not only employees](insider-threats-need-not-be-employees.md)
+
+- [Integrity covers data, services and systems, and applies to automated processes too](integrity-covers-data-and-services.md)
+
+- [Integrity is protected with checksums, hashing and digital signatures](integrity-techniques-checksum-hash-signature.md)
+
+- [Keep servers and databases in private subnets behind the load balancer](private-subnets-behind-load-balancer.md)
+
+- [Keep systems available with backups, redundancy and failover](availability-mechanisms-backup-redundancy-failover.md)
+
+- [Law says whether you may collect, a framework says how to protect, a standard says what shape the data takes](regulation-vs-standard-roles-act-843-hipaa-fhir.md)
+
+- [Least privilege - attach a scoped role and prove one allowed and one denied action](least-privilege-iam-prove-allow-and-deny.md)
+
+- [Logging for accountability trades off against privacy, and policy sets the balance](accountability-logging-vs-privacy.md)
+
+- [Prefer SSH keys with a passphrase over password logins to servers](ssh-keys-over-passwords.md)
+
+- [Prove the safety net - break a test and commit a fake secret on purpose](prove-the-pipeline-works-break-it-on-purpose.md)
+
+- [Put the database in a private subnet with no public access](database-in-private-subnet-no-public-access.md)
+
+- [Scan for committed secrets in CI with gitleaks](secret-scanning-with-gitleaks-in-ci.md)
+
+- [SSH gives secure remote access; ports sit at the transport layer](ssh-ports-and-osi-layers.md)
+
+- [The CIA triad (confidentiality, integrity, availability) is the core of security](cia-triad.md)
+
+- [The CIA triad extends to a five-goal pentad with authenticity and accountability](cia-pentad-five-security-goals.md)
+
+- [The one-page integration design: data flow, carrying event/API, one sovereignty or consent issue](capstone-integration-design-page.md)
+
+- [Use short-lived pre-signed URLs with a private bucket](presigned-url-upload-to-private-bucket.md)
+
+- [Users and insiders are usually the weakest security link](users-are-weakest-security-link.md)
+
+- [Validate at front end, API and database; range limits catch impossible values](database-as-last-line-of-defense-range-checks.md)
+
+- [Verify encryption at rest and TLS; do not assume defaults](verify-encryption-at-rest-and-in-transit.md)
+
+- [Verify subnet isolation from the route table, do not trust labels](verify-private-subnet-has-no-internet-gateway-route.md)
+
+- [What you still own on IaaS (patching, firewall, backups, scaling)](iaas-responsibilities-you-still-own.md)
+
+## Carried over from Prosits 1 and 2
+
+- [After Prosit 1 as a quick translation, Prosit 2 needs real engineering and database design](prosit-2-expects-engineering-and-database-design.md)
+
+- [AgroConnect (Prosit 1) system overview: offline-first PWA, one API, Postgres, three-tier VPC](agroconnect-system-overview.md)
+
+- [AgroConnect AWS infrastructure inventory: network, compute, data, security, observability, cost](agroconnect-aws-infrastructure-inventory.md)
+
+- [AgroConnect mapped Ghana's Act 843 principles to concrete controls and listed its gaps](agroconnect-act-843-privacy-controls.md)
+
+- [AgroConnect picked af-south-1 by measuring latency from Ghana (74 ms median)](agroconnect-region-selection-by-latency.md)
+
+- [AgroConnect scales on ALBRequestCountPerTarget (500 per minute), not CPU](agroconnect-target-tracking-request-count-decision.md)
+
+- [Clone and build a partner's repo to catch files that were never committed](partner-clone-build-catches-uncommitted-files.md)
+
+- [Ground rules for community-engaged prosits (consent, sign-off)](agroconnect-community-ground-rules.md)
+
+- [HealthConnect (Prosit 2) system overview: what was built and what was designed only](healthconnect-system-overview.md)
+
+- [HealthConnect AWS infrastructure inventory (deployed state, November 2026)](healthconnect-aws-infrastructure-inventory.md)
+
+- [HealthConnect disease surveillance: aggregated counts, a rule-based signal and human-confirmed alerts](healthconnect-surveillance-design.md)
+
+- [HealthConnect event flow: appointment.created fans out to two independent Lambdas](healthconnect-event-flow-sns-sqs-lambda.md)
+
+- [HealthConnect keeps one API with route modules instead of sixteen services (D-035)](healthconnect-one-api-with-route-modules.md)
+
+- [HealthConnect PWA and sync architecture in one page](healthconnect-pwa-and-sync-architecture.md)
+
+- [HealthConnect telemedicine: WebRTC with a signaling server and an audio-only fallback](healthconnect-telemedicine-call-architecture.md)
+
+- [HealthConnect treats Ghana's Act 843 as the law and HIPAA only as a safeguards checklist](healthconnect-act-843-and-hipaa-stance.md)
+
+- [HealthConnect's FHIR R4 schema: tables, FHIR resources, consent purposes and audit](healthconnect-fhir-shaped-schema-and-consent.md)
+
+- [HealthConnect's known weak points, useful input for a consolidated architecture review](healthconnect-known-weak-points.md)
+
+- [One backend service implements every contract (AgroConnect ADR-013)](agroconnect-one-backend-service-for-all-contracts.md)
+
+- [Out-of-band AWS changes (drift) can silently block terraform apply and stall deployments](configuration-drift-blocks-terraform-apply.md)
+
+- [Questions the instructor and peers asked at the Prosit 1 presentations](prosit-1-presentation-qa-themes.md)
+
+- [Queue offline writes in IndexedDB and replay with Background Sync](background-sync-offline-write-queue.md)
+
+- [Service worker plus manifest gives an installable, offline-rendering app shell](service-worker-cache-first-offline-shell.md)
+
+- [Tests can pass for the wrong reason; test each rule separately and on real devices](tests-can-pass-for-the-wrong-reason.md)
+
+- [The Prosit 2 brief: problem numbers, four weeks of asks, targets and assessment](prosit-2-brief-problem-and-assessment.md)
+
+- [WebRTC - test across two networks because direct peer links often fail](webrtc-stun-turn-cross-network-testing.md)
+
+- [What HealthConnect reused from AgroConnect, as a map for reusing both in SmartCity](prosit-1-to-2-reuse-map.md)
+
+## Cloud foundations
+
+- [A VM can be shipped as an appliance, but CPU architecture still matters](vm-appliance-and-cpu-architecture-portability.md)
+
+- [Add a human testing stage where a teammate uses the app like a real user and logs issues](human-testing-stage-before-release.md)
+
+- [Big data is described by Volume, Velocity, Variety (and Veracity)](big-data-four-vs.md)
+
+- [Block, object and file storage serve different jobs](block-object-file-storage.md)
+
+- [Choose SQL for fixed-schema data and NoSQL or object storage for flexible data, and justify it](sql-vs-nosql-choice.md)
+
+- [Choosing a service model - time to market and data sensitivity](choosing-service-model-time-and-data-sensitivity.md)
+
+- [CI/CD pipeline shape - build, test, scan, approval-gated deploy](ci-pipeline-build-test-gated-deploy.md)
+
+- [Cloud work builds on operating systems and networking basics](cloud-engineers-need-os-and-networking-fundamentals.md)
+
+- [Containers are lighter than VMs because they share the host kernel instead of bundling an OS](containers-vs-virtual-machines.md)
+
+- [Containers fix the "works on my machine" dependency problem](works-on-my-machine-problem.md)
+
+- [DevOps joins software development and IT operations](devops-joins-development-and-operations.md)
+
+- [Docker core concepts: image, container, Dockerfile, registry](docker-image-container-dockerfile-registry.md)
+
+- [Dockerfile pattern - copy manifests first, install, then copy code, run as non-root](dockerfile-layer-cache-and-non-root-user.md)
+
+- [Five essential characteristics of cloud computing](five-essential-cloud-characteristics.md)
+
+- [Geography-aware networking and CDNs](geography-aware-networking-and-cdns.md)
+
+- [git push over HTTPS needs a token or SSH key, not your password](git-https-push-needs-personal-access-token.md)
+
+- [History of computing - heavy lifting keeps moving to the provider](cloud-computing-history-heavy-lifting-shifts-to-provider.md)
+
+- [IaaS, PaaS, SaaS - control versus convenience](iaas-paas-saas-control-vs-convenience.md)
+
+- [Immutable infrastructure: replace the image, never patch a running container](immutable-infrastructure.md)
+
+- [In-memory data in a container is lost on restart; make it persistent](persistent-data-vs-in-memory-containers.md)
+
+- [Inside a container, localhost is the container itself](localhost-inside-a-container-is-the-container.md)
+
+- [Mix service models per component, not one for the whole system](mixing-service-models-per-component.md)
+
+- [NIST definition of cloud computing (SP 800-145)](nist-cloud-definition.md)
+
+- [Public, private, hybrid and community cloud](cloud-deployment-models.md)
+
+- [Publish one event, let independent functions react](publish-one-event-two-independent-consumers.md)
+
+- [Pull-request checks then image build then rolling refresh](ci-checks-and-deploy-pipeline-prosit-1.md)
+
+- [Rehearse 10-15 minutes timed, and record a backup demo under 5 minutes](final-presentation-rehearsal-and-backup-video.md)
+
+- [Services find each other by Kubernetes DNS name, not IP](kubernetes-service-dns-name-between-services.md)
+
+- [Structured, semi-structured and unstructured data need different stores](structured-semi-structured-unstructured-data.md)
+
+- [TCP is reliable, UDP is fast and lossy, QUIC is Google's newer transport](tcp-vs-udp-vs-quic.md)
+
+- [Terraform workflow - init, plan, apply; import or destroy pre-existing resources](terraform-init-plan-apply-and-import.md)
+
+- [Tests pass locally but fail in CI - look for environment differences](ci-tests-pass-locally-fail-in-ci.md)
+
+- [Turn a manual setup script into cloud-init](cloud-init-script-as-first-infrastructure-as-code.md)
+
+- [Use managed payment APIs and keep payments as a separate service](use-managed-payment-apis.md)
+
+- [Verify CLI access with one identity check per provider](verify-cli-access-to-all-three-clouds.md)
+
+- [Virtualization turns physical resources into virtual ones; a hypervisor manages the VMs](virtualization-and-hypervisor.md)
+
+- [VPC layout - two public and two private subnets across two AZs](vpc-two-az-public-private-subnet-layout.md)

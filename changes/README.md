@@ -10,7 +10,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 - [#2](2-contracts-draft.md) — First draft of the shared contracts — Joseph
 
-<!-- #3 -->
+- [#3](3-seed-knowledge.md) — Seed knowledge and learnings as one-idea notes — Joseph
 
 <!-- #4 -->
 

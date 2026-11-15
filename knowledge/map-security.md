@@ -1,0 +1,134 @@
+---
+title: Security, privacy and data governance (map)
+tags: [process]
+source: index of the notes below
+---
+
+CIA, IAM, encryption, network isolation, audit logs, consent, data residency, Act 843.
+
+**Taught or given**
+
+- [Accountability means every action can be traced to a user, through system logs](accountability-and-system-logs.md)
+
+- [Allow SSH only from your own IP, never 0.0.0.0/0](ssh-security-group-my-ip-only.md)
+
+- [Attackers with a shell can hide their tracks, so protect and ship logs](audit-logs-can-be-tampered.md)
+
+- [Audit logging - record who did what to which record, and await the write](audit-log-who-what-when-await-the-write.md)
+
+- [Authenticity means the sender and data are genuine, which gives non-repudiation](authenticity-and-non-repudiation.md)
+
+- [Availability is about the system being up; accessibility is a different idea](availability-vs-accessibility.md)
+
+- [Compromising one security goal often breaks the others](security-goals-are-interlinked.md)
+
+- [Confidentiality is non-disclosure of any data; privacy is an individual's control over their own data](confidentiality-vs-privacy.md)
+
+- [Cyber threats evolved from viruses and worms to ransomware, APTs and AI-powered attacks](threat-landscape-viruses-to-ai-attacks.md)
+
+- [Cybersecurity, information security and computer security differ by what is protected](cybersecurity-vs-information-vs-computer-security.md)
+
+- [Data centers protect data with physical and software security layers](data-center-layered-security.md)
+
+- [Data residency laws and consent drive where data may live](data-residency-and-consent.md)
+
+- [Data residency plan - shard by country and keep personal data in its home region](data-residency-plan-sharding-by-country.md)
+
+- [Deduplication with short hashes lets anyone who learns the hash claim a file; proof of ownership fixes it](proof-of-ownership-cloud-deduplication.md)
+
+- [Delay and degraded quality of service count as an availability failure](quality-of-service-deviation-is-availability-issue.md)
+
+- [Do daily work as a non-root IAM user, never the root account](never-use-root-account-for-daily-work.md)
+
+- [Do not put frontend, backend and database on the same host](separate-tiers-across-hosts-and-networks.md)
+
+- [Each device gets its own MQTT credential so one can be revoked alone](per-device-mqtt-credentials-and-revocation.md)
+
+- [Every cloud account gets MFA and a $5 billing alert on day one](cloud-account-baseline-mfa-billing-alert.md)
+
+- [FHIR-shaped schema now, with a written gap list for real interoperability](fhir-aligned-schema-with-gap-analysis.md)
+
+- [Firewalls should block persistent flooding sources to stop DDoS](ddos-protection-firewall-blocking.md)
+
+- [If MFA codes are rejected, check the device clock](mfa-codes-rejected-check-device-clock.md)
+
+- [Insiders are anyone related to the organization, not only employees](insider-threats-need-not-be-employees.md)
+
+- [Integrity covers data, services and systems, and applies to automated processes too](integrity-covers-data-and-services.md)
+
+- [Integrity is protected with checksums, hashing and digital signatures](integrity-techniques-checksum-hash-signature.md)
+
+- [Keep servers and databases in private subnets behind the load balancer](private-subnets-behind-load-balancer.md)
+
+- [Keep systems available with backups, redundancy and failover](availability-mechanisms-backup-redundancy-failover.md)
+
+- [Law says whether you may collect, a framework says how to protect, a standard says what shape the data takes](regulation-vs-standard-roles-act-843-hipaa-fhir.md)
+
+- [Least privilege - attach a scoped role and prove one allowed and one denied action](least-privilege-iam-prove-allow-and-deny.md)
+
+- [Logging for accountability trades off against privacy, and policy sets the balance](accountability-logging-vs-privacy.md)
+
+- [Prefer SSH keys with a passphrase over password logins to servers](ssh-keys-over-passwords.md)
+
+- [Prove the safety net - break a test and commit a fake secret on purpose](prove-the-pipeline-works-break-it-on-purpose.md)
+
+- [Put the database in a private subnet with no public access](database-in-private-subnet-no-public-access.md)
+
+- [Scan for committed secrets in CI with gitleaks](secret-scanning-with-gitleaks-in-ci.md)
+
+- [SSH gives secure remote access; ports sit at the transport layer](ssh-ports-and-osi-layers.md)
+
+- [The CIA triad (confidentiality, integrity, availability) is the core of security](cia-triad.md)
+
+- [The CIA triad extends to a five-goal pentad with authenticity and accountability](cia-pentad-five-security-goals.md)
+
+- [The one-page integration design: data flow, carrying event/API, one sovereignty or consent issue](capstone-integration-design-page.md)
+
+- [Use short-lived pre-signed URLs with a private bucket](presigned-url-upload-to-private-bucket.md)
+
+- [Users and insiders are usually the weakest security link](users-are-weakest-security-link.md)
+
+- [Validate at front end, API and database; range limits catch impossible values](database-as-last-line-of-defense-range-checks.md)
+
+- [Verify encryption at rest and TLS; do not assume defaults](verify-encryption-at-rest-and-in-transit.md)
+
+- [Verify subnet isolation from the route table, do not trust labels](verify-private-subnet-has-no-internet-gateway-route.md)
+
+- [What you still own on IaaS (patching, firewall, backups, scaling)](iaas-responsibilities-you-still-own.md)
+
+**Found out by doing** (in `learnings/`)
+
+- [A scan gate can turn red when no code changed; fix by bumping, not by deleting the scan](../learnings/security-scan-gates-can-go-red-without-code-changes.md)
+
+- [Capture least-privilege evidence with the IAM policy simulator](../learnings/prove-iam-with-policy-simulator.md)
+
+- [CI/CD shape that worked: test everything, scan, then deploy only what changed on merge to main](../learnings/cicd-pipeline-shape-test-scan-deploy-changed.md)
+
+- [CloudFront needs its certificate in us-east-1 and routes by Host header, not by DNS target](../learnings/cloudfront-cert-region-and-host-header-routing.md)
+
+- [Create secrets empty in Terraform and fill the value from the CLI so it never enters state or git](../learnings/secrets-set-by-hand-stay-out-of-state.md)
+
+- [Deploy from GitHub Actions with OIDC, no stored keys, and trust only the main branch](../learnings/github-oidc-deploy-role-limited-to-main.md)
+
+- [HTTPS on the ALB with an ACM certificate when DNS lives outside Terraform](../learnings/https-acm-certificate-with-external-dns.md)
+
+- [Least privilege in practice: one IAM role per job, each permission naming one resource](../learnings/least-privilege-one-role-per-job.md)
+
+- [Put the safety rules in the database so psql and scripts cannot skip them](../learnings/database-enforces-rules-not-only-the-api.md)
+
+- [Run each write in one transaction that first tells the database who is acting](../learnings/transaction-sets-acting-user-for-audit.md)
+
+- [Sign-in and rate-limit choices that held up in the HealthConnect API](../learnings/api-rate-limits-and-login-protection.md)
+
+- [Synthetic data and sandbox integrations must be labelled on screen and in the report](../learnings/synthetic-data-and-labelled-sandbox-integrations.md)
+
+- [Team IAM with a group, PowerUser, and a ForceMFA deny policy](../learnings/force-mfa-team-iam-group.md)
+
+## Related
+- [Lectures by week (map)](map-lectures.md)
+
+- [SmartCity Accra brief and our scope (map)](map-smartcity-brief.md)
+
+- [Labs 0–14 (map)](map-labs.md)
+
+- [Course facts (map)](map-course.md)
