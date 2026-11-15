@@ -15,7 +15,7 @@ Choose the broker and time-series database that Week 12 builds against (Lab 10 P
 - nothing
 
 ## Done when
-- One-page decision as decisions/D-NNN, justified on platform, sensor volume (thousands of readings/min) and remaining budget
+- One-page decision as decisions/7-<slug>.md, justified on platform, sensor volume (thousands of readings/min) and remaining budget
 - Elise agrees with the database choice
 
 ## Evidence to capture

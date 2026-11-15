@@ -1,8 +1,7 @@
 ---
-id: C-001
 title: Initial issues, labels, milestones and plan stubs
 date: 2026-11-15
-issue: "#1"
+issue: 1
 pr: "(this PR)"
 in_charge: Joseph Etse
 reviewed_by: (whoever approves this PR)
@@ -36,6 +35,8 @@ python3 scripts/check_notes.py knowledge learnings
 - `changes/TEMPLATE.md`: a **Prompts / session summary** line in AI use (the course asks for prompts in AI declarations); `reviewed_by` is filled by the approver.
 - `.gitignore`: `*.key` and MQTT broker password/ACL files.
 - README no longer claims the not-built items are already recorded; issue #54 tracks that decision. Issue #55 tracks making `contracts` a required check.
+
+- **No index conflicts (Joseph, 15 Nov):** change and decision files are named after the issue number, and `plans/`, `changes/`, `decisions/` indexes have one hidden slot line per issue; `check_change_file.py` now checks the file is linked from the index (tests updated first).
 
 ## Decisions made
 - None new. Owners for the five written reports and the capstone pieces are defaults from the plan; reassign on the issue if needed.

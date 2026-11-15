@@ -17,7 +17,7 @@ Fix the shared formats first so sensors, ingest, data, web and mobile can all st
 ## Done when
 - contracts/ has the sensor-reading JSON Schema with examples, MQTT topics, OpenAPI file and storage layout
 - Tests validate the examples and reject a bad one in CI
-- D-001 records the choices; the team has had the PR to comment on
+- decisions/2-sensor-reading-and-topic-contract.md records the choices; the team has had the PR to comment on
 
 ## Evidence to capture
 - _to fill in_

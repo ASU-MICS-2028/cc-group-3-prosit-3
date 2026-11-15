@@ -82,7 +82,8 @@ class CheckChangeFile(unittest.TestCase):
         g("config", "user.email", "t@example.com")
         g("config", "user.name", "t")
         (self.repo / "changes").mkdir()
-        (self.repo / "changes" / "C-001-first.md").write_text("first")
+        (self.repo / "changes" / "1-first.md").write_text("first")
+        (self.repo / "changes" / "README.md").write_text("- [#1](1-first.md)\n\n<!-- #2 -->\n")
         g("add", "-A")
         g("commit", "-qm", "base")
         g("switch", "-qc", "feature")
@@ -90,11 +91,14 @@ class CheckChangeFile(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
-    def commit(self, *files):
+    def commit(self, *files, index_links=()):
         for f in files:
             p = self.repo / f
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_text("x")
+        if index_links:
+            idx = self.repo / "changes" / "README.md"
+            idx.write_text(idx.read_text() + "".join(f"\n- [x]({l})\n" for l in index_links))
         self.git("add", "-A")
         self.git("commit", "-qm", "work")
 
@@ -107,16 +111,21 @@ class CheckChangeFile(unittest.TestCase):
         self.assertEqual(r.returncode, 1)
         self.assertIn("skip-change-file", r.stdout)
 
-    def test_pr_with_one_new_change_file_passes(self):
-        self.commit("README.md", "changes/C-002-readme.md")
+    def test_indexed_change_file_named_after_issue_passes(self):
+        self.commit("README.md", "changes/2-readme.md", index_links=["2-readme.md"])
         r = self.check()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
-    def test_duplicate_change_number_fails(self):
-        self.commit("changes/C-001-other.md")
+    def test_unindexed_change_file_fails(self):
+        self.commit("changes/2-readme.md")
         r = self.check()
         self.assertEqual(r.returncode, 1)
-        self.assertIn("C-001", r.stdout)
+        self.assertIn("changes/README.md", r.stdout)
+
+    def test_old_c_number_name_fails(self):
+        self.commit("changes/C-002-readme.md", index_links=["C-002-readme.md"])
+        r = self.check()
+        self.assertEqual(r.returncode, 1)
 
     def test_skip_label_passes(self):
         self.commit("README.md")
@@ -124,7 +133,7 @@ class CheckChangeFile(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
     def test_two_change_files_fails(self):
-        self.commit("changes/C-002-a.md", "changes/C-003-b.md")
+        self.commit("changes/2-a.md", "changes/3-b.md", index_links=["2-a.md", "3-b.md"])
         r = self.check()
         self.assertEqual(r.returncode, 1)
 

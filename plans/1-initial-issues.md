@@ -17,7 +17,7 @@ Turn the setup design into GitHub issues so everyone can see their work and its 
 ## Done when
 - Labels, milestones and every initial issue exist
 - Each issue has a plan stub in plans/ and a row in plans/README.md
-- C-001 change file merged
+- changes/1-initial-issues-and-plans.md merged
 
 ## Evidence to capture
 - _to fill in_

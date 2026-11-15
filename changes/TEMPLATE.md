@@ -1,8 +1,7 @@
 ---
-id: C-NNN
+issue: <issue number this PR closes>
 title: <what changed, in a few words>
 date: YYYY-MM-DD
-issue: "#<n>"
 pr: "#<n>"
 in_charge: <one person>
 reviewed_by: <filled in by the approver, or see the PR's approvals>
@@ -26,7 +25,7 @@ reviewed_by: <filled in by the approver, or see the PR's approvals>
 (Write "None" if no AI was used.)
 
 ## Decisions made
-- <D-NNN links, or "none">
+- <links to decisions/<issue>-<slug>.md, or "none">
 
 ## Not done
 - <what's left, or "nothing">
