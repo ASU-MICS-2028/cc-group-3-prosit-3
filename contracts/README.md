@@ -10,7 +10,7 @@ Status: **draft v0**, proposed in [D-001](../decisions/D-001-sensor-reading-and-
 | [`examples/`](./examples/) | One valid reading per domain; `examples/bad/` must fail | everyone (copy them into mocks) |
 | [`mqtt-topics.md`](./mqtt-topics.md) | `accra/<neighbourhood>/<domain>/<device_id>`, QoS 1, one credential per device | sensors, ingest |
 | [`api.openapi.yaml`](./api.openapi.yaml) | REST paths the apps call: latest readings, history, alerts, PM2.5 forecast, citizen reports, open data | api, web, mobile, ml |
-| [`storage.md`](./storage.md) | One table per domain, `(device_id, seq)` unique, 90-day raw retention, hourly rollups | db, ingest, ml, api |
+| [`storage.md`](./storage.md) | One table per domain, `(device_id, ts)` unique, 90-day raw retention, hourly rollups | db, ingest, ml, api |
 
 ## Check it
 
