@@ -124,7 +124,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #59 -->
 
-<!-- #60 -->
+- [#60](60-readme-team-progress.md) — README with team cards and live progress — Joseph
 
 <!-- #61 -->
 
