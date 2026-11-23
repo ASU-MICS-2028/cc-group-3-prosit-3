@@ -38,6 +38,8 @@ Every note is listed below under a topic.
 
 - [WebRTC results: direct paths worked, Chrome Slow 3G does not throttle media, TURN cost is a range](webrtc-testing-and-turn-findings.md)
 
+- [Write every reading to a local spool first, so one path covers normal running and DB outages](bridge-writes-to-a-local-spool-first.md)
+
 ## Security, privacy and data governance
 
 - [A scan gate can turn red when no code changed; fix by bumping, not by deleting the scan](security-scan-gates-can-go-red-without-code-changes.md)

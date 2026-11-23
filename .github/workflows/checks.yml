@@ -42,3 +42,4 @@ jobs:
       - run: pip install -r contracts/requirements.txt
       - run: python3 -m unittest discover contracts/tests -v
       - run: python3 -m unittest discover sensors/tests -v
+      - run: python3 -m unittest discover ingest/tests -v

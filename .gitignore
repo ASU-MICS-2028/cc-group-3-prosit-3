@@ -34,3 +34,7 @@ mlruns/
 # misc
 .DS_Store
 .superpowers/
+
+# bridge buffer (local readings in transit)
+ingest/spool.jsonl
+ingest/spool.tmp

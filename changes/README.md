@@ -44,7 +44,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #19 -->
 
-<!-- #20 -->
+- [#20](20-bridge.md) — MQTT bridge with local buffering (Lab 12 Part C) — Joseph
 
 <!-- #21 -->
 

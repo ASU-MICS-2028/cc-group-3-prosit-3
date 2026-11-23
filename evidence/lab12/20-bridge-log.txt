@@ -1,0 +1,28 @@
+connected to MQTT (Success)
+wrote 1
+wrote 1
+wrote 9
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 9
+wrote 2
+DB down, buffering to /Users/josetseph/Projects/Technical/ashesi/cc-group-3-prosit-3/ingest/spool.jsonl: terminating connection due to administrator command
+wrote 77
+DB back; backlog flushed
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 12
+wrote 3
+wrote 13
+wrote 3
+wrote 13
+wrote 3
