@@ -1,0 +1,18 @@
+     tbl     | rows  |          min           |          max           
+-------------+-------+------------------------+------------------------
+ air_quality | 15000 | 2026-11-23 21:21:13+00 | 2026-11-25 23:20:13+00
+ waste       | 12000 | 2026-11-23 21:21:13+00 | 2026-11-25 23:20:13+00
+ flood       |  8813 | 2026-11-23 21:21:13+00 | 2026-11-25 23:20:43+00
+(3 rows)
+
+    station    |   model_version    | points_logged 
+---------------+--------------------+---------------
+ aq-makola-001 | naive-seasonal-24h |            24
+ aq-nima-001   | naive-seasonal-24h |            48
+(2 rows)
+
+ category |          description          
+----------+-------------------------------
+ flooding | Drain blocked near the market
+(1 row)
+

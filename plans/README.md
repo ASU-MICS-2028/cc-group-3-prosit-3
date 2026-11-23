@@ -66,7 +66,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#30](30-l13-pm25-model.md) — PM2.5 forecast: data, baseline, model, MLflow (L13-A/B/C) — Elise — stub
 
-- [#31](31-l13-prediction-api.md) — Prediction API endpoint (L13-D) — Joseph — stub
+- [#31](31-l13-prediction-api.md) — Prediction API endpoint (L13-D) — Joseph — done
 
 - [#32](32-l13-drift-log.md) — Drift log: predictions vs later actuals (L13-E) — Elise — stub
 

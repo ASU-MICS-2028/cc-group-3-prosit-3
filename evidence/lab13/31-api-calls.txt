@@ -1,0 +1,76 @@
+### latest reading per device (air quality)
+$ curl /readings/latest?domain=air_quality
+[{"device_id": "aq-asylum-down-001", "domain": "air_quality", "metric": "pm25", "value": 43.6, "unit": "ug/m3", "ts": "2026-11-25T23:20:13Z", "seq": 2999, "source": "simulator", "battery_pct": 70.8}, {"device_id": "aq-east-legon-001", "domain": "air_quality", "metric": "pm25", "value": 46.1, "unit": "ug/m3", "ts": "2026-11-25T23:20:13Z", "seq": 2999, "source": "simulator", "battery_pct": 73.4}, {"device_id": "aq-jamestown-001", "domain": "air_quality", "metric": "pm25", "value": 52.0, "unit": "ug/m3", "ts": "2026-11-25T23:20:13Z", "seq": 2999, "source": "simulator", "battery_pct": 66.8}, {"dev
+HTTP 200, 0.019943s
+
+### latest in one neighbourhood
+$ curl /readings/latest?neighbourhood=nima
+[{"device_id": "aq-nima-001", "domain": "air_quality", "metric": "pm25", "value": 48.3, "unit": "ug/m3", "ts": "2026-11-25T23:20:13Z", "seq": 2999, "source": "simulator", "battery_pct": 70.6}, {"device_id": "wb-nima-001", "domain": "waste", "metric": "fill_pct", "value": 57.6, "unit": "%", "ts": "2026-11-25T23:20:13Z", "seq": 2999, "source": "simulator", "battery_pct": 69.2}, {"device_id": "fl-nima-001", "domain": "flood", "metric": "water_level_cm", "value": 18.1, "unit": "cm", "ts": "2026-11-25T23:20:13Z", "seq": 4630, "source": "simulator", "battery_pct": 94.6}]
+HTTP 200, 0.022360s
+
+### raw history
+$ curl /readings?device_id=wb-makola-001&from=2026-11-23T21:21:33Z&to=2026-11-26T21:21:33Z
+[{"device_id": "wb-makola-001", "domain": "waste", "metric": "fill_pct", "value": 8.3, "unit": "%", "ts": "2026-11-23T21:22:13Z", "seq": 1, "source": "simulator", "battery_pct": 89.9}, {"device_id": "wb-makola-001", "domain": "waste", "metric": "fill_pct", "value": 8.4, "unit": "%", "ts": "2026-11-23T21:23:13Z", "seq": 2, "source": "simulator", "battery_pct": 89.9}, {"device_id": "wb-makola-001", "domain": "waste", "metric": "fill_pct", "value": 8.5, "unit": "%", "ts": "2026-11-23T21:24:13Z", "seq": 3, "source": "simulator", "battery_pct": 89.9}, {"device_id": "wb-makola-001", "domain": "waste
+HTTP 200, 0.035551s
+
+### hourly history
+$ curl /readings?device_id=fl-nima-001&from=2026-11-23T21:21:33Z&to=2026-11-26T21:21:33Z&interval=1h
+[{"domain": "flood", "neighbourhood": "nima", "hour": "2026-11-23T21:00:00Z", "avg": 18.286842105263155, "min": 17.6, "max": 19.0, "count": 38, "device_id": "fl-nima-001"}, {"domain": "flood", "neighbourhood": "nima", "hour": "2026-11-23T22:00:00Z", "avg": 28.524603174603172, "min": 19.0, "max": 37.6, "count": 126, "device_id": "fl-nima-001"}, {"domain": "flood", "neighbourhood": "nima", "hour": "2026-11-23T23:00:00Z", "avg": 22.068333333333328, "min": 19.9, "max": 25.3, "count": 60, "device_id": "fl-nima-001"}, {"domain": "flood", "neighbourhood": "nima", "hour": "2026-11-24T00:00:00Z", "avg"
+HTTP 200, 0.018874s
+
+### PM2.5 forecast, 24 h
+$ curl /predictions/pm25?station=aq-makola-001
+{"station": "aq-makola-001", "horizon_h": 24, "model_version": "naive-seasonal-24h", "points": [{"ts": "2026-11-26T00:00:00Z", "pm25": 54.8}, {"ts": "2026-11-26T01:00:00Z", "pm25": 55.1}, {"ts": "2026-11-26T02:00:00Z", "pm25": 53.8}, {"ts": "2026-11-26T03:00:00Z", "pm25": 56.5}, {"ts": "2026-11-26T04:00:00Z", "pm25": 59.4}, {"ts": "2026-11-26T05:00:00Z", "pm25": 67.2}, {"ts": "2026-11-26T06:00:00Z", "pm25": 80.3}, {"ts": "2026-11-26T07:00:00Z", "pm25": 87.4}, {"ts": "2026-11-26T08:00:00Z", "pm25": 80.4}, {"ts": "2026-11-26T09:00:00Z", "pm25": 67.1}, {"ts": "2026-11-26T10:00:00Z", "pm25": 59.5}
+HTTP 200, 0.014914s
+
+### PM2.5 forecast, 48 h
+$ curl /predictions/pm25?station=aq-nima-001&horizon_h=48
+{"station": "aq-nima-001", "horizon_h": 48, "model_version": "naive-seasonal-24h", "points": [{"ts": "2026-11-26T00:00:00Z", "pm25": 47.8}, {"ts": "2026-11-26T01:00:00Z", "pm25": 49.2}, {"ts": "2026-11-26T02:00:00Z", "pm25": 49.6}, {"ts": "2026-11-26T03:00:00Z", "pm25": 49.4}, {"ts": "2026-11-26T04:00:00Z", "pm25": 52.3}, {"ts": "2026-11-26T05:00:00Z", "pm25": 60.6}, {"ts": "2026-11-26T06:00:00Z", "pm25": 74.9}, {"ts": "2026-11-26T07:00:00Z", "pm25": 82.1}, {"ts": "2026-11-26T08:00:00Z", "pm25": 73.9}, {"ts": "2026-11-26T09:00:00Z", "pm25": 61.4}, {"ts": "2026-11-26T10:00:00Z", "pm25": 51.8}, 
+HTTP 200, 0.015359s
+
+### open alerts
+$ curl /alerts
+[{"id": "f073b7b2-5abd-4574-b91f-466557ccd3b7", "kind": "flood_warning", "domain": "flood", "neighbourhood": "nima", "device_id": "fl-nima-001", "opened_at": "2026-11-23T21:21:33Z", "status": "open", "reason": "TEST ROW: drain level 120 cm, above the 100 cm warning line"}]
+HTTP 200, 0.016554s
+
+### citizen report
+$ curl -X POST -H Content-Type: application/json -d {"category":"flooding","description":"Drain blocked near the market","lat":5.55,"lon":-0.21} /reports
+{"id": "626a41ee-3461-4219-bded-7c028b260084"}
+HTTP 201, 0.010207s
+
+### open data, per neighbourhood only
+$ curl /open-data/air_quality?from=2026-11-23T21:21:33Z&to=2026-11-26T21:21:33Z
+[{"domain": "air_quality", "neighbourhood": "asylum-down", "hour": "2026-11-23T21:00:00Z", "avg": 54.28157894736843, "min": 45.5, "max": 66.5, "count": 38}, {"domain": "air_quality", "neighbourhood": "east-legon", "hour": "2026-11-23T21:00:00Z", "avg": 48.871052631578934, "min": 37.1, "max": 58.7, "count": 38}, {"domain": "air_quality", "neighbourhood": "jamestown", "hour": "2026-11-23T21:00:00Z", "avg": 60.73157894736841, "min": 49.9, "max": 71.1, "count": 38}, {"domain": "air_quality", "neighbourhood": "makola", "hour": "2026-11-23T21:00:00Z", "avg": 64.65263157894738, "min": 52.1, "max": 79
+HTTP 200, 0.016406s
+
+## errors
+### forecast for a bin, not an air sensor
+$ curl /predictions/pm25?station=wb-makola-001
+{"error": "station must be an air-quality device (aq-...)"}
+HTTP 400, 0.015891s
+
+### unknown device
+$ curl /predictions/pm25?station=aq-nowhere-001
+{"error": "no readings for aq-nowhere-001"}
+HTTP 404, 0.012243s
+
+### bad horizon
+$ curl /predictions/pm25?station=aq-makola-001&horizon_h=12
+{"error": "horizon_h must be one of 24, 48"}
+HTTP 400, 0.008881s
+
+### missing from/to
+$ curl /readings?device_id=aq-nima-001
+{"error": "from is required"}
+HTTP 400, 0.008242s
+
+### report with a phone number field
+$ curl -X POST -H Content-Type: application/json -d {"category":"waste","description":"x","lat":5.5,"lon":-0.2,"phone":"0240000000"} /reports
+{"error": "Additional properties are not allowed ('phone' was unexpected)"}
+HTTP 400, 0.007718s
+
+### database down
+$ curl /readings/latest
+{"error": "database unavailable"}
+HTTP 503, 0.003513s
+

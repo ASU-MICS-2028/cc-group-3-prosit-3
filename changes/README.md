@@ -66,7 +66,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #30 -->
 
-<!-- #31 -->
+- [#31](31-prediction-api.md) — SmartCity API, every contract endpoint, PM2.5 forecast on a naive baseline (Lab 13 Part D) — Joseph
 
 <!-- #32 -->
 
