@@ -57,7 +57,7 @@ What the AMA gets back:
 - **Flood:** Accra floods every year; people are stranded and property and lives are lost. Early warning lets officials act before and during the event.
 - **Air quality:** cleaner air means fewer airborne-disease outbreaks and better public health.
 
-**The main risk is adoption, not cost.** About 86% of the bill is servers that run all the time, so if few people use the system the cost barely falls and the cost per user rises. The system needs policies and processes that make officials and residents act on it. If a donor funds the pilot, the AMA also needs a plan for when the grant ends.
+**Adoption is a major risk.** About 86% of the pilot estimate is in the database, API, broker and load balancer lines. Those costs are mostly tied to keeping capacity online, so low usage raises the cost per user. The system needs policies and processes that make officials and residents act on it. If a donor funds the pilot, the AMA also needs a plan for when the grant ends.
 
 ## What we would cut at half the budget
 
@@ -80,4 +80,17 @@ We would **not** cut:
 
 ## City-wide projection
 
-_To add: the same formulas at 5,000 sensors and Greater Accra users, to show how costs scale._
+**Approximate projection scaled from the pilot. Only the pilot was priced in the AWS Pricing Calculator.** The city-wide scenario assumes 5,000 sensors and 110,000 monthly active users across Greater Accra. Both are planning inputs. At the pilot's reading rate and retention, this gives 216 million readings per 30-day month and 648 million retained readings. The pilot's storage sizing rule gives about 200 GB with headroom. The same 25 visits per user and 0.5 MB per visit give 1,375 GB of monthly outbound traffic.
+
+| Item | Scaling assumption | USD/month |
+|---|---|---:|
+| Database | Allow four times the pilot line for compute, storage and snapshots | 172.12 |
+| API servers | Budget for four pilot-sized instances on average, twice the pilot average | 82.50 |
+| Load balancer | Keep one ALB and allow twice the pilot line for more traffic | 46.18 |
+| Egress | 1,375 GB at the pilot's effective rate of USD 0.154 per GB | 211.75 |
+| MQTT broker | Allow four times the pilot line for more device traffic | 43.08 |
+| **Total** | | **555.63** |
+
+The model projects **10× the sensors and 11× the users for about 4× the monthly cloud cost**. Egress becomes the largest line, and the cost per monthly active user falls from about **1.4 US cents to 0.5 US cents**. This scenario shows economies of scale because the modeled cost of keeping capacity online grows more slowly than the user count.
+
+The city-wide scenario keeps the load balancer and API auto-scaling to handle peaks and retain API failover. The four-instance average and the database, broker and load balancer allowances need validation with workload tests and fresh pricing. If data per visit doubles, egress alone rises to about USD 424 per month and the total reaches about USD 767 under the same effective rate and other assumptions. The pilot exclusions also apply here.

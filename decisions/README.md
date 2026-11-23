@@ -28,7 +28,7 @@ Entry: `- [#<n>: <decision>](<file>.md) — <status>`
 
 <!-- #11 -->
 
-<!-- #12 -->
+- [#12 — Size the Makola pilot and keep API scaling in the city-wide projection](12-makola-pilot-budget-assumptions.md)
 
 <!-- #13 -->
 
