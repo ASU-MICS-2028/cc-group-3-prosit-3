@@ -46,7 +46,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#20](20-l12-bridge.md) — MQTT bridge with local buffering (L12-C) — Joseph — done
 
-- [#21](21-l12-device-creds.md) — Per-device credentials and revocation drill (L12-E) — Joseph — stub
+- [#21](21-l12-device-creds.md) — Per-device credentials and revocation drill (L12-E) — Joseph — done
 
 - [#22](22-l12-storage.md) — Time-series storage and hourly rollup (L12-C) — Elise — stub
 

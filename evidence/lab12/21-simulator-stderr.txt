@@ -1,0 +1,17 @@
+dropped aq-nima-001 seq 8: Message publish failed: The client is not currently connected.
+refused aq-nima-001: Not authorized
+refused aq-nima-001: Not authorized
+dropped aq-nima-001 seq 9: Message publish failed: The client is not currently connected.
+dropped aq-nima-001 seq 10: Message publish failed: The client is not currently connected.
+refused aq-nima-001: Not authorized
+dropped aq-nima-001 seq 11: Message publish failed: The client is not currently connected.
+dropped aq-nima-001 seq 12: Message publish failed: The client is not currently connected.
+refused aq-nima-001: Not authorized
+dropped aq-nima-001 seq 13: Message publish failed: The client is not currently connected.
+dropped aq-nima-001 seq 14: Message publish failed: The client is not currently connected.
+dropped aq-nima-001 seq 15: Message publish failed: The client is not currently connected.
+dropped aq-nima-001 seq 16: Message publish failed: The client is not currently connected.
+dropped aq-nima-001 seq 17: Message publish failed: The client is not currently connected.
+dropped aq-nima-001 seq 18: Message publish failed: The client is not currently connected.
+refused aq-nima-001: Not authorized
+dropped aq-nima-001 seq 19: Message publish failed: The client is not currently connected.

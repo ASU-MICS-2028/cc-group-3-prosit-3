@@ -6,7 +6,8 @@ first. One path for normal running and outages, and a crash loses nothing that w
 repeats are harmless because (device_id, ts) is unique and inserts use ON CONFLICT DO NOTHING.
 
 Run:   DATABASE_URL=postgresql://smartcity:<password>@localhost:5432/smartcity python3 ingest/bridge.py
-Env:   MQTT_HOST (localhost), MQTT_PORT (1883), SPOOL (ingest/spool.jsonl), BATCH_MAX (500)
+Env:   MQTT_HOST (localhost), MQTT_PORT (1883), MQTT_USERNAME/MQTT_PASSWORD (from ingest/device_credentials.csv),
+       SPOOL (ingest/spool.jsonl), BATCH_MAX (500)
 """
 import json
 import os
@@ -125,12 +126,16 @@ def main():
             print(f"rejected {msg.topic}: {e}", file=sys.stderr, flush=True)
 
     def on_connect(client, userdata, flags, reason, props):
+        if reason.is_failure:
+            print(f"MQTT refused: {reason}", file=sys.stderr, flush=True)
+            return
         client.subscribe("accra/+/+/+", qos=1)
         print(f"connected to MQTT ({reason})", flush=True)
 
     # Fixed client id + clean_session=False: the broker keeps QoS 1 readings for us while the bridge is down.
     c = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="bridge-1", clean_session=False)
     c.on_message, c.on_connect = on_message, on_connect
+    c.username_pw_set(os.environ.get("MQTT_USERNAME"), os.environ.get("MQTT_PASSWORD"))
     c.connect_async(os.environ.get("MQTT_HOST", "localhost"), int(os.environ.get("MQTT_PORT", "1883")))
     c.reconnect_delay_set(1, 30)
     c.loop_start()  # paho's thread receives and reconnects; this thread writes to the DB

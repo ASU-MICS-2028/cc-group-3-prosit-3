@@ -34,6 +34,8 @@ Every note is listed below under a topic.
 
 - [Paho raises on publish while the broker is down; catch it or the sensor dies](paho-publish-raises-while-broker-is-down.md)
 
+- [Revoke one MQTT device by deleting its password and sending Mosquitto SIGHUP; it is cut off at once](mosquitto-reload-disconnects-a-revoked-device.md)
+
 - [Sync downloads with a running-number bookmark can skip records unless numbering is ordered](sync-bookmark-lock-avoids-skipped-records.md)
 
 - [WebRTC results: direct paths worked, Chrome Slow 3G does not throttle media, TURN cost is a range](webrtc-testing-and-turn-findings.md)

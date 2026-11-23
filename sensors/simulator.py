@@ -10,6 +10,7 @@ Every tick is 10 simulated seconds. Air and waste publish every 60 s; flood ever
 or every tick while the water is rising. --speed 60 runs an hour of the city per minute.
 """
 import argparse
+import csv
 import json
 import math
 import os
@@ -115,17 +116,30 @@ def run(ticks, speed, start, rng, publish):
             time.sleep(TICK_S / speed)
 
 
-def mqtt_publisher(host, port):
+def load_passwords(path):
+    """username -> password from ingest/devices.py's CSV; {} if missing, and the broker then refuses the device."""
+    try:
+        with open(path) as f:
+            return {row["username"]: row["password"] for row in csv.DictReader(f)}
+    except FileNotFoundError:
+        return {}
+
+
+def mqtt_publisher(host, port, passwords):
     import paho.mqtt.client as mqtt  # only needed when talking to a broker
 
     clients = {}
 
+    def on_connect(client, userdata, flags, reason, props):
+        if reason.is_failure:  # e.g. a revoked device: "Not authorized"
+            print(f"refused {userdata}: {reason}", file=sys.stderr, flush=True)
+
     def publish(dev, r):
         c = clients.get(dev["device_id"])
         if c is None:
-            c = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id=dev["device_id"])
-            # Per-device credentials come in #21; until then the dev broker allows anonymous.
-            c.username_pw_set(dev["device_id"], os.environ.get("SIM_PASSWORD") or None)
+            c = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id=dev["device_id"], userdata=dev["device_id"])
+            c.username_pw_set(dev["device_id"], passwords.get(dev["device_id"]))  # its own password (#21)
+            c.on_connect = on_connect
             c.connect_async(host, port)  # paho keeps retrying in the background if the broker is down
             c.loop_start()
             for _ in range(50):  # give the first connection up to 5 s before publishing
@@ -153,13 +167,15 @@ def main():
     ap.add_argument("--speed", type=float, default=1.0, help="simulated seconds per real second; 0 = no sleeping")
     ap.add_argument("--seed", type=int, help="fix the random numbers for a repeatable run")
     ap.add_argument("--dry-run", action="store_true", help="print readings instead of publishing")
+    ap.add_argument("--creds", default=os.path.join(os.path.dirname(__file__), "..", "ingest", "device_credentials.csv"),
+                    help="per-device passwords from ingest/devices.py init")
     a = ap.parse_args()
     rng = random.Random(a.seed)
     start = datetime.now(timezone.utc).replace(microsecond=0)
     if a.dry_run:
         run(a.ticks, a.speed, start, rng, lambda dev, r: print(topic(dev), json.dumps(r), flush=True))
         return 0
-    publish, clients = mqtt_publisher(a.host, a.port)
+    publish, clients = mqtt_publisher(a.host, a.port, load_passwords(a.creds))
     try:
         run(a.ticks, a.speed, start, rng, publish)
     except KeyboardInterrupt:
