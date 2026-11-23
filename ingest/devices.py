@@ -1,6 +1,6 @@
 """Per-device MQTT credentials and revocation (#21, Lab 12 Part E).
 
-  python3 ingest/devices.py init           # a new password for every simulator device and the bridge
+  python3 ingest/devices.py init           # a new password for every device (simulator + OpenAQ feeder) and the bridge
   python3 ingest/devices.py revoke <id>    # remove one device and reload the broker; the rest carry on
 
 Files written (all gitignored, never commit them):
@@ -18,6 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "sensors"))
+from openaq import DEVICE as OPENAQ  # noqa: E402  the real-data feeder (#19)
 from simulator import FLEET  # noqa: E402  one list of devices for the simulator and the broker
 
 CONF = ROOT / "ingest" / "mosquitto"
@@ -26,11 +27,12 @@ CREDS = ROOT / "ingest" / "device_credentials.csv"
 IMAGE = "eclipse-mosquitto:2.0.20"
 COMPOSE = ["docker", "compose", "-f", str(ROOT / "ingest" / "compose.yaml")]
 BRIDGE = "bridge"
+DEVICES = [(d, n, dom) for d, n, dom, _ in FLEET] + [OPENAQ]
 
 
 def acl_text(users):
     """Mosquitto ACL for the given usernames. Anyone not listed gets nothing (the ACL file denies by default)."""
-    own = {d: f"accra/{n}/{dom}/{d}" for d, n, dom, _ in FLEET}
+    own = {d: f"accra/{n}/{dom}/{d}" for d, n, dom in DEVICES}
     lines = [f"user {BRIDGE}", "topic read accra/#", ""] if BRIDGE in users else []
     for u in users:
         if u in own:
@@ -64,7 +66,7 @@ def mosquitto_passwd(*args):
 
 
 def init():
-    creds = {u: secrets.token_urlsafe(24) for u in [BRIDGE, *(d for d, *_ in FLEET)]}
+    creds = {u: secrets.token_urlsafe(24) for u in [BRIDGE, *(d for d, *_ in DEVICES)]}
     write_files(creds)
     PASSWD.write_text("".join(f"{u}:{p}\n" for u, p in creds.items()))
     private()

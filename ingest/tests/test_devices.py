@@ -24,6 +24,10 @@ class AclTest(unittest.TestCase):
         self.assertEqual(r["aq-nima-001"], ["topic write accra/nima/air_quality/aq-nima-001"])
         self.assertEqual(r["wb-makola-002"], ["topic write accra/makola/waste/wb-makola-002"])
 
+    def test_openaq_feeder_gets_its_own_topic(self):
+        self.assertEqual(rules(acl_text(["aq-madina-001"]))["aq-madina-001"],
+                         ["topic write accra/madina/air_quality/aq-madina-001"])
+
     def test_bridge_only_reads(self):
         self.assertEqual(rules(acl_text([BRIDGE]))[BRIDGE], ["topic read accra/#"])
 

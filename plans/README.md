@@ -42,7 +42,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#18](18-l12-broker-simulator.md) — MQTT broker and three-domain sensor simulator (L12-A/B) — Joseph — done
 
-- [#19](19-openaq-feeder.md) — OpenAQ feeder for real Accra PM2.5 — Joseph — stub
+- [#19](19-openaq-feeder.md) — OpenAQ feeder for real Accra PM2.5 — Joseph — done
 
 - [#20](20-l12-bridge.md) — MQTT bridge with local buffering (L12-C) — Joseph — done
 
