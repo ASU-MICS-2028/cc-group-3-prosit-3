@@ -54,7 +54,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #24 -->
 
-<!-- #25 -->
+- [#25](25-flood-alerts.md) — Flood alerts: warning line and rising-fast rule behind GET /alerts — Joseph
 
 <!-- #26 -->
 

@@ -22,7 +22,7 @@ For data, run the bridge and simulator (ingest/README.md). `--speed 0` fills two
 |---|---|
 | `GET /readings/latest` | one reading per device; `domain`, `neighbourhood` filters |
 | `GET /readings` | `device_id`, `from`, `to` required; `interval=1h` for hourly aggregates |
-| `GET /alerts` | from the `alerts` table; flood rules that fill it are #25 |
+| `GET /alerts` | opened and closed by `alerts.py` (below); `status=closed` for history |
 | `GET /predictions/pm25` | `station` = an `aq-` device, `horizon_h` 24 or 48 |
 | `POST /reports` | checked against `CitizenReport`; unknown fields such as a phone number are refused |
 | `GET /open-data/{domain}` | hourly per neighbourhood, no device ids; default last 7 days |
@@ -31,8 +31,17 @@ Errors are JSON `{"error": "..."}`: 400 bad input, 404 unknown device or path, 5
 
 **Forecast.** Until Elise's model is registered (#30), `/predictions/pm25` serves a naive baseline. Each future hour gets the hourly mean from the same hour a day earlier, or two days earlier for the second day of a 48 h forecast. With no history that far back it uses the latest hour. `model_version` says `naive-seasonal-24h`. To switch to the real model, change `forecast()` and `MODEL_VERSION`. The response shape stays the same. Every point served goes into `predictions`, so the drift log (#32) can compare it with what was measured.
 
+**Flood alerts (#25).** `alerts.py` runs next to the API (`python3 api/alerts.py`, every 30 s; `--once` for cron). It checks each drain gauge's latest reading:
+
+- **Flood warning:** the water is at or above the **60 cm** warning line. It closes when the water is back below 50 cm, so a level hovering at the line doesn't flap.
+- **Rising fast** (`anomaly`): the water rose **15 cm or more in 15 minutes**. It closes when the rise over 15 minutes is under 5 cm. This usually fires before the warning.
+
+Each alert's `reason` is the sentence residents see, with the numbers, e.g. "Drain level 69 cm, at or above the 60 cm warning line". Times are the readings' own, so buffered data opens alerts at the moment it happened. The lines are one setting for every drain (`WARN_CM`, `RISE_CM` at the top of `alerts.py`); real drains need their own once real gauges are in.
+
+Evidence: `PY=python3 bash evidence/lab12/25-alerts-run.sh` runs 24 simulated hours at 600×. Four storms each opened a rising-fast alert and then a warning, and all eight closed after the water drained. The rising-fast alert came 7 to 23 minutes before the warning.
+
 **Before AWS (#35):** sign-in and a rate limit on `POST /reports` (auth is still open in the contract), CORS narrowed to the dashboard's domain, a connection pool if the load test asks for one.
 
 Evidence: `PY=python3 bash evidence/lab13/31-api-run.sh` loads ~50 h of simulated readings, calls every endpoint plus the error cases, and stops the DB for the last call. Output in `evidence/lab13/31-*.txt`.
 
-Tests: `python3 -m unittest discover api/tests -v` (forecast and report validation; needs `contracts/requirements.txt`).
+Tests: `python3 -m unittest discover api/tests -v` (forecast, report validation, alert rules; needs `contracts/requirements.txt`).

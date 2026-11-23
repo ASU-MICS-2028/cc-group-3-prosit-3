@@ -54,7 +54,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#24](24-l12-mobile-shell.md) — Citizen mobile app shell with live readings (L12-D) — Perfect — stub
 
-- [#25](25-flood-alerts.md) — Flood early-warning alerts (API + app) — Joseph — stub
+- [#25](25-flood-alerts.md) — Flood early-warning alerts (API + app) — Joseph — done (API; app is #24)
 
 - [#26](26-l12-report.md) — Lab 12 report (300 words) — Joseph — stub
 

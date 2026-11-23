@@ -1,0 +1,18 @@
+     device_id      | min_cm | max_cm | readings 
+--------------------+--------+--------+----------
+ fl-asylum-down-001 |     22 |     95 |     1865
+ fl-nima-001        |     15 |     82 |     1917
+(2 rows)
+
+     device_id      |     kind      | status |       opened_at        |       closed_at        |  lasted  |                        reason                         
+--------------------+---------------+--------+------------------------+------------------------+----------+-------------------------------------------------------
+ fl-asylum-down-001 | anomaly       | closed | 2026-11-24 05:21:11+00 | 2026-11-24 05:58:11+00 | 00:37:00 | Drain level rose 22 cm in 15 minutes, now 51 cm
+ fl-asylum-down-001 | flood_warning | closed | 2026-11-24 05:28:31+00 | 2026-11-24 06:28:11+00 | 00:59:40 | Drain level 62 cm, at or above the 60 cm warning line
+ fl-nima-001        | anomaly       | closed | 2026-11-24 06:06:11+00 | 2026-11-24 06:43:41+00 | 00:37:30 | Drain level rose 19 cm in 15 minutes, now 41 cm
+ fl-nima-001        | flood_warning | closed | 2026-11-24 06:28:51+00 | 2026-11-24 06:58:41+00 | 00:29:50 | Drain level 69 cm, at or above the 60 cm warning line
+ fl-asylum-down-001 | anomaly       | closed | 2026-11-24 10:22:11+00 | 2026-11-24 10:46:11+00 | 00:24:00 | Drain level rose 21 cm in 15 minutes, now 51 cm
+ fl-asylum-down-001 | flood_warning | closed | 2026-11-24 10:37:51+00 | 2026-11-24 11:01:11+00 | 00:23:20 | Drain level 71 cm, at or above the 60 cm warning line
+ fl-nima-001        | anomaly       | closed | 2026-11-24 14:30:21+00 | 2026-11-24 15:07:31+00 | 00:37:10 | Drain level rose 21 cm in 15 minutes, now 40 cm
+ fl-nima-001        | flood_warning | closed | 2026-11-24 14:52:51+00 | 2026-11-24 15:29:31+00 | 00:36:40 | Drain level 69 cm, at or above the 60 cm warning line
+(8 rows)
+
