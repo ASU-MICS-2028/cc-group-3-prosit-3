@@ -44,7 +44,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#19](19-openaq-feeder.md) — OpenAQ feeder for real Accra PM2.5 — Joseph — stub
 
-- [#20](20-l12-bridge.md) — MQTT bridge with local buffering (L12-C) — Joseph — stub
+- [#20](20-l12-bridge.md) — MQTT bridge with local buffering (L12-C) — Joseph — done
 
 - [#21](21-l12-device-creds.md) — Per-device credentials and revocation drill (L12-E) — Joseph — stub
 

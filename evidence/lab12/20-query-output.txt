@@ -1,0 +1,22 @@
+     tbl     | rows | devices 
+-------------+------+---------
+ air_quality |  125 |       5
+ waste       |  100 |       4
+ flood       |   64 |       2
+(3 rows)
+
+     device_id      | readings | min | max | missing 
+--------------------+----------+-----+-----+---------
+ aq-asylum-down-001 |       25 |   0 |  24 |       0
+ aq-east-legon-001  |       25 |   0 |  24 |       0
+ aq-jamestown-001   |       25 |   0 |  24 |       0
+ aq-makola-001      |       25 |   0 |  24 |       0
+ aq-nima-001        |       25 |   0 |  24 |       0
+ fl-asylum-down-001 |       39 |   0 |  38 |       0
+ fl-nima-001        |       25 |   0 |  24 |       0
+ wb-jamestown-001   |       25 |   0 |  24 |       0
+ wb-makola-001      |       25 |   0 |  24 |       0
+ wb-makola-002      |       25 |   0 |  24 |       0
+ wb-nima-001        |       25 |   0 |  24 |       0
+(11 rows)
+

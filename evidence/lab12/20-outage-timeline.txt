@@ -1,0 +1,4 @@
+00:42:33 stopping DB
+00:42:40 DB down; spool holds 33 readings
+00:42:46 starting DB
+00:43:18 spool after recovery: 0 readings
