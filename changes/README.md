@@ -112,7 +112,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #53 -->
 
-<!-- #54 -->
+- [#54](54-not-built.md) — Decision: what we are not building, and why — Joseph
 
 <!-- #55 -->
 

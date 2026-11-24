@@ -112,7 +112,7 @@ Entry: `- [#<n>: <decision>](<file>.md) — <status>`
 
 <!-- #53 -->
 
-<!-- #54 -->
+- [#54: What we are not building, and why](54-not-built.md) — proposed
 
 <!-- #55 -->
 

@@ -110,7 +110,7 @@ sensors (simulated + OpenAQ) ──MQTT──▶ broker ──▶ bridge (buffer
                      citizen mobile app ◀──┘
 ```
 
-Traffic, water-pipe and energy sensors, and computer vision, reinforcement learning, digital twins and federated learning are **not built**. The reasons will be recorded as a decision (issue #54).
+Traffic, water-pipe and energy sensors, and computer vision, reinforcement learning, digital twins and federated learning are **not built**. Why, item by item, and what we have instead: [`decisions/54-not-built.md`](./decisions/54-not-built.md).
 
 ---
 
