@@ -40,7 +40,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #17 -->
 
-<!-- #18 -->
+- [#18](18-broker-simulator.md) — MQTT broker and three-domain sensor simulator — Joseph
 
 <!-- #19 -->
 

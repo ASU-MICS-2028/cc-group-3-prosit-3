@@ -40,7 +40,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#17](17-design-system.md) — Design system and screen set for web and mobile — Perfect — stub
 
-- [#18](18-l12-broker-simulator.md) — MQTT broker and three-domain sensor simulator (L12-A/B) — Joseph — stub
+- [#18](18-l12-broker-simulator.md) — MQTT broker and three-domain sensor simulator (L12-A/B) — Joseph — done
 
 - [#19](19-openaq-feeder.md) — OpenAQ feeder for real Accra PM2.5 — Joseph — stub
 

@@ -45,4 +45,4 @@ Every part builds against the shared formats in [`contracts/`](./contracts/READM
 | `notes` | Front matter, `## Related`, and index link for every note |
 | `links` | No broken relative links in Markdown |
 | `unit` | Tests for the checks themselves |
-| `contracts` | Contract examples match the schema; the API lists the agreed paths |
+| `contracts` | Contract examples match the schema; the API lists the agreed paths; simulated readings and topics match the contract |

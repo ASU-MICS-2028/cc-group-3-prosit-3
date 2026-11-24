@@ -44,3 +44,4 @@ jobs:
           python-version: "3.12"
       - run: pip install -r contracts/requirements.txt
       - run: python3 -m unittest discover contracts/tests -v
+      - run: python3 -m unittest discover sensors/tests -v
