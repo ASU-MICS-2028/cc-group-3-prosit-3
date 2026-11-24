@@ -132,6 +132,25 @@ class CheckChangeFile(unittest.TestCase):
         r = self.check(labels="docs,skip-change-file")
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
+    def test_decision_with_wrong_number_fails(self):
+        self.commit("changes/2-a.md", "decisions/7-x.md", index_links=["2-a.md"])
+        r = self.check()
+        self.assertEqual(r.returncode, 1)
+        self.assertIn("decisions/2-", r.stdout)
+
+    def test_unlisted_decision_fails(self):
+        self.commit("changes/2-a.md", "decisions/2-x.md", index_links=["2-a.md"])
+        r = self.check()
+        self.assertEqual(r.returncode, 1)
+        self.assertIn("decisions/README.md", r.stdout)
+
+    def test_listed_decision_with_matching_number_passes(self):
+        (self.repo / "decisions").mkdir()
+        (self.repo / "decisions" / "README.md").write_text("- [#2: x](2-x.md) — proposed\n")
+        self.commit("changes/2-a.md", "decisions/2-x.md", index_links=["2-a.md"])
+        r = self.check()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
     def test_two_change_files_fails(self):
         self.commit("changes/2-a.md", "changes/3-b.md", index_links=["2-a.md", "3-b.md"])
         r = self.check()
