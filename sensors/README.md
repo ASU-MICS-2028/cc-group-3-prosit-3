@@ -31,4 +31,29 @@ docker compose -f ingest/compose.yaml exec mosquitto mosquitto_sub -u bridge \
 
 Tests: `python3 -m unittest discover sensors/tests -v` (needs `contracts/requirements.txt`): a simulated day validates against the schema, topics match, `(device_id, ts)` is unique, timing is right.
 
-Next: the OpenAQ feeder (#19).
+## OpenAQ feeder (`openaq.py`, #19)
+
+Publishes the last 24 h of **real** PM2.5 from Madina Zongo Junction (OpenAQ location 3025587, a low-cost sensor in Madina) as device `aq-madina-001` on `accra/madina/air_quality/aq-madina-001`. It uses the same schema and broker as the simulator, with `source: "openaq"`. `devices.py init` gives it a password like any other device.
+
+```bash
+python3 sensors/openaq.py --dry-run    # print them
+python3 sensors/openaq.py              # publish (broker and bridge running)
+```
+
+It reads OpenAQ's public S3 archive, which needs no API key. The v3 API needs one, and we don't have one. The archive runs a few days behind, so "last 24 h" means the 24 h before the station's newest archived reading, with the timestamps as measured. `--location` picks another station.
+
+**Real vs simulated** (`PY=python3 bash evidence/lab12/19-openaq-run.sh`; output in `evidence/lab12/19-query-output.txt`):
+
+| | Real (Madina) | Simulator (5 stations) |
+|---|---|---|
+| Readings in 24 h | 35, irregular | 1,384 each, one a minute |
+| Mean | 24.5 µg/m³ | 52.7 to 66.9 |
+| Std dev | 8.4 | 13.7 to 13.9 |
+| Range | 14.9 to 61.9 | 25.1 to 110.6 |
+| Mean step between readings | 4.9 | 5.5 to 5.9 |
+
+The real station was less than half as polluted and about 40 % less variable than the simulator. That's mostly because the simulator applies its harmattan ×1.8 from 1 November, and the real air hadn't caught up by 18 to 19 November. Reading-to-reading jumps are similar (about 5 µg/m³), so the noise term is about right, but the real sensor reports only every ~17 min with gaps, which the dashboard and the forecast must tolerate.
+
+One station and one day is not enough to recalibrate the simulator, so the knobs are unchanged.
+
+Next: flood alerts (#25).

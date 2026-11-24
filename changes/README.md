@@ -42,7 +42,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 - [#18](18-broker-simulator.md) — MQTT broker and three-domain sensor simulator — Joseph
 
-<!-- #19 -->
+- [#19](19-openaq-feeder.md) — OpenAQ feeder: 24 h of real Madina PM2.5 through the same pipeline — Joseph
 
 - [#20](20-bridge.md) — MQTT bridge with local buffering (Lab 12 Part C) — Joseph
 

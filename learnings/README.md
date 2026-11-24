@@ -36,6 +36,8 @@ Every note is listed below under a topic.
 
 - [Offline app design: save locally first, encrypt, queue, and let a person settle conflicts](offline-conflicts-are-shown-to-a-person.md)
 
+- [OpenAQ's v3 API needs a key, but its public S3 archive does not; the archive runs a few days behind](openaq-archive-needs-no-key-but-lags-days.md)
+
 - [Paho raises on publish while the broker is down; catch it or the sensor dies](paho-publish-raises-while-broker-is-down.md)
 
 - [Revoke one MQTT device by deleting its password and sending Mosquitto SIGHUP; it is cut off at once](mosquitto-reload-disconnects-a-revoked-device.md)
