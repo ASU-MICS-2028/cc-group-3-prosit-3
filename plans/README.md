@@ -112,7 +112,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 <!-- #53 -->
 
-<!-- #54 -->
+- [#54](54-not-built-decision.md) — Record what we are not building, and why — Joseph — done
 
 <!-- #55 -->
 
