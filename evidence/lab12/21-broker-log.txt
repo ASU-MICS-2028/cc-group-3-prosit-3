@@ -1,0 +1,6 @@
+1795463616: Client aq-nima-001 disconnected.
+1795463617: Client aq-nima-001 disconnected, not authorised.
+1795463619: Client aq-nima-001 disconnected, not authorised.
+1795463623: Client aq-nima-001 disconnected, not authorised.
+1795463631: Client aq-nima-001 disconnected, not authorised.
+1795463647: Client aq-nima-001 disconnected, not authorised.

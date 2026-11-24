@@ -1,5 +1,6 @@
 # Local MQTT broker and time-series DB. From the repo root:
 #   cp ingest/.env.example ingest/.env   (then set a password)
+#   python3 ingest/devices.py init        (MQTT passwords + ACL)
 #   docker compose -f ingest/compose.yaml up -d
 services:
   mosquitto:
@@ -7,7 +8,8 @@ services:
     ports:
       - "127.0.0.1:1883:1883"
     volumes:
-      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      # the whole folder, so the broker sees passwd/acl after devices.py rewrites them
+      - ./mosquitto:/mosquitto/config:ro
 
   timescaledb:
     image: timescale/timescaledb:2.17.2-pg16

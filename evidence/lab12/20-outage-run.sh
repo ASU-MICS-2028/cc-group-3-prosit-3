@@ -6,6 +6,9 @@ PY=${PY:-python3}; E=evidence/lab12
 dc() { docker compose -f ingest/compose.yaml --env-file ingest/.env "$@"; }
 set -a; . ingest/.env; set +a
 export DATABASE_URL="postgresql://smartcity:${POSTGRES_PASSWORD}@localhost:5432/smartcity"
+# since #21 the broker needs the bridge's password (from python3 ingest/devices.py init)
+export MQTT_USERNAME=bridge
+MQTT_PASSWORD=$(awk -F, '$1 == "bridge" {print $2}' ingest/device_credentials.csv); export MQTT_PASSWORD
 dc exec -T timescaledb psql -q -U smartcity -c "TRUNCATE air_quality, waste, flood" >/dev/null
 rm -f ingest/spool.jsonl
 "$PY" ingest/bridge.py > $E/20-bridge-log.txt 2>&1 & BRIDGE=$!

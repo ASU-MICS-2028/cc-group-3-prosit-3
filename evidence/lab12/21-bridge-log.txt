@@ -1,0 +1,23 @@
+connected to MQTT (Success)
+wrote 9
+wrote 1
+wrote 1
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 11
+wrote 10
+wrote 10
+wrote 10
+wrote 10
+wrote 10
+wrote 10
+wrote 10
+wrote 10
+wrote 10
+wrote 10
+wrote 10
+wrote 10

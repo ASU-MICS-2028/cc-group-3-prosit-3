@@ -46,7 +46,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 - [#20](20-bridge.md) — MQTT bridge with local buffering (Lab 12 Part C) — Joseph
 
-<!-- #21 -->
+- [#21](21-device-creds.md) — Per-device MQTT credentials and revocation drill (Lab 12 Part E) — Joseph
 
 <!-- #22 -->
 

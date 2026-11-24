@@ -8,6 +8,7 @@
 passwd
 *.passwd
 mosquitto/acl*
+ingest/mosquitto/acl
 *_credentials.csv
 *.tfvars
 !example.tfvars
