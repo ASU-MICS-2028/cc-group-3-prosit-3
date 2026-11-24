@@ -1,0 +1,11 @@
+Stack: 5960 vCPU-hours and 10700 GB-hours a month, 50% CPU utilisation
+
+region           place         kWh/month   g/kWh kg CO2e/month   CFE
+af-south-1       Cape Town          19.1   757.4         14.47      
+us-east-1        N. Virginia        19.1   365.1          6.97      
+africa-south1    Johannesburg       20.9   641.4         13.41   15%
+europe-west1     Belgium            20.9   126.4          2.64   79%
+europe-west9     Paris              20.9    15.8          0.33   96%
+
+af-south-1 vs us-east-1: 2.1x the CO2e
+af-south-1 over a 4-week prosit: 13.5 kg CO2e
