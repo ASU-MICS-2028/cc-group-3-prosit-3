@@ -30,7 +30,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 - [#12 — Model the Makola pilot and project city-wide costs](12-budget-model.md)
 
-<!-- #13 -->
+- [#13](13-sustainability.md) — Sustainability estimate and region choice (Lab 11 Part D) — Joseph
 
 <!-- #14 -->
 
@@ -116,7 +116,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #55 -->
 
-<!-- #56 -->
+- [#56](56-pr-review-rule-and-ci-hygiene.md) — Review open PRs first; CI hygiene — Joseph
 
 <!-- #57 -->
 

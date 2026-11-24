@@ -30,7 +30,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#12](12-l11-budget-model.md) — SmartCity budget model at stated sensor volume (L11-C) — Elise — in progress
 
-- [#13](13-l11-sustainability.md) — Sustainability estimate and region choice (L11-D) — Joseph — stub
+- [#13](13-l11-sustainability.md) — Sustainability estimate and region choice (L11-D) — Joseph — done
 
 - [#14](14-l11-report.md) — Lab 11 report (300 words) — Eugene — stub
 
@@ -116,7 +116,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 <!-- #55 -->
 
-<!-- #56 -->
+- [#56](56-pr-review-rule-and-ci-hygiene.md) — Review open PRs first; CI hygiene — Joseph — done
 
 <!-- #57 -->
 
