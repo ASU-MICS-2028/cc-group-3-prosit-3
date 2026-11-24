@@ -28,7 +28,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#11](11-l11-optimisations.md) — Two cost optimisations with before/after (L11-B) — Eugene — stub
 
-- [#12](12-l11-budget-model.md) — SmartCity budget model at stated sensor volume (L11-C) — Elise — stub
+- [#12](12-l11-budget-model.md) — SmartCity budget model at stated sensor volume (L11-C) — Elise — in progress
 
 - [#13](13-l11-sustainability.md) — Sustainability estimate and region choice (L11-D) — Joseph — done
 
