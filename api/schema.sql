@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS alerts (
   opened_at timestamptz NOT NULL DEFAULT now(),
   status text NOT NULL DEFAULT 'open' CHECK (status IN ('open', 'closed')),
   reason text NOT NULL);
+ALTER TABLE alerts ADD COLUMN IF NOT EXISTS closed_at timestamptz;  -- set by api/alerts.py (#25)
 
 -- No names or phone numbers (contracts/storage.md).
 CREATE TABLE IF NOT EXISTS citizen_reports (

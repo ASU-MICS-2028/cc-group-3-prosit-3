@@ -1,0 +1,16 @@
+2026-11-24T05:21:11Z open anomaly fl-asylum-down-001 Drain level rose 22 cm in 15 minutes, now 51 cm
+2026-11-24T05:28:31Z open flood_warning fl-asylum-down-001 Drain level 62 cm, at or above the 60 cm warning line
+2026-11-24T05:58:11Z close anomaly fl-asylum-down-001 
+2026-11-24T06:06:11Z open anomaly fl-nima-001 Drain level rose 19 cm in 15 minutes, now 41 cm
+2026-11-24T06:28:11Z close flood_warning fl-asylum-down-001 
+2026-11-24T06:28:51Z open flood_warning fl-nima-001 Drain level 69 cm, at or above the 60 cm warning line
+2026-11-24T06:43:41Z close anomaly fl-nima-001 
+2026-11-24T06:58:41Z close flood_warning fl-nima-001 
+2026-11-24T10:22:11Z open anomaly fl-asylum-down-001 Drain level rose 21 cm in 15 minutes, now 51 cm
+2026-11-24T10:37:51Z open flood_warning fl-asylum-down-001 Drain level 71 cm, at or above the 60 cm warning line
+2026-11-24T10:46:11Z close anomaly fl-asylum-down-001 
+2026-11-24T11:01:11Z close flood_warning fl-asylum-down-001 
+2026-11-24T14:30:21Z open anomaly fl-nima-001 Drain level rose 21 cm in 15 minutes, now 40 cm
+2026-11-24T14:52:51Z open flood_warning fl-nima-001 Drain level 69 cm, at or above the 60 cm warning line
+2026-11-24T15:07:31Z close anomaly fl-nima-001 
+2026-11-24T15:29:31Z close flood_warning fl-nima-001 
