@@ -124,7 +124,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 <!-- #59 -->
 
-<!-- #60 -->
+- [#60](60-readme-team-progress.md) — README with team cards and live progress — Joseph — done
 
 <!-- #61 -->
 
