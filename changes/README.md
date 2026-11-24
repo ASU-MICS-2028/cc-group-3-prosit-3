@@ -98,7 +98,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #46 -->
 
-<!-- #47 -->
+- [#47](47-architecture-doc.md) — Final architecture document, first version (SmartCity AWS and integration design to follow) — Joseph
 
 <!-- #48 -->
 
