@@ -50,7 +50,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #22 -->
 
-<!-- #23 -->
+- [#23 — Scaffold the AMA dashboard](23-dashboard-shell.md)
 
 <!-- #24 -->
 

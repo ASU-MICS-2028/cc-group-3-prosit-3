@@ -50,7 +50,7 @@ Entry: `- [#<n>: <decision>](<file>.md) — <status>`
 
 <!-- #22 -->
 
-<!-- #23 -->
+- [#23 — Use React, TypeScript, and Vite for the AMA dashboard](23-dashboard-web-stack.md)
 
 <!-- #24 -->
 
