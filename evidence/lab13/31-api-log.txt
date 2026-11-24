@@ -1,0 +1,20 @@
+API on http://localhost:8000
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /readings/latest?domain=air_quality HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /readings/latest?neighbourhood=nima HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /readings?device_id=wb-makola-001&from=2026-11-23T21:21:33Z&to=2026-11-26T21:21:33Z HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /readings?device_id=fl-nima-001&from=2026-11-23T21:21:33Z&to=2026-11-26T21:21:33Z&interval=1h HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /predictions/pm25?station=aq-makola-001 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /predictions/pm25?station=aq-nima-001&horizon_h=48 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /alerts HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "POST /reports HTTP/1.1" 201 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /open-data/air_quality?from=2026-11-23T21:21:33Z&to=2026-11-26T21:21:33Z HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /predictions/pm25?station=wb-makola-001 HTTP/1.1" 400 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /predictions/pm25?station=aq-nowhere-001 HTTP/1.1" 404 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /predictions/pm25?station=aq-makola-001&horizon_h=12 HTTP/1.1" 400 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "GET /readings?device_id=aq-nima-001 HTTP/1.1" 400 -
+127.0.0.1 - - [23/Nov/2026 21:21:33] "POST /reports HTTP/1.1" 400 -
+db unavailable: connection failed: connection to server at "127.0.0.1", port 5432 failed: could not receive data from server: Connection refused
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: '5432', hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: could not receive data from server: Connection refused
+- host: 'localhost', port: '5432', hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: could not receive data from server: Connection refused
+127.0.0.1 - - [23/Nov/2026 21:21:34] "GET /readings/latest HTTP/1.1" 503 -
