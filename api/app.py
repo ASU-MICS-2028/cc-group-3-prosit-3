@@ -190,6 +190,9 @@ GET = {"/readings/latest": latest, "/readings": history, "/alerts": alerts, "/pr
 
 
 class Handler(BaseHTTPRequestHandler):
+    def log_message(self, fmt, *args):  # the default puts the caller's IP address first; we don't keep it (docs/privacy.md)
+        print(f"[{self.log_date_time_string()}] {fmt % args}", file=sys.stderr)
+
     def send(self, status, body):
         data = json.dumps(body).encode()
         self.send_response(status)

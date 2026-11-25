@@ -22,12 +22,13 @@ WARN_CM, CLEAR_CM = 60, 50
 RISE_CM, SETTLED_CM, WINDOW_MIN = 15, 5, 15
 
 
-def decide(level, earlier, open_kinds):
-    """Latest level, level WINDOW_MIN earlier (or None), kinds already open -> [("open", kind, reason) | ("close", kind)]."""
+def decide(level, earlier, open_kinds, warn=WARN_CM, clear=CLEAR_CM):
+    """Latest level, level WINDOW_MIN earlier (or None), kinds already open -> [("open", kind, reason) | ("close", kind)].
+    warn/clear are only changed by the what-if replay (api/what_if.py)."""
     out = []
-    if level >= WARN_CM and "flood_warning" not in open_kinds:
-        out.append(("open", "flood_warning", f"Drain level {level:.0f} cm, at or above the {WARN_CM} cm warning line"))
-    elif level < CLEAR_CM and "flood_warning" in open_kinds:
+    if level >= warn and "flood_warning" not in open_kinds:
+        out.append(("open", "flood_warning", f"Drain level {level:.0f} cm, at or above the {warn} cm warning line"))
+    elif level < clear and "flood_warning" in open_kinds:
         out.append(("close", "flood_warning"))
     rise = 0 if earlier is None else level - earlier
     if rise >= RISE_CM and "anomaly" not in open_kinds:

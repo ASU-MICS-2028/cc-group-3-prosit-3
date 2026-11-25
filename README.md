@@ -112,6 +112,8 @@ sensors (simulated + OpenAQ) ──MQTT──▶ broker ──▶ bridge (buffer
 
 Traffic, water-pipe and energy sensors, and computer vision, reinforcement learning, digital twins and federated learning are **not built**. Why, item by item, and what we have instead: [`decisions/54-not-built.md`](./decisions/54-not-built.md).
 
+The sensors measure places, not people. Who owns the data, what we never collect, and how a neighbourhood can switch its sensors off: [`docs/privacy.md`](./docs/privacy.md).
+
 ---
 
 ## Quick start

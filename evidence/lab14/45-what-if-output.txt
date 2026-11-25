@@ -1,0 +1,7 @@
+30 simulated days from 2026-11-01, seed 45: fl-asylum-down-001 62397 readings, peak 153 cm, fl-nima-001 59934 readings, peak 176 cm
+Today's line: warn at 60 cm, clear under 50 cm.
+
+  line  warnings  same storm   earlier by (min)  extra  hours under warning
+  60cm       129         129        0-0, mean 0      0                102.8
+  50cm       153         128       6-10, mean 7     25                161.9
+  40cm       163         118     12-79, mean 16     45                271.1
