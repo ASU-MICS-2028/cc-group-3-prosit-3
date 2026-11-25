@@ -31,7 +31,7 @@ We build **air quality (PM2.5), waste bin fill level and flood/drain level**. Th
 | **Digital twin** (full) | A live model of the city's physical systems is a project in its own right. | A small what-if replay of recorded readings against a different alert line is possible with our data (see below). |
 | **Federated learning** | Its reason to exist is keeping private data on devices, and our sensor data is public and held centrally anyway. The lab's two-party demo is expected to lose to a local model. | One model trained centrally on all readings (#30). |
 
-**Lab 14 advanced-feature test (Part A):** none of the above. It is the **multi-cloud fallback**: the same pipeline on AWS and on Joseph's GCP rebuild (#45), because we already have both. If the GCP rebuild (#16) isn't ready in time, the fallback is the **what-if replay**: re-run recorded flood readings against a lower warning line and count the extra alerts. It needs only data and code we already have (`api/alerts.py`'s `decide()`).
+**Lab 14 advanced-feature test (Part A):** none of the above. It is the **what-if replay** (#45): re-run recorded flood readings against a lower warning line and count the extra alerts, using only data and code we already have (`api/alerts.py`'s `decide()`). Report: [`docs/what-if-test-report.md`](../docs/what-if-test-report.md). We first chose a multi-cloud test (the same pipeline on AWS and on Joseph's GCP rebuild), but on 24 Nov neither side was running: the AWS deploys (#28, #29, #35) and the GCP rebuild (#16) were still open. So we switched to the replay, which this file had named as the fallback.
 
 ## Consequences
 

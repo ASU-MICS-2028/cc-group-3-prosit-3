@@ -94,7 +94,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#44](44-community-stakeholder.md) — Community: stakeholder session and what changed — Eugene — stub
 
-- [#45](45-l14-advanced-feature.md) — Advanced feature test: same pipeline on AWS and GCP (L14-A) — Joseph — stub
+- [#45](45-l14-advanced-feature.md) — Advanced feature test: what-if replay of the flood warning line (L14-A) — Joseph — done
 
 - [#46](46-l14-integration.md) — Capstone integration design (L14-B) — Elise — stub
 
