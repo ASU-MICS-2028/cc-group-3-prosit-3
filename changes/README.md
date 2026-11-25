@@ -84,7 +84,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #39 -->
 
-<!-- #40 -->
+- [#40](40-community-privacy.md) — Privacy and data-ownership note; API log no longer keeps IP addresses — Joseph
 
 <!-- #41 -->
 
@@ -94,11 +94,11 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #44 -->
 
-<!-- #45 -->
+- [#45](45-what-if-replay.md) — Lab 14 Part A: what-if replay of the flood warning line — Joseph
 
 <!-- #46 -->
 
-<!-- #47 -->
+- [#47](47-architecture-doc.md) — Final architecture document, first version (SmartCity AWS and integration design to follow) — Joseph
 
 <!-- #48 -->
 

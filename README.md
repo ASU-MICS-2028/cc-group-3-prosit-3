@@ -112,6 +112,8 @@ sensors (simulated + OpenAQ) ──MQTT──▶ broker ──▶ bridge (buffer
 
 Traffic, water-pipe and energy sensors, and computer vision, reinforcement learning, digital twins and federated learning are **not built**. Why, item by item, and what we have instead: [`decisions/54-not-built.md`](./decisions/54-not-built.md).
 
+The sensors measure places, not people. Who owns the data, what we never collect, and how a neighbourhood can switch its sensors off: [`docs/privacy.md`](./docs/privacy.md).
+
 ---
 
 ## Quick start
@@ -144,7 +146,7 @@ python3 -m unittest discover contracts/tests && python3 -m unittest discover sen
 | [`decisions/`](./decisions/README.md) | One file per decision, with the options and why | whoever decided |
 | [`knowledge/`](./knowledge/README.md) · [`learnings/`](./learnings/README.md) | One-idea notes: what we were taught · what we found out by doing | everyone |
 | [`evidence/`](./evidence/README.md) | Lab evidence: screenshots, terminal output and the scripts that made them | whoever ran it |
-| [`docs/`](./docs/README.md) | Design of this setup, architecture document | Joseph |
+| [`docs/`](./docs/README.md) | [Final architecture document](./docs/architecture.md), privacy note, Lab 14 report, design of this setup | Joseph |
 
 ---
 

@@ -3,13 +3,15 @@
 - **Issue:** #40
 - **Owner:** Joseph (`josetseph`)
 - **Milestone:** Lab 12
-- **Status:** stub (owner fills in "What gets built" before starting)
+- **Status:** done
 
 ## Goal
-Community engagement: privacy and ownership.
+Community engagement: say plainly who owns the data, what we never collect, and how a neighbourhood can opt out.
 
 ## What gets built
-- _to fill in_
+- `docs/privacy.md`: an ownership table, a "never collect" list with where each claim is enforced, the steps to switch a neighbourhood off (revoke, delete, switch back on), and the gaps before going live (Act 843 registration, data stored outside Ghana, how long reports are kept, photos).
+- `api/app.py`: the request log stops recording callers' IP addresses, so the "never collect" list is true.
+- Links from the README and from `docs/README.md`.
 
 ## Depends on
 - nothing
@@ -19,7 +21,8 @@ Community engagement: privacy and ownership.
 - Linked from the README and used in the final report
 
 ## Evidence to capture
-- _to fill in_
+- none beyond the note: each claim links to the code, contract or test that enforces it
 
 ## Not doing
-- _to fill in_
+- Registering with the Data Protection Commission, or a retention job for reports. Both are listed in the note as gaps.
+- The open-data publishing rule, which is #42 (Elise's).
