@@ -84,7 +84,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#39](39-sdg11-view.md) — SDG 11 dashboard view — Elise — stub
 
-- [#40](40-community-privacy.md) — Community: privacy and data-ownership note — Joseph — stub
+- [#40](40-community-privacy.md) — Community: privacy and data-ownership note — Joseph — done
 
 - [#41](41-community-question-ai.md) — Community: citizens can see and question an AI alert or route — Perfect — stub
 

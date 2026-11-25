@@ -84,7 +84,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #39 -->
 
-<!-- #40 -->
+- [#40](40-community-privacy.md) — Privacy and data-ownership note; API log no longer keeps IP addresses — Joseph
 
 <!-- #41 -->
 
