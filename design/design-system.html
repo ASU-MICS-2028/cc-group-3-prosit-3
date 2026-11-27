@@ -49,7 +49,7 @@ code { font-size: var(--text-sm); }
 <div class="grid">
 <div class="panel" data-theme="dark"><h2>Dial · PM2.5</h2><div class="dial"><svg viewBox="0 0 200 200" aria-hidden="true"><path class="track" d="M44.8 155.2 A78 78 0 1 1 155.2 155.2"/><path class="val" d="M44.8 155.2 A78 78 0 0 1 28.4 69.0"/><circle class="handle" cx="28.4" cy="69.0" r="9"/></svg><div class="dial-center"><span class="dial-value">38</span><span class="dial-unit">µg/m³</span></div></div><div class="dial-ends"><span>0</span><span>150</span></div><div class="row" style="justify-content:center"><span class="badge warn"><i class="ico i-alert" aria-hidden="true"></i>Moderate</span></div></div>
 <div class="panel" data-theme="dark"><h2>Vertical slider · drain level</h2>
-<div class="vslider"><div class="vtrack"><div class="vfill over" style="height:75%"></div><div class="vline" style="bottom:62.5%"><span>100 cm line</span></div><div class="vhandle" style="bottom:75%"><i class="ico i-drop" aria-hidden="true"></i></div><div class="vbubble" style="bottom:75%">120<br>cm</div></div><div class="vscale"><span>160</span><span>0</span></div></div></div>
+<div class="vslider"><div class="vtrack"><div class="vfill over" style="height:72%"></div><div class="vline" style="bottom:60%"><span>60 cm line</span></div><div class="vhandle" style="bottom:72%"><i class="ico i-drop" aria-hidden="true"></i></div><div class="vbubble" style="bottom:72%">72<br>cm</div></div><div class="vscale"><span>100</span><span>0</span></div></div></div>
 <div class="panel" data-theme="dark"><h2>Bubbles</h2><div class="bubbles" role="group" aria-label="Choose one"><button class="bubble" aria-pressed="false"><i class="ico lg i-drop" aria-hidden="true"></i>Flooding</button><button class="bubble" aria-pressed="true"><i class="ico lg i-trash" aria-hidden="true"></i>Waste</button><button class="bubble" aria-pressed="false"><i class="ico lg i-wind" aria-hidden="true"></i>Air</button><button class="bubble-add" aria-label="Other"><i class="ico i-plus" aria-hidden="true"></i></button></div></div>
 </div></section>
 
@@ -68,13 +68,13 @@ code { font-size: var(--text-sm); }
 <section class="stack"><h2 class="sec-title">6 · Status and messages</h2>
 <div class="grid">
 <div class="panel" data-theme="dark"><h2>Reading tiles</h2>
-<div class="glass tile"><span class="label"><i class="ico i-wind" aria-hidden="true"></i>PM2.5 · Madina</span><span><span class="value">38</span><span class="unit">µg/m³</span></span><span class="meta"><span class="badge warn"><i class="ico i-alert" aria-hidden="true"></i>Moderate</span>2 min ago</span></div>
+<div class="glass tile"><span class="label"><i class="ico i-wind" aria-hidden="true"></i>PM2.5 · Nima</span><span><span class="value">38</span><span class="unit">µg/m³</span></span><span class="meta"><span class="badge warn"><i class="ico i-alert" aria-hidden="true"></i>Moderate</span>2 min ago</span></div>
 <div class="glass tile loading" aria-busy="true"><span class="label">Loading</span><span class="value">&nbsp;</span><span class="meta">&nbsp;</span></div>
-<div class="glass tile empty"><span class="label"><i class="ico i-trash" aria-hidden="true"></i>Bin fill · Osu</span><span class="value">–</span><span class="meta"><span class="badge stale"><i class="ico i-clock" aria-hidden="true"></i>No reading for 3 h</span></span></div></div>
+<div class="glass tile empty"><span class="label"><i class="ico i-trash" aria-hidden="true"></i>Bin fill · Jamestown</span><span class="value">–</span><span class="meta"><span class="badge stale"><i class="ico i-clock" aria-hidden="true"></i>No reading for 3 h</span></span></div></div>
 <div class="panel" data-theme="light"><h2>Alerts</h2>
-<div class="alert danger" role="alert"><i class="ico lg i-alert" aria-hidden="true"></i><div><div class="title">Flood warning · East Legon</div><div>Drain level 120 cm, above the 100 cm line.</div><div class="when">Opened 14:05</div><a href="#">Why am I seeing this?</a></div></div>
+<div class="alert danger" role="alert"><i class="ico lg i-alert" aria-hidden="true"></i><div><div class="title">Flood warning · Asylum Down</div><div>Drain level 72 cm, at or above the 60 cm warning line.</div><div class="when">Opened 14:05</div><a href="#">Why am I seeing this?</a></div></div>
 <div class="alert warn"><i class="ico lg i-trash" aria-hidden="true"></i><div><div class="title">Bin due · Makola</div><div>86% full and filling.</div></div></div>
-<div class="alert ok"><i class="ico lg i-check" aria-hidden="true"></i><div><div class="title">Warning closed · East Legon</div><div>Drain back to 70 cm.</div></div></div>
+<div class="alert ok"><i class="ico lg i-check" aria-hidden="true"></i><div><div class="title">Warning closed · Asylum Down</div><div>Drain back below 50 cm.</div></div></div>
 <div class="offline" role="status"><i class="ico i-offline" aria-hidden="true"></i><span>You are offline. Your report will send when you are back.</span></div></div>
 <div class="panel" data-theme="dark"><h2>Form and chart</h2><div class="field"><label for="d1">Describe it</label><textarea id="d1" rows="3"></textarea><span class="hint">A few words is enough.</span></div>
 <div class="field invalid"><label for="d2">Where is it?</label><input id="d2" aria-describedby="d2e"><span class="error" id="d2e">Please add a place.</span></div>

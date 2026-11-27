@@ -34,7 +34,7 @@ The design system page shows light and dark panels side by side. Needs internet 
 - **Tool:** Claude Code
 - **What it did:** wrote the plan, tokens, components, screens, the two check scripts and the README; built a comparison page of four colour options for the team's vote, then applied the chosen one; found and fixed contrast failures (borders, muted text on the warm glow), overflow at 200% text, and wrapping of tile names. A first version was rejected as generic and redone against the reference images.
 - **Prompts / session summary:** asked for a roadmap and checklist for my issues, then to start on #17 using two design reference images I supplied. After reviewing the first result I said it looked generic and nothing like the reference, and asked where the design system file was; it was rebuilt to match. The team then found the colours too loud; after comparing options they chose Stone, and I asked for it to be applied and for screenshots to be left out of the repo.
-- **What the person checked or changed:** (Perfect to complete: what you actually looked at or changed before approval)
+- **What the person checked or changed:** I supplied the reference images and rejected the first version as generic; the team chose the Stone colours. I opened all the HTML pages (design-system.html, citizen-app.html, ama-dashboard.html) in Chrome and inspected them at small screen widths, where I found table text breaking mid-word, which was then fixed.
 
 ## Decisions made
 - none
@@ -43,4 +43,4 @@ The design system page shows light and dark panels side by side. Needs internet 
 - Not tested on a real low-end phone (needs a person).
 - No real charts; the chart frame is a placeholder.
 - No photographs behind screens (the reference has them); soft glows instead.
-- Elise has not yet been told where the tokens are.
+- `check_layout.sh` measures sideways overflow only; it doesn't catch words split mid-word (that was found by eye on the dashboard table and fixed), so look at the pages at phone width too.

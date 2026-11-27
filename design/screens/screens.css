@@ -15,10 +15,6 @@ main { max-width: 1240px; margin: 0 auto; padding: var(--space-5) var(--space-4)
 .dash .center { display: grid; justify-items: center; gap: var(--space-3); }
 .list { display: grid; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
 .list li { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); min-height: var(--tap); }
-.tablewrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
-th, td { text-align: left; padding: var(--space-3) var(--space-2); border-bottom: 1px solid var(--glass-edge); vertical-align: top; }
-th { color: var(--ink-muted); font-weight: 600; }
 @media (min-width: 960px) {
   .ama { grid-template-columns: 76px minmax(0, 1fr); }
   .ama .side { flex-direction: column; justify-content: flex-start; }

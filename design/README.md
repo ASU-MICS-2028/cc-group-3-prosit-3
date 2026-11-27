@@ -12,7 +12,7 @@ Plain HTML and CSS. No build step: open the files in a browser.
 | --- | --- |
 | [`design-system.html`](./design-system.html) | **The design system.** One page: colour, type, icons, shape and space, and every component with its states. Start here. |
 | [`tokens.css`](./tokens.css) | Colours (light and dark), type scale, spacing, radius. Set `data-theme="light"` or `"dark"` on any element. |
-| [`components.css`](./components.css) | The components: dial, vertical slider, bubbles, options, switches, tiles, tabs, pill nav, glass cards, alerts, badges, forms. |
+| [`components.css`](./components.css) | The components: dial, vertical slider, bubbles, options, switches, tiles, tabs, pill nav, glass cards, alerts, badges, forms, and a table that turns into stacked rows on narrow screens (give each `td` a `data-label`). |
 | [`icons.css`](./icons.css) | Line icons (Feather, MIT licence). `<i class="ico i-home" aria-hidden="true"></i>` |
 | [`screens/citizen-app.html`](./screens/citizen-app.html) | Six citizen screens: welcome, home, flood warning (why + flag), report an issue, my alerts, offline. |
 | [`screens/ama-dashboard.html`](./screens/ama-dashboard.html) | The AMA officials' dashboard. |
@@ -37,7 +37,7 @@ Use the variables (`var(--ink)`, `var(--surface)`, `var(--space-4)`) instead of 
 - **Sand is a fill, with dark text.** Never sand text on a light background.
 - **Never colour alone.** Status is always an icon plus a word.
 - **Touch targets are at least 44 px** (`--tap`).
-- **Sizes in rem, never px for text**, so 200% text size scales everything. Long words wrap (`overflow-wrap: anywhere`).
+- **Sizes in rem, never px for text**, so 200% text size scales everything. Words only break when one word can't fit a line on its own, so text never splits mid-word on small screens.
 - **Glass falls back to solid** on phones that cannot blur, and when the user asks for reduced transparency. Text contrast is checked against the glass over both ends of the backdrop.
 - **Poppins, with system fonts as the fallback**, so text shows at once even if the font is slow. If the font proves too heavy for low-end phones, remove the font link; nothing else changes.
 
