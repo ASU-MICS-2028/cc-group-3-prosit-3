@@ -1,0 +1,9 @@
+design/design-system.html
+text 100%: overflow=0px width=320 height=8782
+text 200%: overflow=0px width=320 height=18669
+design/screens/citizen-app.html
+text 100%: overflow=0px width=320 height=5080
+text 200%: overflow=0px width=320 height=9226
+design/screens/ama-dashboard.html
+text 100%: overflow=0px width=320 height=3600
+text 200%: overflow=0px width=320 height=6845

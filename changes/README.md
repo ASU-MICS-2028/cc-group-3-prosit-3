@@ -38,7 +38,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #16 -->
 
-<!-- #17 -->
+- [#17](17-design-system.md) — Design tokens, components and screens for the web dashboard and citizen app — Perfect
 
 - [#18](18-broker-simulator.md) — MQTT broker and three-domain sensor simulator — Joseph
 

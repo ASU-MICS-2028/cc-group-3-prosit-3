@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartCity Accra: citizen app screens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../icons.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="screens.css">
+</head>
+<body>
+<main>
+<header class="row between"><div><h1>Citizen app</h1><p class="muted" style="margin-top:6px">Six screens. Numbers are sample values from the contract examples, not live data.</p></div></header>
+<div class="phones">
+<section data-theme="light" class="screen" aria-label="Screen 1: Welcome">
+<div class="topbar-s"><span></span><a href="#" class="muted" style="min-height:44px;display:inline-flex;align-items:center">Skip</a></div>
+<div class="hero-glow" style="min-height:300px"><div class="dial" style="width:200px"><svg viewBox="0 0 200 200" aria-hidden="true"><path class="track" d="M44.8 155.2 A78 78 0 1 1 155.2 155.2"/><path class="val" d="M44.8 155.2 A78 78 0 0 1 141.8 34.1"/><circle class="handle" cx="141.8" cy="34.1" r="9"/></svg><div class="dial-center"><i class="ico lg i-drop" aria-hidden="true"></i><span class="dial-unit">Accra live</span></div></div></div>
+<h1 class="display">Know your air, drains and bins</h1>
+<p class="muted">Sensors across Accra report on the city. See what is happening near you, get warned early, and tell AMA what you see.</p>
+<div class="live-row"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><a class="round-go" href="#" aria-label="Next"><i class="ico lg i-next" aria-hidden="true"></i></a></div>
+</section>
+<section data-theme="dark" class="screen" aria-label="Screen 2: Home">
+<div class="topbar-s"><a class="icon-btn" href="#" aria-label="Menu"><i class="ico  i-menu" aria-hidden="true"></i></a><a class="icon-btn" href="#" aria-label="Notifications"><i class="ico  i-bell" aria-hidden="true"></i></a></div>
+<div class="live-row"><h2>Madina</h2><span class="badge live">Live</span></div>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true">Air</button><button role="tab" aria-selected="false">Flood</button><button role="tab" aria-selected="false">Bins</button></div>
+<div class="dial"><svg viewBox="0 0 200 200" aria-hidden="true"><path class="track" d="M44.8 155.2 A78 78 0 1 1 155.2 155.2"/><path class="val" d="M44.8 155.2 A78 78 0 0 1 28.4 69.0"/><circle class="handle" cx="28.4" cy="69.0" r="9"/></svg><div class="dial-center"><span class="dial-value">38</span><span class="dial-unit">PM2.5 µg/m³</span></div></div>
+<div class="row" style="justify-content:center"><span class="badge warn"><i class="ico  i-alert" aria-hidden="true"></i>Moderate</span><span class="muted">9:00 today</span></div>
+<div class="tiles"><div class="glass tile"><span class="label"><i class="ico  i-clock" aria-hidden="true"></i>Tomorrow 07:00</span><span><span class="value" style="font-size:var(--text-xl)">~45</span></span></div><div class="glass tile"><span class="label"><i class="ico  i-trash" aria-hidden="true"></i>Bin · Makola</span><span><span class="value" style="font-size:var(--text-xl)">72</span><span class="unit" style="font-size:var(--text-base)">%</span></span></div></div>
+<nav class="nav" aria-label="Main"><a href="#" aria-current="page" aria-label="Home"><i class="ico i-home" aria-hidden="true"></i></a><a href="#" aria-label="Alerts"><i class="ico i-bell" aria-hidden="true"></i></a><a href="#" aria-label="Report"><i class="ico i-plus" aria-hidden="true"></i></a><a href="#" aria-label="Me"><i class="ico i-user" aria-hidden="true"></i></a></nav>
+</section>
+<section data-theme="dark" class="screen" aria-label="Screen 3: Flood warning">
+<div class="topbar-s"><a class="icon-btn" href="#" aria-label="Back"><i class="ico  i-back" aria-hidden="true"></i></a><h2>Flood warning</h2><button class="switch" role="switch" aria-checked="true" aria-label="Flood alerts on"></button></div>
+<div class="alert danger" role="alert"><i class="ico lg i-alert" aria-hidden="true"></i><div><div class="title">East Legon drain is high</div><div class="when">Opened 14:05</div></div></div>
+<div class="vslider"><div class="vtrack"><div class="vfill over" style="height:75%"></div><div class="vline" style="bottom:62.5%"><span>100 cm line</span></div><div class="vhandle" style="bottom:75%"><i class="ico  i-drop" aria-hidden="true"></i></div><div class="vbubble" style="bottom:75%">120<br>cm</div></div><div class="vscale"><span>160</span><span>0</span></div></div>
+<div class="glass"><h3>Why you are seeing this</h3><p class="muted" style="margin-top:6px">The sensor measured 120 cm. Our warning line is 100 cm. A computer rule raised this, and a person has not checked it yet.</p></div>
+<button class="btn ghost block"><i class="ico  i-flag" aria-hidden="true"></i>This looks wrong</button>
+<nav class="nav" aria-label="Main"><a href="#" aria-label="Home"><i class="ico i-home" aria-hidden="true"></i></a><a href="#" aria-current="page" aria-label="Alerts"><i class="ico i-bell" aria-hidden="true"></i></a><a href="#" aria-label="Report"><i class="ico i-plus" aria-hidden="true"></i></a><a href="#" aria-label="Me"><i class="ico i-user" aria-hidden="true"></i></a></nav>
+</section>
+<section data-theme="dark" class="screen" aria-label="Screen 4: Report an issue">
+<div class="topbar-s"><a class="icon-btn" href="#" aria-label="Back"><i class="ico  i-back" aria-hidden="true"></i></a><h2>Report an issue</h2><span></span></div>
+<h1 class="display">What is happening?</h1>
+<div class="bubbles" role="group" aria-label="Type of problem"><button class="bubble" aria-pressed="false"><i class="ico lg i-drop" aria-hidden="true"></i>Flooding</button><button class="bubble" aria-pressed="true"><i class="ico lg i-trash" aria-hidden="true"></i>Waste</button><button class="bubble" aria-pressed="false"><i class="ico lg i-wind" aria-hidden="true"></i>Air</button><button class="bubble-add" aria-label="Something else"><i class="ico  i-plus" aria-hidden="true"></i></button></div>
+<div class="field"><label for="desc">Describe it</label><textarea id="desc" rows="3" maxlength="1000" aria-describedby="dh"></textarea><span class="hint" id="dh">A few words. Please leave out names and phone numbers.</span></div>
+<div class="options"><button class="option" aria-pressed="false"><i class="ico lg i-pin" aria-hidden="true"></i>My place</button><button class="option" aria-pressed="false"><i class="ico lg i-camera" aria-hidden="true"></i>Photo</button></div>
+<button class="btn accent block"><i class="ico  i-send" aria-hidden="true"></i>Send report</button>
+<nav class="nav" aria-label="Main"><a href="#" aria-label="Home"><i class="ico i-home" aria-hidden="true"></i></a><a href="#" aria-label="Alerts"><i class="ico i-bell" aria-hidden="true"></i></a><a href="#" aria-current="page" aria-label="Report"><i class="ico i-plus" aria-hidden="true"></i></a><a href="#" aria-label="Me"><i class="ico i-user" aria-hidden="true"></i></a></nav>
+</section>
+<section data-theme="light" class="screen" aria-label="Screen 5: My alerts">
+<div class="topbar-s"><a class="icon-btn" href="#" aria-label="Menu"><i class="ico  i-grid" aria-hidden="true"></i></a><a class="icon-btn" href="#" aria-label="Profile"><i class="ico  i-user" aria-hidden="true"></i></a></div>
+<h1 class="display">My alerts</h1>
+<p class="muted">Choose what we warn you about in Madina.</p>
+<div class="tiles"><div class="dtile on"><i class="ico lg i-drop" aria-hidden="true"></i><div class="row"><span class="name">Flood<br>warnings</span><button class="switch" role="switch" aria-checked="true" aria-label="Flood warnings"></button></div></div><div class="dtile on"><i class="ico lg i-wind" aria-hidden="true"></i><div class="row"><span class="name">Air<br>quality</span><button class="switch" role="switch" aria-checked="true" aria-label="Air quality"></button></div></div><div class="dtile"><i class="ico lg i-trash" aria-hidden="true"></i><div class="row"><span class="name">Bin<br>due</span><button class="switch" role="switch" aria-checked="false" aria-label="Bin due"></button></div></div><div class="dtile on"><i class="ico lg i-flag" aria-hidden="true"></i><div class="row"><span class="name">Report<br>updates</span><button class="switch" role="switch" aria-checked="true" aria-label="Report updates"></button></div></div></div>
+<nav class="nav" aria-label="Main"><a href="#" aria-label="Home"><i class="ico i-home" aria-hidden="true"></i></a><a href="#" aria-current="page" aria-label="Alerts"><i class="ico i-bell" aria-hidden="true"></i></a><a href="#" aria-label="Report"><i class="ico i-plus" aria-hidden="true"></i></a><a href="#" aria-label="Me"><i class="ico i-user" aria-hidden="true"></i></a></nav>
+</section>
+<section data-theme="dark" class="screen" aria-label="Screen 6: Offline">
+<div class="topbar-s"><a class="icon-btn" href="#" aria-label="Menu"><i class="ico  i-menu" aria-hidden="true"></i></a><a class="icon-btn" href="#" aria-label="Notifications"><i class="ico  i-bell" aria-hidden="true"></i></a></div>
+<div class="live-row"><h2>Madina</h2><span class="badge stale"><i class="ico  i-offline" aria-hidden="true"></i>Offline</span></div>
+<div class="offline" role="status"><i class="ico  i-offline" aria-hidden="true"></i><span>You are offline. Showing the reading from 8:40. Your report is saved and will send when you are back.</span></div>
+<div class="dial" style="opacity:.8"><svg viewBox="0 0 200 200" aria-hidden="true"><path class="track" d="M44.8 155.2 A78 78 0 1 1 155.2 155.2"/><path class="val" d="M44.8 155.2 A78 78 0 0 1 26.6 73.6"/><circle class="handle" cx="26.6" cy="73.6" r="9"/></svg><div class="dial-center"><span class="dial-value">36</span><span class="dial-unit">PM2.5 µg/m³</span></div></div>
+<div class="row" style="justify-content:center"><span class="badge stale"><i class="ico  i-clock" aria-hidden="true"></i>20 minutes old</span></div>
+<div class="glass"><h3>Waiting to send</h3><ul class="list" style="margin-top:8px"><li><span>Waste · Makola</span><span class="badge stale"><i class="ico  i-clock" aria-hidden="true"></i>Queued</span></li></ul></div>
+<nav class="nav" aria-label="Main"><a href="#" aria-current="page" aria-label="Home"><i class="ico i-home" aria-hidden="true"></i></a><a href="#" aria-label="Alerts"><i class="ico i-bell" aria-hidden="true"></i></a><a href="#" aria-label="Report"><i class="ico i-plus" aria-hidden="true"></i></a><a href="#" aria-label="Me"><i class="ico i-user" aria-hidden="true"></i></a></nav>
+</section>
+</div>
+</main>
+</body>
+</html>

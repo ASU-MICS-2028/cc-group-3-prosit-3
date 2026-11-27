@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartCity Accra: design system</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="icons.css">
+<link rel="stylesheet" href="components.css">
+<style>
+main { max-width: 1100px; margin: 0 auto; padding: var(--space-5) var(--space-4) 64px; display: grid; gap: var(--space-6); }
+.grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); align-items: start; }
+.panel { border-radius: 36px; padding: var(--space-5) var(--space-4); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); align-content: start; background: var(--bg); color: var(--ink); box-shadow: var(--shadow); }
+.panel[data-theme="light"] { background: linear-gradient(172deg, var(--screen-a), var(--screen-b)); }
+.panel[data-theme="dark"] { background: radial-gradient(110% 60% at 50% 20%, var(--glow), transparent 62%), var(--bg); }
+.sw { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: var(--space-3); align-items: center; }
+.sw i { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); display: block; }
+code { font-size: var(--text-sm); }
+.icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: var(--space-3); }
+.icons div { display: grid; justify-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--ink-muted); }
+.sec-title { font-size: var(--text-xl); font-weight: 700; }
+</style>
+</head>
+<body>
+<main>
+<header><h1>SmartCity Accra<br>design system</h1><p style="margin-top:8px">One look for the AMA dashboard and the citizen app. Based on the shared reference: soft greige canvas, off-white and charcoal screens, sand accents, round controls.</p></header>
+
+<section class="stack"><h2 class="sec-title">1 · Colour</h2>
+<div class="grid"><div class="panel" data-theme="light"><h2>Light screen</h2><div class="sw"><i style="background:var(--bg)"></i><span><strong>--bg</strong><br><span class="muted">screen</span></span></div><div class="sw"><i style="background:var(--surface)"></i><span><strong>--surface</strong><br><span class="muted">cards</span></span></div><div class="sw"><i style="background:var(--ink)"></i><span><strong>--ink</strong><br><span class="muted">text</span></span></div><div class="sw"><i style="background:var(--ink-muted)"></i><span><strong>--ink-muted</strong><br><span class="muted">secondary text</span></span></div><div class="sw"><i style="background:var(--accent)"></i><span><strong>--accent</strong><br><span class="muted">active state, handles</span></span></div><div class="sw"><i style="background:var(--nav)"></i><span><strong>--nav</strong><br><span class="muted">bottom bar</span></span></div><div class="sw"><i style="background:var(--ok)"></i><span><strong>--ok</strong><br><span class="muted">good</span></span></div><div class="sw"><i style="background:var(--warn)"></i><span><strong>--warn</strong><br><span class="muted">caution</span></span></div><div class="sw"><i style="background:var(--danger)"></i><span><strong>--danger</strong><br><span class="muted">urgent</span></span></div></div><div class="panel" data-theme="dark"><h2>Dark screen</h2><div class="sw"><i style="background:var(--bg)"></i><span><strong>--bg</strong><br><span class="muted">screen</span></span></div><div class="sw"><i style="background:var(--surface)"></i><span><strong>--surface</strong><br><span class="muted">cards</span></span></div><div class="sw"><i style="background:var(--ink)"></i><span><strong>--ink</strong><br><span class="muted">text</span></span></div><div class="sw"><i style="background:var(--ink-muted)"></i><span><strong>--ink-muted</strong><br><span class="muted">secondary text</span></span></div><div class="sw"><i style="background:var(--accent)"></i><span><strong>--accent</strong><br><span class="muted">active state, handles</span></span></div><div class="sw"><i style="background:var(--nav)"></i><span><strong>--nav</strong><br><span class="muted">bottom bar</span></span></div><div class="sw"><i style="background:var(--ok)"></i><span><strong>--ok</strong><br><span class="muted">good</span></span></div><div class="sw"><i style="background:var(--warn)"></i><span><strong>--warn</strong><br><span class="muted">caution</span></span></div><div class="sw"><i style="background:var(--danger)"></i><span><strong>--danger</strong><br><span class="muted">urgent</span></span></div></div>
+<div class="panel" data-theme="light"><h2>Rules</h2>
+<p><strong>Sand is a fill with dark text.</strong> Never sand text on a light screen.</p>
+<p><strong>Never colour alone.</strong> A status is always an icon and a word.</p>
+<p><strong>Glass</strong> is a translucent card over the screen glow. It falls back to solid on phones that cannot blur.</p>
+<p class="muted">Every text and background pair is checked: <code>python3 design/check_contrast.py</code></p></div></div></section>
+
+<section class="stack"><h2 class="sec-title">2 · Type</h2>
+<div class="grid"><div class="panel" data-theme="light">
+<div class="display">Know your air, drains and bins</div>
+<h2>Heading · Poppins 600</h2><p>Body text is 16 px at 100% and grows with the phone's text size. Sizes are rem, never px.</p>
+<p class="muted">Secondary text · 14 px</p><div class="tile"><span class="value">38</span><span class="muted">The one big number a screen is about</span></div></div>
+<div class="panel" data-theme="light"><h2>Scale</h2><p class="muted">--text-sm 0.875rem</p><p>--text-base 1rem</p><p style="font-size:var(--text-lg)">--text-lg 1.25rem</p><p style="font-size:var(--text-xl)">--text-xl 1.75rem</p><p style="font-size:var(--text-display);font-weight:700">--text-display 2rem</p><p class="muted">Poppins, with system fonts as fallback so text never waits.</p></div></div></section>
+
+<section class="stack"><h2 class="sec-title">3 · Icons</h2>
+<div class="panel" data-theme="light"><div class="icons"><div><i class="ico lg i-home" aria-hidden="true"></i><span>home</span></div><div><i class="ico lg i-bell" aria-hidden="true"></i><span>bell</span></div><div><i class="ico lg i-alert" aria-hidden="true"></i><span>alert</span></div><div><i class="ico lg i-drop" aria-hidden="true"></i><span>drop</span></div><div><i class="ico lg i-wind" aria-hidden="true"></i><span>wind</span></div><div><i class="ico lg i-trash" aria-hidden="true"></i><span>trash</span></div><div><i class="ico lg i-plus" aria-hidden="true"></i><span>plus</span></div><div><i class="ico lg i-user" aria-hidden="true"></i><span>user</span></div><div><i class="ico lg i-pin" aria-hidden="true"></i><span>pin</span></div><div><i class="ico lg i-offline" aria-hidden="true"></i><span>offline</span></div><div><i class="ico lg i-check" aria-hidden="true"></i><span>check</span></div><div><i class="ico lg i-back" aria-hidden="true"></i><span>back</span></div><div><i class="ico lg i-next" aria-hidden="true"></i><span>next</span></div><div><i class="ico lg i-camera" aria-hidden="true"></i><span>camera</span></div><div><i class="ico lg i-grid" aria-hidden="true"></i><span>grid</span></div><div><i class="ico lg i-flag" aria-hidden="true"></i><span>flag</span></div><div><i class="ico lg i-info" aria-hidden="true"></i><span>info</span></div><div><i class="ico lg i-menu" aria-hidden="true"></i><span>menu</span></div><div><i class="ico lg i-chart" aria-hidden="true"></i><span>chart</span></div><div><i class="ico lg i-send" aria-hidden="true"></i><span>send</span></div><div><i class="ico lg i-clock" aria-hidden="true"></i><span>clock</span></div></div><p class="muted">Line icons (Feather, MIT licence). Use <code>&lt;i class="ico i-home" aria-hidden="true"&gt;&lt;/i&gt;</code>.</p></div></section>
+
+<section class="stack"><h2 class="sec-title">4 · Round controls</h2>
+<div class="grid">
+<div class="panel" data-theme="dark"><h2>Dial · PM2.5</h2><div class="dial"><svg viewBox="0 0 200 200" aria-hidden="true"><path class="track" d="M44.8 155.2 A78 78 0 1 1 155.2 155.2"/><path class="val" d="M44.8 155.2 A78 78 0 0 1 28.4 69.0"/><circle class="handle" cx="28.4" cy="69.0" r="9"/></svg><div class="dial-center"><span class="dial-value">38</span><span class="dial-unit">µg/m³</span></div></div><div class="dial-ends"><span>0</span><span>150</span></div><div class="row" style="justify-content:center"><span class="badge warn"><i class="ico i-alert" aria-hidden="true"></i>Moderate</span></div></div>
+<div class="panel" data-theme="dark"><h2>Vertical slider · drain level</h2>
+<div class="vslider"><div class="vtrack"><div class="vfill over" style="height:75%"></div><div class="vline" style="bottom:62.5%"><span>100 cm line</span></div><div class="vhandle" style="bottom:75%"><i class="ico i-drop" aria-hidden="true"></i></div><div class="vbubble" style="bottom:75%">120<br>cm</div></div><div class="vscale"><span>160</span><span>0</span></div></div></div>
+<div class="panel" data-theme="dark"><h2>Bubbles</h2><div class="bubbles" role="group" aria-label="Choose one"><button class="bubble" aria-pressed="false"><i class="ico lg i-drop" aria-hidden="true"></i>Flooding</button><button class="bubble" aria-pressed="true"><i class="ico lg i-trash" aria-hidden="true"></i>Waste</button><button class="bubble" aria-pressed="false"><i class="ico lg i-wind" aria-hidden="true"></i>Air</button><button class="bubble-add" aria-label="Other"><i class="ico i-plus" aria-hidden="true"></i></button></div></div>
+</div></section>
+
+<section class="stack"><h2 class="sec-title">5 · Controls</h2>
+<div class="grid">
+<div class="panel" data-theme="dark"><h2>Tabs</h2><div class="tabs" role="tablist"><button role="tab" aria-selected="true">Air</button><button role="tab" aria-selected="false">Flood</button><button role="tab" aria-selected="false">Waste</button></div>
+<h2>Options</h2><div class="options"><button class="option" aria-pressed="true"><i class="ico lg i-drop" aria-hidden="true"></i>Flood</button><button class="option" aria-pressed="false"><i class="ico lg i-wind" aria-hidden="true"></i>Air</button><button class="option" aria-pressed="false"><i class="ico lg i-trash" aria-hidden="true"></i>Bins</button></div>
+<h2>Buttons</h2><div class="row"><button class="btn">Primary</button><button class="btn ghost">Ghost</button><button class="btn" disabled>Sending…</button></div><button class="btn block"><i class="ico i-send" aria-hidden="true"></i>Send report</button></div>
+<div class="panel" data-theme="light"><h2>Device tiles and switches</h2><div class="tiles">
+<div class="dtile on"><i class="ico lg i-wind" aria-hidden="true"></i><div class="row"><span class="name">Air<br>alerts</span><button class="switch" role="switch" aria-checked="true" aria-label="Air alerts"></button></div></div>
+<div class="dtile"><i class="ico lg i-drop" aria-hidden="true"></i><div class="row"><span class="name">Flood<br>alerts</span><button class="switch" role="switch" aria-checked="false" aria-label="Flood alerts"></button></div></div></div>
+<h2>Tabs, light</h2><div class="tabs" role="tablist"><button role="tab" aria-selected="true">Now</button><button role="tab" aria-selected="false">Today</button></div>
+<nav class="nav" aria-label="Main"><a href="#" aria-current="page" aria-label="Home"><i class="ico i-home" aria-hidden="true"></i></a><a href="#" aria-label="Alerts"><i class="ico i-bell" aria-hidden="true"></i></a><a href="#" aria-label="Report"><i class="ico i-plus" aria-hidden="true"></i></a><a href="#" aria-label="Me"><i class="ico i-user" aria-hidden="true"></i></a></nav></div>
+</div></section>
+
+<section class="stack"><h2 class="sec-title">6 · Status and messages</h2>
+<div class="grid">
+<div class="panel" data-theme="dark"><h2>Reading tiles</h2>
+<div class="glass tile"><span class="label"><i class="ico i-wind" aria-hidden="true"></i>PM2.5 · Madina</span><span><span class="value">38</span><span class="unit">µg/m³</span></span><span class="meta"><span class="badge warn"><i class="ico i-alert" aria-hidden="true"></i>Moderate</span>2 min ago</span></div>
+<div class="glass tile loading" aria-busy="true"><span class="label">Loading</span><span class="value">&nbsp;</span><span class="meta">&nbsp;</span></div>
+<div class="glass tile empty"><span class="label"><i class="ico i-trash" aria-hidden="true"></i>Bin fill · Osu</span><span class="value">–</span><span class="meta"><span class="badge stale"><i class="ico i-clock" aria-hidden="true"></i>No reading for 3 h</span></span></div></div>
+<div class="panel" data-theme="light"><h2>Alerts</h2>
+<div class="alert danger" role="alert"><i class="ico lg i-alert" aria-hidden="true"></i><div><div class="title">Flood warning · East Legon</div><div>Drain level 120 cm, above the 100 cm line.</div><div class="when">Opened 14:05</div><a href="#">Why am I seeing this?</a></div></div>
+<div class="alert warn"><i class="ico lg i-trash" aria-hidden="true"></i><div><div class="title">Bin due · Makola</div><div>86% full and filling.</div></div></div>
+<div class="alert ok"><i class="ico lg i-check" aria-hidden="true"></i><div><div class="title">Warning closed · East Legon</div><div>Drain back to 70 cm.</div></div></div>
+<div class="offline" role="status"><i class="ico i-offline" aria-hidden="true"></i><span>You are offline. Your report will send when you are back.</span></div></div>
+<div class="panel" data-theme="dark"><h2>Form and chart</h2><div class="field"><label for="d1">Describe it</label><textarea id="d1" rows="3"></textarea><span class="hint">A few words is enough.</span></div>
+<div class="field invalid"><label for="d2">Where is it?</label><input id="d2" aria-describedby="d2e"><span class="error" id="d2e">Please add a place.</span></div>
+<div class="glass chart"><h3>PM2.5, next 24 h</h3><div class="plot" role="img" aria-label="Chart placeholder">chart drawn here</div><p class="summary">Peak near 45 µg/m³ at 07:00 (sample). <a href="#">View as table</a></p></div></div>
+</div></section>
+
+<section class="stack"><h2 class="sec-title">7 · Shape and space</h2>
+<div class="panel" data-theme="light"><p>Radius: <code>--radius 28px</code> cards · <code>--radius-sm 16px</code> inputs · <code>--radius-pill</code> buttons and nav · circles for dials, bubbles and handles.</p><p>Space: 4 · 8 · 12 · 16 · 24 · 32 px (<code>--space-1…6</code>). Touch targets are at least 44 px (<code>--tap</code>).</p><p>Screens: <code>.screen</code> with <code>data-theme="light"</code> or <code>"dark"</code>. Dark screens carry a warm glow behind the hero, the way the reference's charcoal screen does.</p></div></section>
+</main>
+</body>
+</html>

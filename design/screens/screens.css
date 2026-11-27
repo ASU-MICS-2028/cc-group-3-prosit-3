@@ -1,0 +1,29 @@
+/* Layout for the mock-up screens only. Components come from ../components.css. */
+main { max-width: 1240px; margin: 0 auto; padding: var(--space-5) var(--space-4) 64px; display: grid; gap: var(--space-5); }
+.phones { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); align-items: start; }
+.phones .screen { max-width: 380px; width: 100%; margin-inline: auto; }
+.cap { font-size: var(--text-sm); color: var(--ink-muted); text-align: center; }
+.live-row { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); }
+
+/* AMA dashboard */
+.ama { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); min-height: 0; }
+.ama .side { display: flex; gap: var(--space-2); justify-content: space-between; }
+.ama .side .nav { flex: 1; }
+.dash { display: grid; gap: var(--space-4); grid-template-columns: minmax(0, 1fr); }
+.dash > * { min-width: 0; }
+.dash .card-title { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-3); }
+.dash .center { display: grid; justify-items: center; gap: var(--space-3); }
+.list { display: grid; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
+.list li { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); min-height: var(--tap); }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+th, td { text-align: left; padding: var(--space-3) var(--space-2); border-bottom: 1px solid var(--glass-edge); vertical-align: top; }
+th { color: var(--ink-muted); font-weight: 600; }
+@media (min-width: 960px) {
+  .ama { grid-template-columns: 76px minmax(0, 1fr); }
+  .ama .side { flex-direction: column; justify-content: flex-start; }
+  .ama .side .nav { flex-direction: column; flex: 0 0 auto; border-radius: 40px; padding: var(--space-2); }
+  .ama .side .nav a[aria-current="page"] { flex: 0 0 auto; }
+  .dash { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .dash .c4 { grid-column: span 4; } .dash .c6 { grid-column: span 6; } .dash .c8 { grid-column: span 8; } .dash .c12 { grid-column: span 12; }
+}

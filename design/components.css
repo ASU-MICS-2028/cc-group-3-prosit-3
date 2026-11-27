@@ -1,0 +1,149 @@
+/* Shared components (issue #17). Needs tokens.css and icons.css. Plain CSS, no build step. */
+*, *::before, *::after { box-sizing: border-box; }
+body { overflow-wrap: anywhere; }   /* a long word wraps; it never pushes the page sideways at 200% text */
+.row > *, .grid > * { min-width: 0; }
+h1, h2, h3 { line-height: 1.2; margin: 0; }
+h1 { font-size: var(--text-display); font-weight: 700; }
+h2 { font-size: var(--text-lg); font-weight: 600; }
+h3 { font-size: var(--text-base); font-weight: 600; }
+p { margin: 0; }
+a { color: inherit; text-underline-offset: 3px; }
+.muted { color: var(--ink-muted); }
+.row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+.between { justify-content: space-between; }
+.stack { display: grid; gap: var(--space-4); grid-template-columns: minmax(0, 1fr); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Screen: a phone-shaped surface. Set data-theme="light" or "dark" on it. ---------- */
+.screen { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); align-content: start;
+  min-height: 700px; padding: var(--space-5) var(--space-4) var(--space-4); border-radius: 40px; background: var(--bg); color: var(--ink); box-shadow: var(--shadow); }
+.screen[data-theme="light"] { background: linear-gradient(172deg, var(--screen-a), var(--screen-b)); }
+.screen[data-theme="dark"] { background: radial-gradient(110% 55% at 50% 30%, var(--glow), transparent 62%), var(--bg); }
+.screen > .spacer { min-height: 0; }
+.topbar-s { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+
+/* ---------- Glass card: solid by default; frosted where the phone can blur and the user allows it ---------- */
+.glass { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); }
+@supports (backdrop-filter: blur(1px)) and (background: color-mix(in srgb, red, blue)) {
+  @media (prefers-reduced-transparency: no-preference) {
+    .glass { background: color-mix(in srgb, var(--glass) calc(var(--glass-alpha) * 100%), transparent); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border-color: var(--glass-edge); }
+  }
+}
+
+/* ---------- Buttons ---------- */
+.btn { min-height: var(--tap); min-width: var(--tap); padding: 0 var(--space-5); border-radius: var(--radius-pill); border: 2px solid var(--primary); background: var(--primary); color: var(--on-primary); font: inherit; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); text-decoration: none; }
+.btn.accent { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--border); }
+.btn.block { width: 100%; min-height: 52px; }
+.btn[disabled] { background: var(--surface-2); color: var(--ink-muted); border-color: var(--border); cursor: not-allowed; }
+.icon-btn { width: var(--tap); height: var(--tap); padding: 0; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: var(--ink); display: inline-grid; place-items: center; cursor: pointer; text-decoration: none; }
+.round-go { width: 52px; height: 52px; padding: 0; border-radius: 50%; border: 0; background: transparent; color: var(--ink); display: inline-grid; place-items: center; }
+
+/* ---------- Tabs (underlined, like Lamp / Home theatre / Temperature) ---------- */
+.tabs { display: flex; gap: var(--space-5); overflow-x: auto; scrollbar-width: none; }
+.tabs [role="tab"] { min-height: var(--tap); padding: 0; background: none; border: 0; color: var(--ink-muted); font: inherit; cursor: pointer; white-space: nowrap; }
+.tabs [aria-selected="true"] { color: var(--ink); font-weight: 600; box-shadow: inset 0 -3px var(--accent); }
+
+/* ---------- Dial: round gauge with a glowing handle ---------- */
+.dial { position: relative; width: min(100%, 270px); margin-inline: auto; aspect-ratio: 1; }
+.dial svg { width: 100%; height: 100%; overflow: visible; }
+.dial .track { fill: none; stroke: var(--ink); opacity: 0.16; stroke-width: 14; stroke-linecap: round; }
+.dial .val { fill: none; stroke: var(--gauge); stroke-width: 14; stroke-linecap: round; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--gauge) 50%, transparent)); }
+.dial .handle { fill: var(--handle); stroke: var(--bg); stroke-width: 4; filter: drop-shadow(0 0 8px color-mix(in srgb, var(--handle) 70%, transparent)); }
+.dial-center { position: absolute; inset: 20%; border-radius: 50%; display: grid; place-content: center; text-align: center; gap: 2px; background: color-mix(in srgb, var(--bg) 80%, transparent); border: 1px solid var(--glass-edge); }
+.dial-value { font-size: var(--text-big); font-weight: 700; line-height: 1; }
+.dial-unit { font-size: var(--text-sm); color: var(--ink-muted); }
+.dial-ends { display: flex; justify-content: space-between; padding: 0 12%; margin-top: -26px; font-size: var(--text-sm); color: var(--ink-muted); }
+
+/* ---------- Vertical slider (flood level): handle with an icon, value bubble on a dotted line ---------- */
+.vslider { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-4); align-items: stretch; min-height: 340px; }
+.vtrack { position: relative; width: 72px; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--ink) 14%, transparent); overflow: visible; }
+.vfill { position: absolute; left: 0; right: 0; bottom: 0; border-radius: var(--radius-pill); background: linear-gradient(to top, var(--gauge-a), var(--gauge-b)); }
+.vfill.over { background: linear-gradient(to top, var(--gauge-a), var(--gauge-over)); }
+.vhandle { position: absolute; left: 50%; width: 44px; height: 44px; margin: 0 0 -22px -22px; border-radius: 50%; background: var(--handle); color: var(--on-handle); display: grid; place-items: center; box-shadow: 0 0 0 4px color-mix(in srgb, var(--bg) 70%, transparent); }
+.vline { position: absolute; left: -10px; right: -10px; border-top: 2px dashed var(--ink-muted); }
+.vline span { position: absolute; left: calc(100% + 18px); top: 6px; width: 5em; line-height: 1.2; font-size: var(--text-sm); color: var(--ink-muted); }
+.vbubble { position: absolute; left: calc(100% + 18px); margin-bottom: -34px; width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center; text-align: center; font-weight: 700; line-height: 1.1; background: color-mix(in srgb, var(--glass) calc(var(--glass-alpha) * 100% + 25%), transparent); border: 1px solid var(--glass-edge); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.vbubble::before { content: ""; position: absolute; right: 100%; top: 50%; width: 18px; border-top: 2px dotted var(--ink-muted); }
+.vscale { display: grid; align-content: space-between; font-size: var(--text-sm); color: var(--ink-muted); }
+
+/* ---------- Bubbles: round choices (like "Configure Your Moments") ---------- */
+.bubbles { position: relative; display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; padding: var(--space-2) 0; }
+.bubble { width: 104px; height: 104px; border-radius: 50%; display: grid; place-content: center; justify-items: center; gap: 2px; text-align: center; font: inherit; font-weight: 600; cursor: pointer; color: var(--ink); background: color-mix(in srgb, var(--surface) 80%, transparent); border: 1px solid var(--glass-edge); }
+.bubble:nth-child(2n) { margin-top: 28px; } .bubble:nth-child(3n) { width: 116px; height: 116px; }
+.bubble[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.bubble-add { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; border: 0; }
+
+/* ---------- Option buttons: square, icon + word (like Saver / Dim / Night) ---------- */
+.options { display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)); gap: var(--space-3); }
+.option { display: grid; justify-items: center; gap: var(--space-2); padding: var(--space-3); border-radius: var(--radius-sm); border: 1px solid var(--glass-edge); background: color-mix(in srgb, var(--surface) 75%, transparent); color: var(--ink); font: inherit; font-size: var(--text-sm); font-weight: 600; cursor: pointer; min-height: 84px; }
+.option[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+
+/* ---------- Switch ---------- */
+.switch { position: relative; width: 56px; height: var(--tap); padding: 0; border: 0; background: transparent; cursor: pointer; flex: none; }
+.switch::before { content: ""; position: absolute; inset: 9px 2px; border-radius: var(--radius-pill); background: var(--surface-2); border: 2px solid var(--border); }
+.switch::after { content: ""; position: absolute; top: 12px; left: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--ink); }
+.switch[aria-checked="true"]::before { background: var(--accent); border-color: var(--accent); }
+.switch[aria-checked="true"]::after { left: 30px; background: var(--on-accent); }
+
+/* ---------- Device tile: icon, name, switch (like Smart Devices). .on = the dark active tile ---------- */
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.dtile { display: grid; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius); background: var(--surface); color: var(--ink); border: 1px solid var(--glass-edge); align-content: space-between; min-height: 150px; }
+.dtile .ico.lg { color: var(--ink); }
+.dtile .name { font-weight: 600; line-height: 1.25; }
+.dtile .row { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-1); justify-items: start; }
+.dtile.on { --ink: var(--on-tile-on); --ink-muted: color-mix(in srgb, var(--on-tile-on) 72%, var(--tile-on)); --surface-2: color-mix(in srgb, var(--on-tile-on) 20%, var(--tile-on)); --border: color-mix(in srgb, var(--on-tile-on) 55%, var(--tile-on)); --accent: var(--tile-accent); --on-accent: var(--on-tile-accent); background: var(--tile-on); }
+
+/* ---------- Reading tile (dashboard) ---------- */
+.tile { display: grid; gap: var(--space-1); }
+.tile .label { color: var(--ink-muted); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); }
+.tile .value { font-size: var(--text-big); font-weight: 700; line-height: 1.1; }
+.tile .unit { font-size: var(--text-lg); font-weight: 500; color: var(--ink-muted); margin-left: var(--space-1); }
+.tile .meta { font-size: var(--text-sm); color: var(--ink-muted); display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap; }
+.tile.loading .value, .tile.loading .meta { background: var(--surface-2); color: transparent; border-radius: var(--radius-sm); min-height: 1.2em; width: 60%; }
+.tile.empty .value { color: var(--ink-muted); }
+
+/* ---------- Badge: always an icon and a word ---------- */
+.badge { display: inline-flex; align-items: center; gap: var(--space-1); padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); font-size: var(--text-sm); font-weight: 600; min-height: 28px; }
+.badge .ico { width: 1em; height: 1em; }
+.badge.ok { background: var(--ok-bg); color: var(--ok); }
+.badge.warn { background: var(--warn-bg); color: var(--warn); }
+.badge.danger { background: var(--danger-bg); color: var(--danger); }
+.badge.stale { background: var(--surface-2); color: var(--ink-muted); }
+.badge.live { background: transparent; color: var(--ink); padding-left: 0; } .badge.live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+
+/* ---------- Alert banner ---------- */
+.alert { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-3); border-radius: var(--radius); padding: var(--space-4); }
+.alert > .ico { margin-top: 2px; }
+.alert.warn { background: var(--warn-bg); color: var(--warn); }
+.alert.danger { background: var(--danger-bg); color: var(--danger); }
+.alert.ok { background: var(--ok-bg); color: var(--ok); }
+.alert .title { font-weight: 700; }
+.alert .when { font-size: var(--text-sm); }
+.alert a { font-weight: 600; }
+
+/* ---------- Form field ---------- */
+.field { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+.field label, .field .label { font-weight: 600; }
+.field input, .field select, .field textarea { width: 100%; min-width: 0; min-height: var(--tap); font: inherit; color: var(--ink); background: color-mix(in srgb, var(--surface) 85%, transparent); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: var(--space-3); }
+.field .hint { font-size: var(--text-sm); color: var(--ink-muted); }
+.field.invalid input, .field.invalid textarea { border: 2px solid var(--danger); }
+.field .error { color: var(--danger); font-size: var(--text-sm); font-weight: 600; }
+
+/* ---------- Offline notice ---------- */
+.offline { display: flex; gap: var(--space-3); align-items: center; background: var(--surface-2); border: 1px dashed var(--border); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); }
+
+/* ---------- Chart frame ---------- */
+.chart { display: grid; gap: var(--space-3); }
+.chart .plot { min-height: 140px; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--ink) 8%, transparent); display: grid; place-items: center; color: var(--ink-muted); }
+.chart .summary { font-size: var(--text-sm); color: var(--ink-muted); }
+
+/* ---------- Bottom navigation: dark pill, sand circle on the current item ---------- */
+.nav { display: flex; justify-content: space-around; gap: var(--space-1); background: var(--nav); color: var(--on-nav); border-radius: var(--radius-pill); padding: var(--space-2); }
+.nav a { flex: 1 1 0; min-width: var(--tap); min-height: var(--tap); display: grid; place-items: center; color: inherit; text-decoration: none; border-radius: var(--radius-pill); }
+.nav a[aria-current="page"] { background: var(--accent); color: var(--on-accent); flex: 0 0 56px; }
+
+/* ---------- Display title and small helpers ---------- */
+.display { font-size: var(--text-display); font-weight: 700; line-height: 1.15; }
+.hero-glow { display: grid; place-items: center; min-height: 260px; border-radius: var(--radius); background: radial-gradient(closest-side, var(--glow-strong), transparent 75%); }
+.dots { display: flex; gap: var(--space-2); } .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--ink-muted); } .dots i:first-child { background: var(--ink); }
