@@ -1,0 +1,23 @@
+$ docker build -t smartcity:local .
+built
+
+$ docker image ls smartcity:local
+smartcity:local  242MB
+
+$ docker run --rm smartcity:local sh -c "whoami; find /app -type f | sort"
+app
+/app/api/alerts.py
+/app/api/app.py
+/app/api/requirements.txt
+/app/api/schema.sql
+/app/contracts/api.openapi.yaml
+/app/contracts/requirements.txt
+/app/contracts/sensor-reading.schema.json
+/app/ingest/bridge.py
+/app/ingest/requirements.txt
+/app/sensors/openaq.py
+/app/sensors/requirements.txt
+/app/sensors/simulator.py
+
+# any credential, password, ACL or .env file anywhere in the image? (expect none)
+done

@@ -150,7 +150,7 @@ Entry: `- [#<n>](<file>.md) — <what changed> — <in charge>`
 
 <!-- #72 -->
 
-<!-- #73 -->
+- [#73](73-containers.md) — One container image for the API, bridge, alert checker and simulator; broker queue limit raised — Joseph
 
 <!-- #74 -->
 

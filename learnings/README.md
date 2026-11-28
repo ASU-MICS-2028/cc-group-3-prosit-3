@@ -34,6 +34,8 @@ Every note is listed below under a topic.
 
 - [Ids created on the device make offline retries idempotent](client-generated-uuids-make-retries-safe.md)
 
+- [Mosquitto queues only 1000 messages for a client that falls behind, then silently drops the rest](mosquitto-drops-queued-messages-past-1000.md)
+
 - [Offline app design: save locally first, encrypt, queue, and let a person settle conflicts](offline-conflicts-are-shown-to-a-person.md)
 
 - [OpenAQ's v3 API needs a key, but its public S3 archive does not; the archive runs a few days behind](openaq-archive-needs-no-key-but-lags-days.md)
