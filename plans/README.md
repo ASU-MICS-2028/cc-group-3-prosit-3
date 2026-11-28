@@ -38,7 +38,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 - [#16](16-gcp-setup.md) — GCP project, budget alert and billing export — Joseph — stub
 
-- [#17](17-design-system.md) — Design system and screen set for web and mobile — Perfect — stub
+- [#17](17-design-system.md) — Design system and screen set for web and mobile — Perfect — in progress
 
 - [#18](18-l12-broker-simulator.md) — MQTT broker and three-domain sensor simulator (L12-A/B) — Joseph — done
 

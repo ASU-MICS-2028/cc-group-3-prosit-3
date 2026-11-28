@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartCity Accra: AMA dashboard screen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../icons.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="screens.css">
+</head>
+<body>
+<main>
+<section class="screen" data-theme="dark" aria-label="AMA dashboard" style="min-height:0;border-radius:40px">
+<div class="ama">
+<div class="side"><nav class="nav" aria-label="Main"><a href="#" aria-current="page" aria-label="Overview"><i class="ico  i-home" aria-hidden="true"></i></a><a href="#" aria-label="Alerts"><i class="ico  i-bell" aria-hidden="true"></i></a><a href="#" aria-label="Charts"><i class="ico  i-chart" aria-hidden="true"></i></a><a href="#" aria-label="Residents"><i class="ico  i-user" aria-hidden="true"></i></a></nav></div>
+<div class="stack">
+<div class="live-row"><div><h1 class="display">Accra overview</h1><p class="muted">AMA officials · sample values, not live data</p></div><span class="badge live">11 of 11 sensors reporting</span></div>
+<div class="dash">
+<div class="glass c4"><div class="card-title"><h2>Air · Jamestown</h2><span class="badge warn"><i class="ico  i-alert" aria-hidden="true"></i>Moderate</span></div><div class="center"><div class="dial" style="width:min(100%,220px)"><svg viewBox="0 0 200 200" aria-hidden="true"><path class="track" d="M44.8 155.2 A78 78 0 1 1 155.2 155.2"/><path class="val" d="M44.8 155.2 A78 78 0 0 1 28.4 69.0"/><circle class="handle" cx="28.4" cy="69.0" r="9"/></svg><div class="dial-center"><span class="dial-value">38</span><span class="dial-unit">PM2.5 µg/m³</span></div></div></div></div>
+<div class="glass c4"><div class="card-title"><h2>Flood · Asylum Down</h2><span class="badge danger"><i class="ico  i-alert" aria-hidden="true"></i>Above line</span></div><div class="vslider" style="min-height:300px"><div class="vtrack"><div class="vfill over" style="height:72%"></div><div class="vline" style="bottom:60%"><span>60 cm line</span></div><div class="vhandle" style="bottom:72%"><i class="ico  i-drop" aria-hidden="true"></i></div><div class="vbubble" style="bottom:72%">72<br>cm</div></div><div class="vscale"><span>100</span><span>0</span></div></div></div>
+<div class="c4 stack"><div class="glass"><div class="card-title"><h2>Open alerts</h2><span class="badge danger">2</span></div><ul class="list"><li><span><strong>Flood warning</strong><br><span class="muted">Asylum Down · 14:05</span></span><span class="badge danger"><i class="ico  i-alert" aria-hidden="true"></i>Open</span></li><li><span><strong>Bin due</strong><br><span class="muted">Makola · 13:20</span></span><span class="badge warn"><i class="ico  i-trash" aria-hidden="true"></i>Open</span></li></ul></div>
+<div class="glass tile"><span class="label"><i class="ico  i-trash" aria-hidden="true"></i>Bin fill · Makola</span><span><span class="value">72</span><span class="unit">%</span></span><span class="meta"><span class="badge ok"><i class="ico  i-check" aria-hidden="true"></i>Normal</span></span></div></div>
+<div class="glass chart c8"><div class="card-title"><h2>PM2.5, next 24 h · Nima</h2></div><div class="plot" role="img" aria-label="Line chart placeholder">forecast line chart drawn here</div><p class="summary">Peak near 45 µg/m³ at 07:00 (sample). The model version comes from the API. <a href="#">View as table</a></p></div>
+<div class="glass c4"><div class="card-title"><h2>Warning rule</h2></div><p class="muted">Warn when the drain is at or above <strong style="color:var(--ink)">60 cm</strong> (ends below 50 cm), or rises 15 cm in 15 minutes. Residents see the reason in plain words.</p></div>
+<div class="glass c12"><div class="card-title"><h2>From residents</h2><span class="badge stale">2 new</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Type</th><th>Where</th><th>Note</th><th>When</th></tr></thead><tbody>
+<tr><td data-label="Type"><span class="badge warn"><i class="ico  i-flag" aria-hidden="true"></i>Flag</span></td><td data-label="Where">Asylum Down</td><td data-label="Note">“Drain looks fine to me” on the flood warning</td><td data-label="When" class="nowrap">14:20</td></tr>
+<tr><td data-label="Type"><span class="badge stale"><i class="ico  i-pin" aria-hidden="true"></i>Report</span></td><td data-label="Where">Makola</td><td data-label="Note">Flooding near the market entrance</td><td data-label="When" class="nowrap">13:55</td></tr></tbody></table></div></div>
+</div></div></div></section>
+</main>
+</body>
+</html>
