@@ -1,0 +1,15 @@
+# Allow-list: only what the Dockerfile copies goes into the build context (#73).
+# Keeps ingest/device_credentials.csv, ingest/mosquitto/passwd and acl, .env files and the spool out.
+*
+!contracts/requirements.txt
+!contracts/sensor-reading.schema.json
+!contracts/api.openapi.yaml
+!ingest/requirements.txt
+!ingest/bridge.py
+!api/requirements.txt
+!api/app.py
+!api/alerts.py
+!api/schema.sql
+!sensors/requirements.txt
+!sensors/simulator.py
+!sensors/openaq.py

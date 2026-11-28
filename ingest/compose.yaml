@@ -2,6 +2,9 @@
 #   cp ingest/.env.example ingest/.env   (then set a password)
 #   python3 ingest/devices.py init        (MQTT passwords + ACL)
 #   docker compose -f ingest/compose.yaml up -d
+# The whole pipeline in containers (#73), from the repo root:
+#   export MQTT_PASSWORD="$(awk -F, '$1=="bridge" {print $2}' ingest/device_credentials.csv)"
+#   docker compose -f ingest/compose.yaml --env-file ingest/.env --profile app up -d --build
 services:
   mosquitto:
     image: eclipse-mosquitto:2.0.20
@@ -21,3 +24,49 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in ingest/.env}
     volumes:
       - ./dev-schema.sql:/docker-entrypoint-initdb.d/10-dev-schema.sql:ro
+    healthcheck:   # the app services wait for this, so they don't crash on a DB that is still starting
+      test: ["CMD", "pg_isready", "-U", "smartcity", "-d", "smartcity"]
+      interval: 2s
+      retries: 30
+
+  # --profile app: the image from the repo's Dockerfile, one service per process (#73)
+  bridge:
+    profiles: [app]
+    build: ..
+    image: smartcity:local
+    command: ["python", "ingest/bridge.py"]
+    environment:
+      DATABASE_URL: postgresql://smartcity:${POSTGRES_PASSWORD}@timescaledb:5432/smartcity
+      MQTT_HOST: mosquitto
+      MQTT_USERNAME: bridge
+      MQTT_PASSWORD: ${MQTT_PASSWORD:?export MQTT_PASSWORD from ingest/device_credentials.csv}
+    volumes:
+      - spool:/data
+    depends_on:
+      timescaledb: {condition: service_healthy}
+      mosquitto: {condition: service_started}
+    restart: unless-stopped
+
+  api:
+    profiles: [app]
+    image: smartcity:local
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DATABASE_URL: postgresql://smartcity:${POSTGRES_PASSWORD}@timescaledb:5432/smartcity
+    depends_on:
+      timescaledb: {condition: service_healthy}
+    restart: unless-stopped
+
+  alerts:
+    profiles: [app]
+    image: smartcity:local
+    command: ["python", "api/alerts.py"]
+    environment:
+      DATABASE_URL: postgresql://smartcity:${POSTGRES_PASSWORD}@timescaledb:5432/smartcity
+    depends_on:
+      timescaledb: {condition: service_healthy}
+    restart: unless-stopped
+
+volumes:
+  spool:

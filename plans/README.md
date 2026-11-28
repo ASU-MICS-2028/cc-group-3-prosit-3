@@ -150,7 +150,7 @@ Entry: `- [#<n>](<file>.md) — <title> — <owner> — <status>`
 
 <!-- #72 -->
 
-<!-- #73 -->
+- [#73](73-containers.md) — Package the bridge, API, alert checker and simulator as one container image — Joseph — done
 
 <!-- #74 -->
 
